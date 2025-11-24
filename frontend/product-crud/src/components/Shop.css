@@ -1,0 +1,25 @@
+.products-wrapper {
+    display: flex;
+    justify-content: center;
+    padding-top: 15rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    background: var(--purple);
+    padding: 1rem;
+    border-radius: 2rem;
+}
+.product-card {
+    border: 1px solid grey;
+    border-radius: 1rem;
+    background: white;
+    min-height: 8rem;
+    padding: 0.5rem;
+}
+.product-card .info-btn {
+    display: block;
+    border-radius: 1rem;
+    padding: 1rem 1rem 0.5rem 1rem;
+}

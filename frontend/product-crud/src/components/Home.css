@@ -1,0 +1,30 @@
+.background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -555;
+    width: 100%;
+    height: calc(100vh - 50px);
+    object-fit: cover;
+}
+.home-wrapper {
+    height: 100%;
+}
+.intro-section {
+    height: 100%;
+}
+.intro-wrapper .intro-text {
+    color: white;
+    text-align: center;
+    padding-top: 14rem;
+    font-weight: 100;
+}
+.intro-wrapper .intro-heading span {
+    font-size: 6rem;
+       backdrop-filter: blur(1px);
+}
+.intro-wrapper .intro-desc span {
+    font-size: 2rem;
+    box-shadow: 5px 5px 5px 0px black;
+    backdrop-filter: blur(8px);
+}

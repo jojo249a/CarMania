@@ -1,0 +1,49 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6rem;
+ /* Layering trick: blur the whole background */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Fade effect using a mask */
+  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.281));
+}
+nav * {
+    color: white;
+    font-size: 1.2rem;
+}
+nav .home-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 6rem;
+}
+nav .nav-item {
+    position: relative;
+        font-weight: 200;
+}
+nav .nav-item::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    background: white;
+    bottom: 0;
+    left: 0;
+}
+nav .nav-item:hover {
+    color: var(--white);
+}
+nav .nav-item:hover .home-icon {
+    fill: var(--white);
+}
+nav .home-icon {
+    font-size: 3rem;
+}
+nav .nav-items {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
