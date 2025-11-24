@@ -3,12 +3,9 @@ nav {
     align-items: center;
     justify-content: center;
     height: 6rem;
- /* Layering trick: blur the whole background */
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  /* Fade effect using a mask */
-  background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.281));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.281));
 }
 nav * {
     color: white;
@@ -22,7 +19,7 @@ nav .home-link {
 }
 nav .nav-item {
     position: relative;
-        font-weight: 200;
+    font-weight: 200;
 }
 nav .nav-item::after {
     content: "";
