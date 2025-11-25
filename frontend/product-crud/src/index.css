@@ -3,21 +3,26 @@
     --yellow: #F0BC00;
     --purple: #2E294E;
     --white: #ff6734;
+    --grey-text: #4a4a4a;
 }
 * {
     margin: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
 a {
     text-decoration: none;
+    color: inherit;
 }
 li {
     list-style: none;
 }
 body {
     background: #EADEDA;
+    color: var(--grey-text);
 }
 .main-wrapper {
     display: flex;
@@ -26,4 +31,8 @@ body {
 }
 .main-content {
     flex: 1;
+}
+.heading {
+    font-size: 4rem;
+    font-weight: 200;
 }

@@ -13,18 +13,51 @@
 .intro-section {
     height: 100%;
 }
-.intro-wrapper .intro-text {
+.intro-wrapper {
+    display: flex;
+    justify-content: center;
     color: white;
+}
+.intro-wrapper .intro-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-align: center;
-    padding-top: 14rem;
+    padding-top: 25vh;
     font-weight: 100;
 }
-.intro-wrapper .intro-heading span {
+.intro-wrapper .intro-heading {
     font-size: 6rem;
-       backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
+    letter-spacing: 0.2rem;
 }
-.intro-wrapper .intro-desc span {
+.intro-wrapper .intro-desc {
+    display: inline-block;
+    padding-inline: 0.5rem;
     font-size: 2rem;
     box-shadow: 5px 5px 5px 0px black;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(20px);
+    letter-spacing: 1rem;
+    text-transform: uppercase;
+}
+.intro-wrapper .intro-btn {
+    display: flex;
+    align-items: center;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    letter-spacing: 1rem;
+}
+.offers-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.offers-wrapper .offers-heading {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 }
