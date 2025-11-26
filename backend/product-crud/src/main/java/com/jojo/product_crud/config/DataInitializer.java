@@ -19,11 +19,11 @@ public class DataInitializer implements CommandLineRunner {
     public void run(String... args) {
         productRepository.deleteAll();
         if (productRepository.count() == 0) {
-            productRepository.save(new Product(null, "Car1", "/images/911.jpeg", 799.99));
-            productRepository.save(new Product(null, "Car2", "/images/astonmartin.jpeg", 34000.99));
-            productRepository.save(new Product(null, "Car3", "/images/sti.jpeg", 25999.99));
-            productRepository.save(new Product(null, "Car4", "/images/sf90.jpeg", 1009.99));
-            productRepository.save(new Product(null, "Car5", "/images/m4.jpeg", 199999.99));
+            for (int i = 0; i <= 1; i++ ) { 
+                productRepository.save(new Product(null, "Porsche 911 GT2 RS", "/images/911.jpeg", 799.99));
+                productRepository.save(new Product(null, "Subaru Impreza WRX STi", "/images/sti.jpeg", 25999.99));
+                productRepository.save(new Product(null, "BMW M4 Competition", "/images/m4.jpeg", 199999.99));
+            }
         }
     }
 }

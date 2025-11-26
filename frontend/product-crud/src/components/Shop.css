@@ -7,12 +7,11 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
-    background: var(--purple);
     padding: 1rem;
     border-radius: 2rem;
 }
 .product-card {
-    border: 1px solid grey;
+    border: 1px solid var(--grey);
     border-radius: 1rem;
     background: white;
     min-height: 8rem;
