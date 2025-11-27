@@ -22,9 +22,10 @@
 }
 .intro-wrapper .intro-heading {
     font-size: 6rem;
+    mask: linear-gradient(black, black, transparent);
     backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
     letter-spacing: 0.2rem;
+    font-weight: 500;
     margin-bottom: 1rem;
 }
 .intro-wrapper .intro-desc {
@@ -39,7 +40,7 @@
     border-radius: 9rem;
     padding: 0.5rem 2rem;
 }
-.intro-wrapper .intro-btn {
+.intro-wrapper .intro-button {
     display: flex;
     align-items: center;
     position: relative;
@@ -51,10 +52,10 @@
     padding: 0.5rem 1rem;
     letter-spacing: 0.5rem;
 }
-.intro-btn .intro-btn-text {
+.intro-button .intro-button-text {
     margin-left: 4rem;
 }
-.intro-btn .circle {
+.intro-button .circle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,7 +69,7 @@
     margin-right: 2rem;
     transition: 0.2s;
 }
-.intro-btn:hover .circle {
+.intro-button:hover .circle {
     background: var(--red);;
     color: white;
 }
@@ -83,10 +84,11 @@
     gap: 1.5rem;
     padding-block: 4rem;
 }
-.offers-grid .offers-list {
+.offers-wrapper .offers-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    width: 100%;
 }
 .offers-list .offers-item {
     width: 700px;
@@ -111,7 +113,7 @@
 .offers-list .offers-item-img {
     width: 100%;
 }
-.offers-list .offers-item-btn {
+.offers-list .offers-item-button {
     position: absolute;
     bottom: 1.5rem;
     left: 2rem;

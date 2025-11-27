@@ -8,13 +8,11 @@ export default function App() {
   return (
     <>
       <Nav />
-      <div className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/admin" element={<Admin />}></Route>
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/admin" element={<Admin />} />
+      </Routes>
     </>
   )
 }

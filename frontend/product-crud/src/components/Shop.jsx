@@ -14,7 +14,7 @@ export default function Shop() {
     }, []);
 
     return (
-        <div className="products-wrapper">
+        <>
             <div className="product-grid">
             {
                 products.map(product => (
@@ -27,6 +27,6 @@ export default function Shop() {
                 ))
             }
             </div>
-        </div>
+        </>
     )   
 }

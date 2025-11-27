@@ -20,45 +20,45 @@ export default function Home() {
     useEffect(() => getOffers(), []);
 
     return (
-        <div className="home-wrapper">
-            <section className="intro-section">
-                <div className="intro-wrapper">
-                    <img src="/showroom6.avif" alt="Background" className="background-img" />
-                    <div className="intro-text">
-                        <div className="intro-heading">
-                            <span>CarMania</span>
-                            <SecondLogo className="second-logo"/>
-                        </div>
-                        <div className="intro-desc">
-                            <span>All the cars you love</span>
-                        </div>
-                        <div>
-                            <Link className="intro-btn" to="/Shop">
-                                <div className="circle">
-                                    <FaChevronRight />
-                                </div>
-                                <div className="intro-btn-text">
-                                    View Offers
-                                </div>
-                            </Link>
+        <>
+            <main>
+                <section>
+                    <div className="intro-wrapper">
+                        <img src="/showroom6.avif" alt="Showroom" className="background-img" />
+                        <div className="intro-text">
+                            <div className="intro-heading">
+                                <span>CarMania</span>
+                                <SecondLogo className="second-logo"/>
+                            </div>
+                            <div className="intro-desc">
+                                <span>All the cars you love</span>
+                            </div>
+                            <div>
+                                <Link className="intro-button" to="/Shop">
+                                    <div className="circle">
+                                        <FaChevronRight />
+                                    </div>
+                                    <div className="intro-button-text">
+                                        View Offers
+                                    </div>
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section className="offers-section">
-                <div className="offers-wrapper">
-                    <h2 className="offers-heading heading">
-                        <SecondLogo className="second-logo"/>
-                        Current range of new and used cars
-                    </h2>
-                    <div className="offers-grid">
+                </section>
+                <section>
+                    <div className="offers-wrapper center">
+                        <h2 className="offers-heading heading">
+                            <SecondLogo className="second-logo"/>
+                            Current range of new and used cars
+                        </h2>
                         <ul className="offers-list">
                             {
                                 offers.map(offer => (
                                     <li className="offers-item" key={offer.id}>
                                         <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
                                         <div>
-                                            <Link className="offers-item-btn button" to="">Read More</Link>
+                                            <Link className="offers-item-button button" to="">Read More</Link>
                                         </div>
                                         <div className="offers-item-text">
                                             <h2 className="offers-item-heading">{offer.name}</h2>
@@ -68,13 +68,23 @@ export default function Home() {
                                 ))
                             }
                         </ul>
+                        <div className="offers-buttons">
+                            <Link className="button button-white" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
+                            <Link className="button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
+                        </div>
                     </div>
-                    <div className="offers-buttons">
-                        <Link className="button button-white" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
-                        <Link className="button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
+                </section>
+            </main>
+            <aside class="banner center">
+                <img class="banner-img" src="/showroom2.jpg" alt="Showroom" />
+                <div className="banner-text">
+                    <h2 className="banner-heading">Showrooms CarMania</h2>
+                    <div className="banner-buttons">
+                        <Link className="button button-transp">ŽILINA Showroom <FaChevronRight className="button-arrow"/></Link>
+                        <Link className="button button-transp">BRATISLAVA Showroom <FaChevronRight className="button-arrow"/></Link>
                     </div>
                 </div>
-            </section>
-        </div>
+            </aside>
+         </>
     )
 }
