@@ -1,0 +1,26 @@
+footer {
+    background: var(--dark);
+    color: white;
+    font-weight: 200;
+
+}
+.footer-top {
+    padding: 1rem;
+    font-size: 1.25rem;
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+.footer-top .footer-top-iconrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}

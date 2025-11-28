@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import PrimaryLogo from "../assets/primary-logo.svg?react"
-import "./Nav.css"
+import "../styles/Nav.css"
 
 export default function Nav() {
     return (
