@@ -131,6 +131,7 @@
 .offers-wrapper .offers-buttons {
     margin-block: 4rem;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
 }

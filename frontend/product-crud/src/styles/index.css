@@ -2,8 +2,9 @@
 :root {
     --light: #e2e2e2;
     --dark: #222222;
+    --dark2: #121212;
     --grey: #4a4a4a;
-    --grey2: #3c3c3c;;
+    --grey2: #3c3c3c;
     --red: #c41515;
 }
 * {
@@ -33,6 +34,9 @@ body {
 .heading {
     font-size: 3rem;
     font-weight: 200;
+}
+.err-message {
+    margin-block: 4rem;
 }
 .button {
     display: inline-flex;

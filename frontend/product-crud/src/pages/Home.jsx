@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom"
-import { FaChevronRight } from "react-icons/fa"
+import { FaChevronRight, FaImages, FaRegHeart, FaRegComment } from "react-icons/fa"
 import PrimaryLogo from "../assets/primary-logo.svg?react";
 import SecondLogo from "../assets/second-logo.svg?react";
 import CZFlag from "..//assets/cz-flag.svg?react";
 import SKFlag from "../assets/sk-flag.svg?react";
-import { FaImages } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
-import { FaRegComment } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 import "../styles/Home.css"
@@ -19,9 +16,8 @@ export default function Home() {
         fetch("http://localhost:8080/api/products")
             .then(res => res.json())
             .then(data => setOffers(data))
-            .catch(err => setError(err));
+            .catch(() => setError("Failed to load offers"));
     }
-
     useEffect(() => getOffers(), []);
 
     return (
@@ -52,31 +48,36 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
+                    
                     <div className="offers-wrapper center">
                         <h2 className="offers-heading heading">
                             <SecondLogo className="second-logo"/>
                             Current range of new and used cars
                         </h2>
-                        <ul className="offers-list">
-                            {
-                                offers.map(offer => (
-                                    <li className="offers-item" key={offer.id}>
-                                        <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
-                                        <div>
-                                            <Link className="offers-item-button button" to="">Read More</Link>
-                                        </div>
-                                        <div className="offers-item-text">
-                                            <h2 className="offers-item-heading">{offer.name}</h2>
-                                            <div className="offers-item-price">{offer.price}€ Tax included</div>
-                                        </div>
-                                    </li>
-                                ))
-                            }
-                        </ul>
+                        {error ? <div className="err-message">{error}</div> : 
+                        <>
+                            <ul className="offers-list">
+                                {
+                                    offers.map(offer => (
+                                        <li className="offers-item" key={offer.id}>
+                                            <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
+                                            <div>
+                                                <Link className="offers-item-button button" to="">Read More</Link>
+                                            </div>
+                                            <div className="offers-item-text">
+                                                <h2 className="offers-item-heading">{offer.name}</h2>
+                                                <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                            </div>
+                                        </li>
+                                    ))
+                                }
+                            </ul>
+                        </>   
+                        }     
                         <div className="offers-buttons">
                             <Link className="button button-white" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
                             <Link className="button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
-                        </div>
+                        </div>           
                     </div>
                 </section>
             </main>
@@ -161,11 +162,9 @@ export default function Home() {
                             </div>
                             <div className="ig-posts-text-line ig-posts-comment">
                                 When you want something different than Rosso. 😉
-
-                                This Ferrari 812 GTS wears Viola Hong Kong, a Special 2-Layer metallic paint that shifts with the light — deep, dark purple turning vibrant under the sun.
-
+                                This Ferrari 812 GTS wears Viola Hong Kong, a Special 2-Layer metallic paint
+                                that shifts with the light — deep, dark purple turning vibrant under the sun.
                                 Carbon on the outside, carbon on the inside, with yellow accents that make it pop.
-
                                 Atelier Ferrari at its finest.
                                 Now available!
                             </div>
