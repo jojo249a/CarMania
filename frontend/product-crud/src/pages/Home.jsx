@@ -11,6 +11,13 @@ import "../styles/Home.css"
 export default function Home() {
     const [offers, setOffers] = useState([]);
     const [error, setError] = useState("");
+    const images = [
+        "/showroom2.jpg",
+        "/showroom6.avif",
+        "/showroom7.avif",
+        "/showroom8.avif"
+    ];
+    const [index, setIndex] = useState(0);
 
     function getOffers() {
         fetch("http://localhost:8080/api/products")
@@ -18,14 +25,27 @@ export default function Home() {
             .then(data => setOffers(data))
             .catch(() => setError("Failed to load offers"));
     }
-    useEffect(() => getOffers(), []);
+
+
+
+    useEffect(() => {
+        getOffers();
+    }, []);
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIndex(prev => (prev + 1) % images.length);
+        }, 3000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
             <main>
                 <section>
                     <div className="intro-wrapper">
-                        <img src="/showroom6.avif" alt="Showroom" className="background-img" />
+                        <img src={images[index]} alt="Showroom" className="background-img" />
                         <div className="intro-text">
                             <div className="intro-heading">
                                 <span>CarMania</span>
@@ -36,7 +56,7 @@ export default function Home() {
                             </div>
                             <div>
                                 <Link className="intro-button" to="/Shop">
-                                    <div className="circle">
+                                    <div className="intro-circle">
                                         <FaChevronRight />
                                     </div>
                                     <div className="intro-button-text">

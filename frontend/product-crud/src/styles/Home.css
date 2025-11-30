@@ -1,17 +1,16 @@
 .background-img {
-    top: 0;
-    left: 0;
     z-index: -555;
     width: 100%;
     height: calc(100vh - 50px);
     object-fit: cover;
+    transition: opacity 0.8s ease-in-out; /* optional fade effect */
 }
 .intro-wrapper {
     display: flex;
     justify-content: center;
     color: white;
 }
-.intro-wrapper .intro-text {
+.intro-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +19,7 @@
     padding-top: 32vh;
     font-weight: 100;
 }
-.intro-wrapper .intro-heading {
+.intro-heading {
     font-size: 6rem;
     mask: linear-gradient(black, black, transparent);
     backdrop-filter: blur(1px);
@@ -29,7 +28,7 @@
     margin-bottom: 1rem;
     text-shadow: 5px 5px 5px black;
 }
-.intro-wrapper .intro-desc {
+.intro-desc {
     display: inline-block;
     padding-inline: 0.5rem;
     font-size: 2rem;
@@ -41,7 +40,7 @@
     border-radius: 9rem;
     padding: 0.5rem 2rem;
 }
-.intro-wrapper .intro-button {
+.intro-button {
     display: flex;
     align-items: center;
     position: relative;
@@ -53,10 +52,10 @@
     padding: 0.5rem 1rem;
     letter-spacing: 0.5rem;
 }
-.intro-button .intro-button-text {
+.intro-button-text {
     margin-left: 4rem;
 }
-.intro-button .circle {
+.intro-circle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -68,9 +67,9 @@
     position: absolute;
     left: -0.5rem;
     margin-right: 2rem;
-    transition: 0.2s;
+    transition: background .2s;
 }
-.intro-button:hover .circle {
+.intro-button:hover .intro-circle {
     background: var(--red);;
     color: white;
 }
@@ -79,26 +78,26 @@
     align-items: center;
     flex-direction: column;
 }
-.offers-wrapper .offers-heading {
+.offers-heading {
     display: flex;
     align-items: center;
     gap: 1.5rem;
     margin-block: 4rem;
 }
-.offers-wrapper .offers-list {
+.offers-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     width: 100%;
 }
-.offers-list .offers-item {
+.offers-item {
     width: 700px;
     position: relative;
     color: white;
     height: 475px;
     background: black;
 }
-.offers-list .offers-item::after {
+.offers-item::after {
     content: "";
     bottom: 0;
     left: 0;
@@ -106,15 +105,15 @@
     height: 75%;
     width: 100%;
     background: linear-gradient(to top, rgb(0, 0, 0) 25%, rgba(0, 0, 0, 0) 80%);
-    transition: 0.3s;
+    transition: height .3s;
 }
 .offers-item:hover::after {
     height: 65%;
 }
-.offers-list .offers-item-img {
+.offers-item-img {
     width: 100%;
 }
-.offers-list .offers-item-button {
+.offers-item-button {
     position: absolute;
     bottom: 1.5rem;
     left: 2rem;
@@ -122,13 +121,13 @@
     font-size: 1rem;
     z-index: 99;
 }
-.offers-list .offers-item-text {
+.offers-item-text {
     position: absolute;
     bottom: 1.5rem;
     right: 2rem;
     z-index: 99;
 }
-.offers-wrapper .offers-buttons {
+.offers-buttons {
     margin-block: 4rem;
     display: flex;
     justify-content: center;

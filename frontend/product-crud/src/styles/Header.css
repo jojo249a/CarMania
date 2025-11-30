@@ -7,7 +7,6 @@ header {
     height: 6rem;
     color: white;
     backdrop-filter: blur(3px);
-    transition: 0.3s;;
 }
 header::before {
     content: "";
@@ -15,11 +14,11 @@ header::before {
     height: 100%;
     position: absolute;
     background: linear-gradient(to bottom, var(--dark), var(--dark2));
-    transition: opacity 0.3s;
+    transition: opacity .3s;
     opacity: 0;
     z-index: -5;
 }
-header.fixed::before {
+header.bg::before {
     opacity: 1;
 }
 .header-inner {
@@ -76,6 +75,15 @@ header.fixed::before {
     position: absolute;
     right: 0;
     min-width: 7rem;
+    opacity: 0;
+    transform: translateY(20px);
+    visibility: hidden;
+    transition: visibility .2s, transform .2s, opacity .2s;
+}
+.langs-list.opened {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 .header-arrow-down {
     width: 0.75rem;
@@ -88,7 +96,6 @@ header.fixed::before {
     min-width: 10rem;
     text-wrap: nowrap;
     visibility: hidden;
-    transition: 0.2s;
     opacity: 0;
     transform: translateY(20px);
     transition: visibility .2s, transform .2s, opacity .2s;

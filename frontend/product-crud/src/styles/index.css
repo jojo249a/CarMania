@@ -47,7 +47,7 @@ body {
     font-weight: 300;
     padding: 0.5rem 1.25rem;
     font-size: 1.5rem;
-    transition: 0.2s;
+    transition: background .2s;
 }
 .button:hover {
     background: var(--red);
@@ -159,7 +159,7 @@ body {
     top: 0.5rem;
     right: 0.5rem;
     opacity: 1;
-    transition: opacity 0.2s;
+    transition: opacity .2s;
 }
 .ig-posts-text {
     display: flex;
@@ -172,7 +172,7 @@ body {
     left: 0;
     font-weight: 200;
     font-size: 1rem;
-    transition: 0.2s;
+    transition: opacity .2s;
     width: 100%;
     height: 100%;
     opacity: 0;

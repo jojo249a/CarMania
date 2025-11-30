@@ -9,13 +9,14 @@ import { useEffect, useState } from "react"
 import "../styles/Header.css"
 
 export default function Header() {
-    const [fixed, setFixed] = useState(false);
+    const [bg, setBg] = useState(false);
+    const [opened, setOpened] = useState(false);
 
     function handleScroll() {
         if (window.scrollY > 0) {
-            setFixed(true);
+            setBg(true);
         } else {
-            setFixed(false);
+            setBg(false);
         }
     }
 
@@ -28,7 +29,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header className={fixed ? "fixed" : ""}>
+        <header className={bg ? "bg" : ""}>
             <div className="header-inner center">
                 <Link className="nav-home-link" to="/"><PrimaryLogo /></Link>
                 <nav>
@@ -67,18 +68,18 @@ export default function Header() {
                     </ul>
                 </nav>
                 <div className="header-langs">
-                    <div className="current-lang">
+                    <div className="current-lang" onClick={() => setOpened(!opened)}>
                         <SKFlag className="langs-flag"/>
                         <FaChevronDown className="header-arrow-down"/>
                     </div>
-                    <ul className="langs-list">
-                        <li className="langs-item">
+                    <ul className={`langs-list ${opened ? "opened" : ""}`}>
+                        <li className="langs-item" onClick={() => setOpened(!opened)}>
                             <SKFlag className="langs-flag"/> SK
                         </li>
-                        <li className="langs-item">
+                        <li className="langs-item" onClick={() => setOpened(!opened)}>
                             <CZFlag className="langs-flag"/> CZ
                         </li>
-                        <li className="langs-item">
+                        <li className="langs-item" onClick={() => setOpened(!opened)}>
                             <UKFlag className="langs-flag"/> UK
                       </li>
                     </ul>
