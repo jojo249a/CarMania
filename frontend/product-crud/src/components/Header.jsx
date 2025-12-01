@@ -70,9 +70,10 @@ export default function Header() {
                 </nav>
                 <div className="nav-opener" onClick={() => setOpenNav(!openNav)}>
                     <FaBars className="nav-opener-icon"/>
+                    Menu
                 </div>
                 <div className="header-langs">
-                    <div className="current-lang" onClick={() => setOpenLangs(!openLangs)}>
+                    <div className="langs-opener" onClick={() => setOpenLangs(!openLangs)}>
                         <SKFlag className="langs-flag"/>
                         <FaChevronDown className="header-arrow-down lang-arrow-down"/>
                     </div>

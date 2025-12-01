@@ -29,7 +29,7 @@ header.bg::before {
     padding-inline: 2rem; 
 }
 .header-home-link {
-    position:  relative;
+    display: flex;  
     margin-right: 3rem;
 }
 .nav-items-list {
@@ -52,7 +52,7 @@ header.bg::before {
     cursor: pointer;
     margin-left: auto;
 }
-.current-lang {
+.langs-opener {
     display: flex;
     align-items: center;
     padding: 0.5rem 0.25rem;
@@ -77,18 +77,17 @@ header.bg::before {
 }
 .langs-list {
     position: absolute;
-    right: 0;
     min-width: 7rem;
-    opacity: 0;
+    right: 0;
+    z-index: 1;
     transform: translateY(20px);
-    visibility: hidden;
-    transition: visibility .2s, transform .2s, opacity .2s;
+    opacity: 0;
     pointer-events: none;
+    transition: transform .2s, opacity .2s;
 }
 .langs-list.opened {
-    opacity: 1;
-    visibility: visible;
     transform: translateY(0);
+    opacity: 1;
     pointer-events: auto;
 }
 .header-arrow-down {
@@ -101,8 +100,8 @@ header.bg::before {
     left: -0.5rem;
     min-width: 10rem;
     text-wrap: nowrap;
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(20px);
     transition: visibility .2s, transform .2s, opacity .2s;
 }
@@ -123,8 +122,8 @@ header.bg::before {
     border: none;
 }
 .nav-item:hover .nav-items-sublist {
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
     transform: translateY(0);
 }
 .nav-opener {
@@ -171,12 +170,15 @@ header.bg::before {
     .header-arrow-down {
         margin-left: auto;
     }
-    .lang-arrow-down {
-        margin-left: 0.5rem;
-    }
     .nav-opener {
-        display: block;
+        display: flex;
         cursor: pointer;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        padding-inline: 1rem;
+        gap: 0.75rem;
+        height: 40px;
     }
     nav.opened {
         visibility: visible;
@@ -185,6 +187,19 @@ header.bg::before {
         pointer-events: auto;
     }
     .header-langs {
-        margin-left: 2rem;
+        margin-left: 1rem;
+    }
+    .langs-opener {
+        background: rgba(0, 0, 0, 0.5);
+        height: 40px;
+        padding-inline: 12px;
+        border-radius: 8px;
+    }
+    .langs-list {
+        right: -32px;
+        top: calc(100% + 15px); 
+    }
+    .lang-arrow-down {
+        margin-left: 0.5rem;
     }
 }
