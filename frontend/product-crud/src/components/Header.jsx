@@ -3,14 +3,15 @@ import PrimaryLogo from "../assets/primary-logo.svg?react"
 import CZFlag from "../assets/cz-flag.svg?react"
 import SKFlag from "../assets/sk-flag.svg?react"
 import UKFlag from "../assets/uk-flag.svg?react"
-import { FaChevronDown } from "react-icons/fa"
+import { FaChevronDown, FaBars } from "react-icons/fa"
 import { useEffect, useState } from "react"
 
 import "../styles/Header.css"
 
 export default function Header() {
     const [bg, setBg] = useState(false);
-    const [opened, setOpened] = useState(false);
+    const [openLangs, setOpenLangs] = useState(false);
+    const [openNav, setOpenNav] = useState(false);
 
     function handleScroll() {
         if (window.scrollY > 0) {
@@ -31,8 +32,8 @@ export default function Header() {
     return (
         <header className={bg ? "bg" : ""}>
             <div className="header-inner inner">
-                <Link className="nav-home-link" to="/"><PrimaryLogo /></Link>
-                <nav>
+                <Link className="header-home-link" to="/"><PrimaryLogo className="header-home-logo"/></Link>
+                <nav className={openNav ? "opened" : ""}>
                     <ul className="nav-items-list">
                         <li className="nav-item">
                             <span className="nav-link" to="/shop">Showrooms<FaChevronDown className="header-arrow-down"/></span>
@@ -67,19 +68,22 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
+                <div className="nav-opener" onClick={() => setOpenNav(!openNav)}>
+                    <FaBars className="nav-opener-icon"/>
+                </div>
                 <div className="header-langs">
-                    <div className="current-lang" onClick={() => setOpened(!opened)}>
+                    <div className="current-lang" onClick={() => setOpenLangs(!openLangs)}>
                         <SKFlag className="langs-flag"/>
-                        <FaChevronDown className="header-arrow-down"/>
+                        <FaChevronDown className="header-arrow-down lang-arrow-down"/>
                     </div>
-                    <ul className={`langs-list ${opened ? "opened" : ""}`}>
-                        <li className="langs-item" onClick={() => setOpened(!opened)}>
+                    <ul className={`langs-list ${openLangs ? "opened" : ""}`}>
+                        <li className="langs-item" onClick={() => setOpenLangs(!openLangs)}>
                             <SKFlag className="langs-flag"/> SK
                         </li>
-                        <li className="langs-item" onClick={() => setOpened(!opened)}>
+                        <li className="langs-item" onClick={() => setOpenLangs(!openLangs)}>
                             <CZFlag className="langs-flag"/> CZ
                         </li>
-                        <li className="langs-item" onClick={() => setOpened(!opened)}>
+                        <li className="langs-item" onClick={() => setOpenLangs(!openLangs)}>
                             <UKFlag className="langs-flag"/> UK
                       </li>
                     </ul>
