@@ -68,6 +68,9 @@ header.bg::before {
     padding: 0.5rem 1rem;
     border-bottom: 1px solid var(--light);
 }
+.langs-item:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
 .langs-item:last-child {
     border: none;
 }
@@ -79,11 +82,13 @@ header.bg::before {
     transform: translateY(20px);
     visibility: hidden;
     transition: visibility .2s, transform .2s, opacity .2s;
+    pointer-events: none;
 }
 .langs-list.opened {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 .header-arrow-down {
     width: 0.75rem;
@@ -111,7 +116,7 @@ header.bg::before {
     border-bottom: 1px solid var(--light);
 }
 .nav-subitem:hover {
-    background: rgba(0, 0, 0, 0.726);
+    background: rgba(0, 0, 0, 0.7);
 }
 .nav-subitem:last-child {
     border: none;

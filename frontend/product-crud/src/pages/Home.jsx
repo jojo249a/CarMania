@@ -26,8 +26,6 @@ export default function Home() {
             .catch(() => setError("Failed to load offers"));
     }
 
-
-
     useEffect(() => {
         getOffers();
     }, []);
@@ -44,15 +42,17 @@ export default function Home() {
         <>
             <main>
                 <section>
-                    <div className="intro-wrapper">
-                        <img src={images[index]} alt="Showroom" className="background-img" />
+                    <div className="intro">
+                        <div className="intro-bg-img-wrap">
+                            <img src={images[index]} alt="Showroom" className="intro-bg-img" />
+                        </div>
                         <div className="intro-text">
                             <div className="intro-heading">
                                 <span>CarMania</span>
                                 <SecondLogo className="second-logo"/>
                             </div>
                             <div className="intro-desc">
-                                <span>LUXURY / PERFORMANCE</span>
+                                <span>LUXURY / PERFORMANCE </span>
                             </div>
                             <div>
                                 <Link className="intro-button" to="/Shop">
@@ -68,40 +68,44 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
-                    
-                    <div className="offers-wrapper center">
+                    <div className="inner spaced">
                         <h2 className="offers-heading heading">
                             <SecondLogo className="second-logo"/>
                             Current range of new and used cars
                         </h2>
-                        {error ? <div className="err-message">{error}</div> : 
-                        <>
-                            <ul className="offers-list">
-                                {
-                                    offers.map(offer => (
-                                        <li className="offers-item" key={offer.id}>
-                                            <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
-                                            <div>
-                                                <Link className="offers-item-button button" to="">Read More</Link>
-                                            </div>
-                                            <div className="offers-item-text">
-                                                <h2 className="offers-item-heading">{offer.name}</h2>
-                                                <div className="offers-item-price">{offer.price}€ Tax included</div>
-                                            </div>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </>   
-                        }     
+                    </div>
+                    {error ? 
+                    <div className="inner spaced"> 
+                        {error}
+                    </div> :
+                    <div className="inner spaced">
+                        <ul className="offers-list">
+                            {
+                                offers.map(offer => (
+                                    <li className="offers-item" key={offer.id}>
+                                        <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
+                                        <div>
+                                            <Link className="offers-item-button button" to="">Read More</Link>
+                                        </div>
+                                        <div className="offers-item-text">
+                                            <h2 className="offers-item-heading">{offer.name}</h2>
+                                            <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                        </div>
+                                    </li>
+                                ))
+                            }
+                        </ul>   
+                    </div>
+                    }
+                    <div className="inner spaced">
                         <div className="offers-buttons">
                             <Link className="button button-white" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
                             <Link className="button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
-                        </div>           
-                    </div>
+                        </div>   
+                    </div>        
                 </section>
             </main>
-            <aside className="banner center">
+            <aside className="banner">
                 <img className="banner-img" src="/showroom2.jpg" alt="Showroom" />
                 <div className="banner-text">
                     <h2 className="banner-heading">Showrooms CarMania</h2>
@@ -111,7 +115,7 @@ export default function Home() {
                     </div>
                 </div>
             </aside>
-            <aside className="ig center">
+            <aside className="ig inner">
                 <div className="side-text">
                     <div>
                         Follow us on Instagram!
@@ -192,6 +196,6 @@ export default function Home() {
                     </a>
                 </div>
             </aside>
-         </>
+        </>
     )
 }

@@ -1,14 +1,28 @@
-.background-img {
-    z-index: -555;
-    width: 100%;
-    height: calc(100vh - 50px);
-    object-fit: cover;
-    transition: opacity 0.8s ease-in-out; /* optional fade effect */
-}
-.intro-wrapper {
+.intro {
     display: flex;
     justify-content: center;
     color: white;
+    position: relative;
+}
+.intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25%;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) );
+}
+.intro-bg-img-wrap {
+    width: 100%;
+}
+.intro-bg-img {
+    width: 100%;
+    height: calc(100vh - 50px);
+    object-fit: cover;
+    transition: opacity 0.8s ease-in-out;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 .intro-text {
     display: flex;
@@ -73,7 +87,7 @@
     background: var(--red);;
     color: white;
 }
-.offers-wrapper {
+.offers {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -81,8 +95,8 @@
 .offers-heading {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.5rem;
-    margin-block: 4rem;
 }
 .offers-list {
     display: grid;
@@ -128,7 +142,6 @@
     z-index: 99;
 }
 .offers-buttons {
-    margin-block: 4rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

@@ -30,7 +30,7 @@ export default function Header() {
 
     return (
         <header className={bg ? "bg" : ""}>
-            <div className="header-inner center">
+            <div className="header-inner inner">
                 <Link className="nav-home-link" to="/"><PrimaryLogo /></Link>
                 <nav>
                     <ul className="nav-items-list">
