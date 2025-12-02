@@ -12,6 +12,9 @@ export default function Header() {
     const [bg, setBg] = useState(false);
     const [openLangs, setOpenLangs] = useState(false);
     const [openNav, setOpenNav] = useState(false);
+    const [openShowrooms, setOpenShowrooms] = useState(false);
+    const [openService, setOpenService] = useState(false);
+    const [openOffers, setOpenOffers] = useState(false);
 
     function handleScroll() {
         if (window.scrollY > 0) {
@@ -36,14 +39,26 @@ export default function Header() {
                 <nav className={openNav ? "opened" : ""}>
                     <ul className="nav-items-list">
                         <li className="nav-item">
-                            <span className="nav-link" to="/shop">Showrooms<FaChevronDown className="header-arrow-down"/></span>
+                            <span className={`nav-link ${openShowrooms ? "opened" : ""}`} onClick={() => {
+                                if (window.innerWidth <= 1140) {
+                                    setOpenShowrooms(!openShowrooms);
+                                }}}>
+                                Showrooms
+                                <FaChevronDown className="header-arrow-down"/>
+                            </span>
                             <ul className="nav-items-sublist">
                                 <li className="nav-subitem"><Link className="nav-sublink">Showroom Ostrava</Link></li>
                                 <li className="nav-subitem"><Link className="nav-sublink">Showroom Žilina</Link></li>
                             </ul>
                         </li> 
                         <li className="nav-item">
-                            <span className="nav-link" to="/admin">Cars for sale<FaChevronDown className="header-arrow-down"/></span>
+                            <span className={`nav-link ${openOffers ? "opened" : ""}`} onClick={() => {
+                                if (window.innerWidth <= 1140) {
+                                    setOpenOffers(!openOffers);
+                                }}}>
+                                Cars for sale
+                                <FaChevronDown className="header-arrow-down"/>
+                            </span>
                             <ul className="nav-items-sublist">
                                 <li className="nav-subitem"><Link className="nav-sublink">Certified used cars</Link></li>
                                 <li className="nav-subitem"><Link className="nav-sublink">New & demo cars</Link></li>
@@ -57,7 +72,13 @@ export default function Header() {
                             <Link className="nav-link" to="">Leasing</Link>
                         </li>
                         <li className="nav-item">
-                            <span className="nav-link" to="">Service<FaChevronDown className="header-arrow-down"/></span>
+                            <span className={`nav-link ${openService ? "opened" : ""}`} onClick={() => { 
+                                if (window.innerWidth <= 1140) {
+                                    setOpenService(!openService);
+                                }}}>
+                                Service
+                                <FaChevronDown className="header-arrow-down"/>
+                            </span>
                             <ul className="nav-items-sublist">
                                 <li className="nav-subitem"><Link className="nav-sublink">Service</Link></li>
                                 <li className="nav-subitem"><Link className="nav-sublink">Car detailing</Link></li>
@@ -68,12 +89,20 @@ export default function Header() {
                         </li>
                     </ul>
                 </nav>
-                <div className="nav-opener" onClick={() => setOpenNav(!openNav)}>
+                <div className="nav-opener" onClick={() => {
+                    setOpenNav(!openNav);
+                    if (openLangs) {
+                        setOpenLangs(!openLangs);
+                    }}}>
                     <FaBars className="nav-opener-icon"/>
                     Menu
                 </div>
                 <div className="header-langs">
-                    <div className="langs-opener" onClick={() => setOpenLangs(!openLangs)}>
+                    <div className="langs-opener" onClick={() => { 
+                        setOpenLangs(!openLangs)
+                        if (openNav) {
+                            setOpenNav(!openNav);
+                        }}}>
                         <SKFlag className="langs-flag"/>
                         <FaChevronDown className="header-arrow-down lang-arrow-down"/>
                     </div>

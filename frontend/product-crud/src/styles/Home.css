@@ -146,3 +146,15 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
+
+@media only screen and (max-width: 1140px) {
+    .intro-heading {
+        font-size: 5rem;
+    }
+    .intro-desc {
+        font-size: 1.75rem;
+    }
+    .offers-item {
+
+    }
+}
