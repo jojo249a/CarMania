@@ -46,9 +46,9 @@ export default function Header() {
                                 Showrooms
                                 <FaChevronDown className="header-arrow-down"/>
                             </span>
-                            <ul className="nav-items-sublist">
-                                <li className="nav-subitem"><Link className="nav-sublink">Showroom Ostrava</Link></li>
-                                <li className="nav-subitem"><Link className="nav-sublink">Showroom Žilina</Link></li>
+                            <ul className="submenu">
+                                <li className="submenu-item"><Link className="submenu-link">Showroom Ostrava</Link></li>
+                                <li className="submenu-item"><Link className="submenu-link">Showroom Žilina</Link></li>
                             </ul>
                         </li> 
                         <li className="nav-item">
@@ -59,10 +59,10 @@ export default function Header() {
                                 Cars for sale
                                 <FaChevronDown className="header-arrow-down"/>
                             </span>
-                            <ul className="nav-items-sublist">
-                                <li className="nav-subitem"><Link className="nav-sublink">Certified used cars</Link></li>
-                                <li className="nav-subitem"><Link className="nav-sublink">New & demo cars</Link></li>
-                                <li className="nav-subitem"><Link className="nav-sublink">Sold cars</Link></li>
+                            <ul className="submenu">
+                                <li className="submenu-item"><Link className="submenu-link">Certified used cars</Link></li>
+                                <li className="submenu-item"><Link className="submenu-link">New & demo cars</Link></li>
+                                <li className="submenu-item"><Link className="submenu-link">Sold cars</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">
@@ -79,9 +79,9 @@ export default function Header() {
                                 Service
                                 <FaChevronDown className="header-arrow-down"/>
                             </span>
-                            <ul className="nav-items-sublist">
-                                <li className="nav-subitem"><Link className="nav-sublink">Service</Link></li>
-                                <li className="nav-subitem"><Link className="nav-sublink">Car detailing</Link></li>
+                            <ul className="submenu">
+                                <li className="submenu-item"><Link className="submenu-link">Service</Link></li>
+                                <li className="submenu-item"><Link className="submenu-link">Car detailing</Link></li>
                             </ul>
                         </li>
                         <li className="nav-item">

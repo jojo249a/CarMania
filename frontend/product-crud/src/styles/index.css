@@ -179,7 +179,7 @@ body {
     overflow: hidden;
     display: flex;
     align-items: start;
-    height: 4rem;
+    height: 3rem;
     line-height: 1rem;
     margin: 0.5rem 1rem;
 }
@@ -190,4 +190,13 @@ body {
 }
 .ig-posts-link:hover .ig-posts-media-icon {
     opacity: 0;
+}
+
+@media only screen and (max-width: 1140px) {
+    .ig-posts-comment {
+        display: none;
+    }
+}
+@media only screen and (max-width: 940px) {
+
 }

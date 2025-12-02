@@ -106,7 +106,6 @@ header.bg::before {
     position: absolute;
     min-width: 7rem;
     right: 0;
-    z-index: 1;
     transform: translateY(20px);
     opacity: 0;
     pointer-events: none;
@@ -123,36 +122,38 @@ header.bg::before {
     margin-left: 0.5rem;
     transition: transform .2s;
 }
-.nav-items-sublist {
+.submenu {
     position: absolute;
     left: -0.5rem;
     min-width: 10rem;
     text-wrap: nowrap;
     opacity: 0;
-    visibility: hidden;
     transform: translateY(20px);
-    transition: visibility .2s, transform .2s, opacity .2s;
+    pointer-events: none;
+    visibility: hidden;
+    transition: transform .2s, opacity .2s;
 }
-.nav-subitem {
+.submenu-item {
     border-bottom: 1px solid var(--light);
 }
-.nav-sublink {
+.submenu-link {
     display: inline-block;
     width: 100%;
-    padding: 0.75rem;   
+    padding: 0.75rem;
     background: rgba(0, 0, 0, 0.5);
     transition: background .2s;
 }
-.nav-sublink:hover {
+.submenu-link:hover {
     background: rgba(0, 0, 0);
 }
-.nav-subitem:last-child {
+.submenu-item:last-child {
     border: none;
 }
-.nav-item:hover .nav-items-sublist {
-    visibility: visible;
+.nav-item:hover .submenu {
     opacity: 1;
     transform: translateY(0);
+    visibility: visible;
+    pointer-events: auto;
 }
 .nav-opener {
     margin-left: auto;
@@ -178,24 +179,24 @@ header.bg::before {
         top: 100%;
         opacity: 0;
         width: 300px;
-        visibility: hidden;
         pointer-events: none;
+        visibility: hidden;
         -ms-transform: translateY(20px);
         transform: translateY(20px);
-        transition: visibility .2s, transform .2s, opacity .2s;
+        transition: transform .2s, opacity .2s;
     }
     nav.opened {
-        visibility: visible;
         opacity: 1;
         transform: translateY(0);
+        visibility: visible;
         pointer-events: auto;
     }
     .nav-items-list {
         display: block ;
     }
     .nav-item {
-        margin-right: 0;
         border-bottom: 1px solid var(--light);
+        margin-right: 0;
     }
     .nav-item:last-child {
         border: none;
@@ -206,19 +207,31 @@ header.bg::before {
         padding: 0.75rem 1.25rem;
         background: rgba(0, 0, 0, 0.5);
     }
+    .nav-link:hover::before {
+        content: none;
+    }
     .nav-link:hover {
         background: rgba(0, 0, 0);
     }
-    .nav-items-sublist {
-        display: none;
+    .submenu {
+        max-height: 0px;
         position: static;
+        overflow: hidden;
         width: 100%;
-        visibility: visible;
         opacity: 1;
         transform: none;
+        visibility: visible;
+        transition: max-height 0.5s;
     }
-    .nav-link.opened + .nav-items-sublist{
-        display: block;
+    .nav-link.opened {
+        border-bottom: 1px solid var(--light);
+    }
+    .nav-link.opened + .submenu {
+        max-height: 300px;
+        transition: max-height 0.7s ease-in-out;
+    }
+    .submenu-link {
+        padding-left: 1.75rem;
     }
     .nav-link.opened .header-arrow-down {
         transform: rotate(180deg);

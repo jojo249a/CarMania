@@ -44,3 +44,19 @@ footer {
     margin-top: 1rem;
 }
 
+@media only screen and (max-width: 1140px) {
+    .footer-top-inner {
+        max-width: 900px;
+    }
+    .footer-bottom-inner {
+        max-width: 860px;
+    }
+}
+@media only screen and (max-width: 940px) {
+    .footer-top-inner {
+        max-width: 740px;
+    }
+    .footer-bottom-inner {
+        max-width: 700px;
+    }
+}

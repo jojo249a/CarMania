@@ -83,13 +83,15 @@ export default function Home() {
                             {
                                 offers.map(offer => (
                                     <li className="offers-item" key={offer.id}>
-                                        <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
-                                        <div>
-                                            <Link className="offers-item-button button" to="">Read More</Link>
+                                        <div className="offers-item-img-wrap">
+                                            <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
                                         </div>
-                                        <div className="offers-item-text">
-                                            <h2 className="offers-item-heading">{offer.name}</h2>
-                                            <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                        <div className="offers-item-bottom">
+                                            <Link className="offers-item-button button" to="">Read More</Link>
+                                            <div className="offers-item-text">
+                                                <h2 className="offers-item-heading">{offer.name}</h2>
+                                                <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                            </div>
                                         </div>
                                     </li>
                                 ))
