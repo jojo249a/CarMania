@@ -195,9 +195,6 @@ body {
     display: flex;
     justify-content: center;
 }
-.cm-logo {
-
-}
 
 @media only screen and (max-width: 1140px) {
     .ig-posts-comment {
@@ -226,9 +223,7 @@ body {
     .ig-side-text {
         padding-block: 20px;
     }
-    .ig-posts {
 
-    }
 }
 @media only screen and (max-width: 768px) {
     .heading {
@@ -236,6 +231,17 @@ body {
     }
     .banner-heading {
         margin-bottom: 16px;
+    }
+    .ig {
+        max-width: 600px;
+    }
+}
+@media only screen and (max-width: 540px) {
+    .banner-heading {
+        mask: none;
+    }
+    .ig {
+        width: 100%;
     }
 }
 

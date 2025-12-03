@@ -77,21 +77,24 @@ export default function Home() {
                     <div className="inner spaced err-msg"> 
                         {error}
                     </div> :
-                    <div className="inner spaced">
+                    <div className="inner spaced offers-list-wrap">
                         <ul className="offers-list">
                             {
                                 offers.map(offer => (
                                     <li className="offers-item" key={offer.id}>
-                                        <div className="offers-item-img-wrap">
-                                            <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
-                                        </div>
-                                        <div className="offers-item-bottom">
-                                            <Link className="offers-item-button button" to="">Read More</Link>
-                                            <div className="offers-item-text">
-                                                <h2 className="offers-item-heading">{offer.name}</h2>
-                                                <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                        <Link className="offers-item-link" to="/shop">
+                                            <div className="offers-item-top">
+                                                <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
+                                            </div>  
+                                            <div className="offers-item-bottom">
+                                                <div className="offers-item-button button" to="">2022 | 1 750 km | Benzín </div>
+                                                <div className="offers-item-text">
+                                                    <h2 className="offers-item-brand">Porsche</h2>
+                                                    <h2 className="offers-item-model">{offer.name}</h2>
+                                                    <div className="offers-item-price">{offer.price}€ Tax included</div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </Link>
                                     </li>
                                 ))
                             }
