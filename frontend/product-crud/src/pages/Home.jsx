@@ -23,7 +23,7 @@ export default function Home() {
         fetch("http://localhost:8080/api/products")
             .then(res => res.json())
             .then(data => setOffers(data))
-            .catch(() => setError("Failed to load offers"));
+            .catch(() => setError("Failed to load offers."));
     }
 
     useEffect(() => {
@@ -49,33 +49,32 @@ export default function Home() {
                         <div className="intro-text">
                             <div className="intro-heading">
                                 <span>CarMania</span>
-                                <SecondLogo className="second-logo"/>
                             </div>
                             <div className="intro-desc">
-                                <span>LUXURY / PERFORMANCE </span>
+                                LUXURY
+                                <SecondLogo className="cm-logo intro-desc-logo"/>
+                                PERFORMANCE
                             </div>
-                            <div>
-                                <Link className="intro-button" to="/Shop">
-                                    <div className="intro-circle">
-                                        <FaChevronRight />
-                                    </div>
-                                    <div className="intro-button-text">
-                                        View Offers
-                                    </div>
-                                </Link>
-                            </div>
+                            <Link className="intro-button" to="/Shop">
+                                <div className="intro-circle">
+                                    <FaChevronRight />
+                                </div>
+                                <div className="intro-button-text">
+                                    View Offers
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </section>
                 <section>
                     <div className="inner spaced">
                         <h2 className="offers-heading heading">
-                            <SecondLogo className="second-logo"/>
+                            <SecondLogo className="cm-logo"/>
                             Current range of new and used cars
                         </h2>
                     </div>
                     {error ? 
-                    <div className="inner spaced"> 
+                    <div className="inner spaced err-msg"> 
                         {error}
                     </div> :
                     <div className="inner spaced">
@@ -101,8 +100,8 @@ export default function Home() {
                     }
                     <div className="inner spaced">
                         <div className="offers-buttons">
-                            <Link className="button button-white" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
-                            <Link className="button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
+                            <Link className="button button-white offers-button" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
+                            <Link className="button offers-button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
                         </div>   
                     </div>        
                 </section>
@@ -112,20 +111,28 @@ export default function Home() {
                 <div className="banner-text">
                     <h2 className="banner-heading">Showrooms CarMania</h2>
                     <div className="banner-buttons">
-                        <Link className="button button-transp"><SKFlag className="button-icon" /><span><strong>ŽILINA</strong> Showroom</span><FaChevronRight className="button-arrow"/></Link>
-                        <Link className="button button-transp"><CZFlag className="button-icon" /><span><strong>OSTRAVA</strong> Showroom</span><FaChevronRight className="button-arrow"/></Link>
+                        <Link className="button button-transp banner-button">
+                            <SKFlag className="button-icon" />
+                            <span><strong>ŽILINA</strong> Showroom</span>
+                            <FaChevronRight className="button-arrow"/>
+                        </Link>
+                            <Link className="button button-transp banner-button">
+                            <CZFlag className="button-icon" />
+                            <span><strong>OSTRAVA</strong> Showroom</span>
+                            <FaChevronRight className="button-arrow"/>
+                        </Link>
                     </div>
                 </div>
             </aside>
             <aside className="ig inner">
-                <div className="side-text">
+                <div className="ig-side-text">
                     <div>
                         Follow us on Instagram!
                         <div>
                             <strong><a href="https://www.instagram.com/bavaria.motors">@car.mania</a></strong>
                         </div>
                     </div>
-                    <SecondLogo />
+                    <SecondLogo className="cm-logo" />
                 </div>
                 <div className="ig-posts">
                     <a href="https://www.instagram.com/p/DRb_sJcjPCy" className="ig-posts-link">

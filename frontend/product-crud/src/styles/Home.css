@@ -18,11 +18,12 @@
 }
 .intro-bg-img {
     width: 100%;
-    height: calc(100vh - 190px);
+    max-height: 730px;
     object-fit: cover;
     transition: opacity 0.8s ease-in-out;
     user-select: none;
     -webkit-user-drag: none;
+    display: block;
 }
 .intro-text {
     display: flex;
@@ -36,40 +37,46 @@
     font-weight: 100;
 }
 .intro-heading {
-    font-size: 6rem;
+    font-size: 5rem;
     mask: linear-gradient(black, black, transparent);
     backdrop-filter: blur(1px);
     letter-spacing: 0.2rem;
     font-weight: 500;
-    margin-bottom: 1rem;
     text-shadow: 5px 5px 5px black;
 }
 .intro-desc {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     padding-inline: 0.5rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     box-shadow: 5px 5px 5px 0px black;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: var(--light);
+    color: var(--grey);
     letter-spacing: 0.5rem;
+    font-weight: 300;
     text-transform: uppercase;
     border-radius: 9rem;
     padding: 0.5rem 2rem;
+}
+.intro-desc-logo {
+    margin-inline: 10px 20px;
+    width: 60px;
+    height: 30px;
 }
 .intro-button {
     display: flex;
     align-items: center;
     position: relative;
     border-radius: 1rem;
-    margin-top: 1rem;
+    margin-top: 20px;
     background: rgba(0, 0, 0, 0.6);
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 1.75rem;
     padding: 0.5rem 1rem;
     letter-spacing: 0.5rem;
 }
 .intro-button-text {
-    margin-left: 4rem;
+    margin-left: 65px;
 }
 .intro-circle {
     display: flex;
@@ -78,10 +85,10 @@
     background: white;
     color: var(--grey);
     border-radius: 5rem;
-    width: 4rem;
-    height: 4rem;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    left: -0.5rem;
+    left: -8px;
     margin-right: 2rem;
     transition: background .2s;
 }
@@ -149,15 +156,42 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1rem;
+}
+.offers-button {
+    margin: 0 8px 16px;
 }
 
 @media only screen and (max-width: 1140px) {
+    .intro-bg-img {
+        max-height: 500px;
+    }
     .intro-heading {
-        font-size: 5rem;
+        font-size: 4rem;
     }
     .intro-desc {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
+    .intro-button {
+        font-size: 1.5rem;
+    }
+}
 
+@media only screen and (max-width: 940px) {
+    .intro-heading {
+        font-size: 3.5rem;
+    }
+    .intro-desc {
+        font-size: 1.25rem;
+    }
+    .intro-button {
+        font-size: 1.25rem;
+    }
+    .intro-desc-logo {
+        width: 40px;
+        height: 20px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
 }

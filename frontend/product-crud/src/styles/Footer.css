@@ -9,6 +9,7 @@ footer {
     display: flex;
     padding: 2rem 1rem;
     font-size: 1.25rem;
+    gap: 80px;
     max-width: 1060px;
 }
 .footer-bottom {
@@ -52,7 +53,17 @@ footer {
         max-width: 860px;
     }
 }
+
 @media only screen and (max-width: 940px) {
+    .footer-top-inner {
+        max-width: 740px;
+    }
+    .footer-bottom-inner {
+        max-width: 700px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .footer-top-inner {
         max-width: 740px;
     }
