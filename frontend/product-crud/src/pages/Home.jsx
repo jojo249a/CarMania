@@ -69,7 +69,7 @@ export default function Home() {
                 <section>
                     <div className="inner spaced">
                         <h2 className="offers-heading heading">
-                            <SecondLogo className="cm-logo"/>
+                            <SecondLogo className="cm-logo offers-heading-logo"/>
                             Current range of new and used cars
                         </h2>
                     </div>
@@ -87,7 +87,7 @@ export default function Home() {
                                                 <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
                                             </div>  
                                             <div className="offers-item-bottom">
-                                                <div className="offers-item-button button" to="">2022 | 1 750 km | Benzín </div>
+                                                <div className="offers-item-label" to="">2022 | 1 750 km | Benzín </div>
                                                 <div className="offers-item-text">
                                                     <h2 className="offers-item-brand">Porsche</h2>
                                                     <h2 className="offers-item-model">{offer.name}</h2>
@@ -135,7 +135,7 @@ export default function Home() {
                             <strong><a href="https://www.instagram.com/bavaria.motors">@car.mania</a></strong>
                         </div>
                     </div>
-                    <SecondLogo className="cm-logo" />
+                    <SecondLogo className="cm-logo ig-side-text-logo" />
                 </div>
                 <div className="ig-posts">
                     <a href="https://www.instagram.com/p/DRb_sJcjPCy" className="ig-posts-link">

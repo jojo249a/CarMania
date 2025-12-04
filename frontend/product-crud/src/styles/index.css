@@ -14,6 +14,7 @@
     outline: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
+    vertical-align: baseline;
 }
 a {
     text-decoration: none;
@@ -38,7 +39,8 @@ body {
     background: var(--red);
     color: white;
     font-weight: 300;
-    padding: 0.5rem 1.25rem;
+    text-align: center;
+    padding: 8px 20px;
     font-size: 1.5rem;
     transition: background .2s;
 }
@@ -107,14 +109,15 @@ body {
 .banner-heading {
     letter-spacing: 0.5rem;
     font-size: 2rem;
-    mask: linear-gradient(black, black, transparent);
+    color: white;
     backdrop-filter: blur(1px);
-    margin-bottom: 10px;
+    margin: 0 25px 10px;
 }
 .banner-buttons {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-inline: 6px;
 }
 .banner-button {
     margin: 0 8px 16px;
@@ -138,6 +141,7 @@ body {
     display: flex;
     flex: 1;
     color: white;
+    flex-wrap: wrap;
 }
 .ig-posts-link {
     position: relative;
@@ -221,11 +225,14 @@ body {
         max-width: 768px;
     }
     .ig-side-text {
-        padding-block: 20px;
+        padding-block: 30px;
     }
 
 }
 @media only screen and (max-width: 768px) {
+    .spaced {
+        margin-block: 45px;
+    }
     .heading {
         font-size: 2rem;
     }
@@ -236,12 +243,29 @@ body {
         max-width: 600px;
     }
 }
-@media only screen and (max-width: 540px) {
-    .banner-heading {
-        mask: none;
-    }
+@media only screen and (max-width: 540px) {     
     .ig {
-        width: 100%;
+        max-width: 400px;
+    }
+    .ig-posts-link {
+        flex-basis: 50%;
+    }
+    .ig-side-text {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin-inline: 15px;
+    }
+    .ig-side-text-logo {
+        width: 4s0px;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+    .banner-heading {
+        font-size: 1.75rem;
+    }
+    .button {
+        font-size: 1.25rem;
     }
 }
 
