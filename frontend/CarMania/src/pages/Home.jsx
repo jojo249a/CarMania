@@ -20,7 +20,7 @@ export default function Home() {
     const [index, setIndex] = useState(0);
 
     function getOffers() {
-        fetch("http://localhost:8080/api/products")
+        fetch("http://localhost:8080/api/cars")
             .then(res => res.json())
             .then(data => setOffers(data))
             .catch(() => setError("Failed to load offers."));

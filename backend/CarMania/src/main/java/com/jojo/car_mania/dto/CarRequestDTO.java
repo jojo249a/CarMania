@@ -1,4 +1,4 @@
-package com.jojo.product_crud.dto;
+package com.jojo.car_mania.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
@@ -7,7 +7,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class ProductRequestDTO {
+public class CarRequestDTO {
     @NotBlank(message = "Name is required")
     private String name;
     

@@ -1,13 +1,13 @@
-package com.jojo.product_crud;
+package com.jojo.car_mania;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProductCrudApplication {
+public class CarManiaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProductCrudApplication.class, args);
+		SpringApplication.run(CarManiaApplication.class, args);
 	}
 
 }
