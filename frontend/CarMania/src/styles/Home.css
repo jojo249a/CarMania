@@ -205,7 +205,6 @@
         font-size: 1.75rem;
     }
 }
-
 @media only screen and (max-width: 940px) {
     .intro-heading {
         font-size: 3.5rem;
@@ -241,7 +240,6 @@
         font-size: 1.6rem;
     }
 }
-
 @media only screen and (max-width: 768px) {
     .offers-heading-logo {
         width: 45px;

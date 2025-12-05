@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jojo</groupId>
-	<artifactId>product-crud</artifactId>
+	<artifactId>car-mania</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>product-crud</name>
+	<name>CarMania</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
