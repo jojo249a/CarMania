@@ -50,14 +50,14 @@ public class CarController {
 
     @PostMapping
     public ResponseEntity<?> createCar(@Valid @RequestBody CarRequestDTO dto) {
-        Car car = carService.create(dto.getName(), dto.getImage(), dto.getPrice());
+        Car car = carService.create(dto);
         return ResponseEntity.status(201).body(car);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> updateCar(@PathVariable Long id, @Valid @RequestBody CarRequestDTO dto) {
         try { 
-            Car car = carService.update(id, dto.getName(), dto.getImage(), dto.getPrice());
+            Car car = carService.update(id, dto);
             return ResponseEntity.ok(Map.of(
                 "Car", car,
                 "Message", "Car updated successfully"
