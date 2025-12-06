@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jojo.car_mania.dto.CarRequestDTO;
+import com.jojo.car_mania.dto.CarCreationDTO;
+import com.jojo.car_mania.dto.CarUpdateDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.service.CarService;
 
@@ -49,13 +50,13 @@ public class CarController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createCar(@Valid @RequestBody CarRequestDTO dto) {
+    public ResponseEntity<?> createCar(@Valid @RequestBody CarCreationDTO dto) {
         Car car = carService.create(dto);
         return ResponseEntity.status(201).body(car);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<?> updateCar(@PathVariable Long id, @Valid @RequestBody CarRequestDTO dto) {
+    public ResponseEntity<?> updateCar(@PathVariable Long id, @Valid @RequestBody CarUpdateDTO dto) {
         try { 
             Car car = carService.update(id, dto);
             return ResponseEntity.ok(Map.of(

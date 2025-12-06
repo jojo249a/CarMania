@@ -15,11 +15,5 @@ public class DataInitializer implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {
-        carRepository.deleteAll();
-        if (carRepository.count() == 0) {
-            for (int i = 0; i <= 1; i++ ) { 
-            }
-        }
-    }
+    public void run(String... args) {}
 }

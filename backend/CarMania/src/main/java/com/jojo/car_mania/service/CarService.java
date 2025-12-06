@@ -5,7 +5,8 @@ import java.util.NoSuchElementException;
 
 import org.springframework.stereotype.Service;
 
-import com.jojo.car_mania.dto.CarRequestDTO;
+import com.jojo.car_mania.dto.CarCreationDTO;
+import com.jojo.car_mania.dto.CarUpdateDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.repository.CarRepository;
 
@@ -28,9 +29,10 @@ public class CarService {
         return car;
     }
 
-    public Car create(CarRequestDTO dto) {
+    public Car create(CarCreationDTO dto) {
         Car car = Car.builder()
                 .image(dto.getImage())
+                .description(dto.getDescription())
                 .features(dto.getFeatures())
                 .make(dto.getMake())
                 .model(dto.getModel())
@@ -49,25 +51,29 @@ public class CarService {
         return carRepository.save(car);
     }
 
-    public Car update(Long id, CarRequestDTO dto) {
+    public Car update(Long id, CarUpdateDTO dto) {
         Car car = carRepository.findById(id)
                             .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
 
-        car.setColor(dto.getColor());
-        car.setImage(dto.getImage());
-        car.setPrice(dto.getPrice());
-        car.setBodyStyle(dto.getBodyStyle());
-        car.setDrivetrain(dto.getDrivetrain());
-        car.setFeatures(dto.getFeatures());
-        car.setFuelType(dto.getFuelType());
-        car.setMake(dto.getMake());
-        car.setModel(dto.getModel());
-        car.setMileage(dto.getMileage());
-        car.setPower(dto.getPower());
-        car.setTransmission(dto.getTransmission());
-        car.setLocation(dto.getLocation());
-            return carRepository.save(car);
-        }
+        if (dto.getImage() != null) car.setImage(dto.getImage());
+        if (dto.getDescription() != null) car.setDescription(dto.getDescription());
+        if (dto.getFeatures() != null) car.setFeatures(dto.getFeatures());
+        if (dto.getMake() != null) car.setMake(dto.getMake());
+        if (dto.getModel() != null) car.setModel(dto.getModel());
+        if (dto.getYear() != null) car.setYear(dto.getYear());
+        if (dto.getMileage() != null) car.setMileage(dto.getMileage());
+        if (dto.getFuelType() != null) car.setFuelType(dto.getFuelType());
+        if (dto.getPower() != null) car.setPower(dto.getPower());
+        if (dto.getDrivetrain() != null) car.setDrivetrain(dto.getDrivetrain());
+        if (dto.getTransmission() != null) car.setTransmission(dto.getTransmission());
+        if (dto.getColor() != null) car.setColor(dto.getColor());
+        if (dto.getBodyStyle() != null) car.setBodyStyle(dto.getBodyStyle());
+        if (dto.getPrice() != null) car.setPrice(dto.getPrice());
+        if (dto.getLocation() != null) car.setLocation(dto.getLocation());
+        if (dto.getEngineSize() != null) car.setEngineSize(dto.getEngineSize());
+
+        return carRepository.save(car);
+    }
 
     public void delete(Long id) {
         Car car = carRepository.findById(id)

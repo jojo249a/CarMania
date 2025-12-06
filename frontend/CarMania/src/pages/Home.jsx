@@ -84,13 +84,15 @@ export default function Home() {
                                     <li className="offers-item" key={offer.id}>
                                         <Link className="offers-item-link" to="/shop">
                                             <div className="offers-item-top">
-                                                <img className="offers-item-img" src={`http://localhost:8080/${offer.image}`} alt={offer.name} />
+                                                <img className="offers-item-img" 
+                                                src={`http://localhost:8080/${offer.image}`} 
+                                                alt={offer.name} />
                                             </div>  
                                             <div className="offers-item-bottom">
-                                                <div className="offers-item-label" to="">2022 | 1 750 km | Benzín </div>
+                                                <div className="offers-item-label" to="">{offer.year} | {offer.mileage} | {offer.fuelType}</div>
                                                 <div className="offers-item-text">
-                                                    <h2 className="offers-item-brand">Porsche</h2>
-                                                    <h2 className="offers-item-model">{offer.name}</h2>
+                                                    <h2 className="offers-item-brand">{offer.make}</h2>
+                                                    <h2 className="offers-item-model">{offer.model}</h2>
                                                     <div className="offers-item-price">{offer.price}€ Tax included</div>
                                                 </div>
                                             </div>
@@ -103,8 +105,12 @@ export default function Home() {
                     }
                     <div className="inner spaced">
                         <div className="offers-buttons">
-                            <Link className="button button-white offers-button" to="/shop">Certified used cars <FaChevronRight className="button-arrow"/></Link>
-                            <Link className="button offers-button" to="/shop">New and demonstrator cars <FaChevronRight className="button-arrow"/></Link>
+                            <Link className="button button-white offers-button" to="/shop">
+                                Certified used cars <FaChevronRight className="button-arrow"/>
+                            </Link>
+                            <Link className="button offers-button" to="/shop">
+                                New and demonstrator cars <FaChevronRight className="button-arrow"/>
+                            </Link>
                         </div>   
                     </div>        
                 </section>
