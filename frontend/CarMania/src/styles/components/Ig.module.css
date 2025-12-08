@@ -1,0 +1,122 @@
+.ig {
+    display: flex;
+    background: rgb(243, 243, 243);
+    color: var(--grey);
+    font-size: 1.5rem;
+    margin-top: 8rem;
+}
+.igSideText {
+    flex: 1;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline: 40px;
+}
+.igPosts {
+    display: flex;
+    flex: 1;
+    color: white;
+    flex-wrap: wrap;
+}
+.igPostsLink {
+    position: relative;
+    flex: 1;
+}
+.igPostsImg {
+    width: 100%;
+    height: 100%;
+}
+.igPostsMediaIcon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    opacity: 1;
+    transition: opacity .2s;
+}
+.igPostsText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-weight: 200;
+    font-size: 1rem;
+    transition: opacity .2s;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.igPostsTextLine {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.igPostsComment {
+    overflow: hidden;
+    display: flex;
+    align-items: start;
+    height: 3rem;
+    line-height: 1rem;
+    margin: 0.5rem 1rem;
+}
+.igPostsLink:hover .igPostsText {
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    opacity: 1;
+}
+.igPostsLink:hover .igPostsMediaIcon {
+    opacity: 0;
+}
+
+@media only screen and (max-width: 1140px) {
+    .igPostsComment {
+        display: none;
+    }
+    .igPostsMediaIcon {
+        width: 20px;
+        height: 20px;
+    }
+    .igSideText {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .ig {
+        flex-direction: column;
+        max-width: 768px;
+    }
+    .igSideText {
+        padding-block: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .ig {
+        max-width: 600px;
+    }
+}
+
+@media only screen and (max-width: 540px) {     
+    .ig {
+        width: 100%;
+    }
+    .igPostsLink {
+        flex-basis: 50%;
+    }
+    .igSideText {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+        margin-inline: 15px;
+    }
+    .igSideTextLogo {
+        width: 40px;
+        height: 20px;
+        margin-bottom: 10px;
+    }
+}

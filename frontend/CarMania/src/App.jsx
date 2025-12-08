@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./layout/Header"
+import Footer from "./layout/Footer"
 import Home from "./pages/Home"
 import Offers from "./pages/Offers"
-import Admin from "./pages/Admin"
 
 export default function App() {
   return (
@@ -12,7 +11,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/offers" element={<Offers />} />
-        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer />
     </>

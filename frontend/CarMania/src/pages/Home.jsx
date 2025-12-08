@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom"
-import { FaChevronRight, FaImages, FaRegHeart, FaRegComment } from "react-icons/fa"
-import PrimaryLogo from "../assets/primary-logo.svg?react";
-import SecondLogo from "../assets/second-logo.svg?react";
-import CZFlag from "..//assets/cz-flag.svg?react";
-import SKFlag from "../assets/sk-flag.svg?react";
-import { useEffect, useState } from "react";
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+import { FaChevronRight } from "react-icons/fa"
+import SecondLogo from "../assets/second-logo.svg?react"
 
-import "../styles/Home.css"
+import Banner from "../components/Banner"
+import Ig from "../components/Ig"
+
+import styles from "../styles/pages/Home.module.css"
 
 export default function Home() {
     const [offers, setOffers] = useState([]);
@@ -89,7 +89,9 @@ export default function Home() {
                                                 alt={offer.name} />
                                             </div>  
                                             <div className="offers-item-bottom">
-                                                <div className="offers-item-label" to="">{offer.year} | {offer.mileage} | {offer.fuelType}</div>
+                                                <div className="offers-item-label" to="">
+                                                    {offer.year} | {offer.mileage} km | {offer.fuelType}
+                                                </div>
                                                 <div className="offers-item-text">
                                                     <h2 className="offers-item-brand">{offer.make}</h2>
                                                     <h2 className="offers-item-model">{offer.model}</h2>
@@ -105,115 +107,18 @@ export default function Home() {
                     }
                     <div className="inner spaced">
                         <div className="offers-buttons">
-                            <Link className="button button-white offers-button" to="/shop">
+                            <Link to="/" className="button buttonWhite offers-button">
                                 Certified used cars <FaChevronRight className="button-arrow"/>
                             </Link>
-                            <Link className="button offers-button" to="/shop">
+                            <Link to="/" className="button offers-button">
                                 New and demonstrator cars <FaChevronRight className="button-arrow"/>
                             </Link>
                         </div>   
                     </div>        
                 </section>
             </main>
-            <aside className="banner">
-                <img className="banner-img" src="/showroom2.jpg" alt="Showroom" />
-                <div className="banner-text">
-                    <h2 className="banner-heading">Showrooms CarMania</h2>
-                    <div className="banner-buttons">
-                        <Link className="button button-transp banner-button">
-                            <SKFlag className="button-icon" />
-                            <span><strong>ŽILINA</strong> Showroom</span>
-                            <FaChevronRight className="button-arrow"/>
-                        </Link>
-                            <Link className="button button-transp banner-button">
-                            <CZFlag className="button-icon" />
-                            <span><strong>OSTRAVA</strong> Showroom</span>
-                            <FaChevronRight className="button-arrow"/>
-                        </Link>
-                    </div>
-                </div>
-            </aside>
-            <aside className="ig inner">
-                <div className="ig-side-text">
-                    <div>
-                        Follow us on Instagram!
-                        <div>
-                            <strong><a href="https://www.instagram.com/bavaria.motors">@car.mania</a></strong>
-                        </div>
-                    </div>
-                    <SecondLogo className="cm-logo ig-side-text-logo" />
-                </div>
-                <div className="ig-posts">
-                    <a href="https://www.instagram.com/p/DRb_sJcjPCy" className="ig-posts-link">
-                        <img className="ig-posts-img" src="/mclaren.jpg" alt="McLaren" />
-                        <FaImages className="ig-posts-media-icon" />
-                        <div className="ig-posts-text">
-                            <div className="ig-posts-text-line">
-                                <FaRegHeart /> 583
-                            </div>
-                            <div className="ig-posts-text-line">
-                                <FaRegComment /> 3
-                            </div>
-                            <div className="ig-posts-text-line ig-posts-comment">
-                                We sold this Mclaren 600 LT in the color 'MSO Lantana Purple' 
-                                on request and delivered the car last week to its new owner! 💜
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/p/DRb_sJcjPCy" className="ig-posts-link">
-                        <img className="ig-posts-img" src="/mclaren2.jpg" alt="McLaren" />
-                        <FaImages className="ig-posts-media-icon" />
-                        <div className="ig-posts-text">
-                            <div className="ig-posts-text-line">
-                                <FaRegHeart /> 583
-                            </div>
-                            <div className="ig-posts-text-line">
-                                <FaRegComment /> 3
-                            </div>
-                            <div className="ig-posts-text-line ig-posts-comment">
-                                We sold this Mclaren 600 LT in the color 'MSO Lantana Purple' 
-                                on request and delivered the car last week to its new owner! 💜
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/p/DRb_sJcjPCy" className="ig-posts-link">
-                        <img className="ig-posts-img" src="/mclaren3.jpg" alt="McLaren" />
-                        <FaImages className="ig-posts-media-icon" />
-                        <div className="ig-posts-text">
-                            <div className="ig-posts-text-line">
-                                <FaRegHeart /> 583
-                            </div>
-                            <div className="ig-posts-text-line">
-                                <FaRegComment /> 3
-                            </div>
-                            <div className="ig-posts-text-line ig-posts-comment">
-                                We sold this Mclaren 600 LT in the color 'MSO Lantana Purple' 
-                                on request and delivered the car last week to its new owner! 💜
-                            </div>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com/p/DQFE7FGjGl0" className="ig-posts-link">
-                        <img className="ig-posts-img" src="/812.jpg" alt="Ferrari" />
-                        <FaImages className="ig-posts-media-icon" />
-                        <div className="ig-posts-text">
-                            <div className="ig-posts-text-line">
-                                <FaRegHeart /> 1,054
-                            </div>
-                            <div className="ig-posts-text-line">
-                                <FaRegComment /> 6
-                            </div>
-                            <div className="ig-posts-text-line ig-posts-comment">
-                                When you want something different than Rosso. 😉
-                                This Ferrari 812 GTS wears Viola Hong Kong, a Special 2-Layer metallic paint
-                                that shifts with the light — deep, dark purple turning vibrant under the sun.
-                                Carbon on the outside, carbon on the inside, with yellow accents that make it pop.
-                                Atelier Ferrari at its finest.
-                                Now available!
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </aside>
+            <Banner />
+            <Ig />
         </>
     )
 }

@@ -1,0 +1,124 @@
+import { Link } from "react-router-dom"
+import PrimaryLogo from "../assets/primary-logo.svg?react"
+import CZFlag from "../assets/cz-flag.svg?react"
+import SKFlag from "../assets/sk-flag.svg?react"
+import UKFlag from "../assets/uk-flag.svg?react"
+import { FaChevronDown, FaBars } from "react-icons/fa"
+import { useEffect, useState } from "react"
+
+import styles from "../styles/layout/Header.module.css"
+
+export default function Header() {
+    const [bg, setBg] = useState(false);
+    const [openLangs, setOpenLangs] = useState(false);
+    const [openNav, setOpenNav] = useState(false);
+    const [openShowrooms, setOpenShowrooms] = useState(false);
+    const [openService, setOpenService] = useState(false);
+    const [openOffers, setOpenOffers] = useState(false);
+
+    function handleScroll() {
+        if (window.scrollY > 0) {
+            setBg(true);
+        } else {
+            setBg(false);
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        }
+    }, []);
+
+    return (
+        <header className={bg ? styles.bg : ""}>
+            <div className={`${styles.headerInner} inner`}>
+                <Link className={styles.headerHomeLink} to="/"><PrimaryLogo className={styles.headerHomeLogo} /></Link>
+                <nav className={openNav ? styles.opened : ""}>
+                    <ul className={styles.navItemsList}>
+                        <li className={styles.navItem}>
+                            <span className={`${styles.navLink} ${openShowrooms ? styles.opened : ""}`} onClick={() => {
+                                if (window.innerWidth <= 1140) {
+                                    setOpenShowrooms(!openShowrooms);
+                                }}}>
+                                Showrooms
+                                <FaChevronDown className={styles.headerArrowDown} />
+                            </span>
+                            <ul className={styles.submenu}>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Showroom Ostrava</Link></li>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Showroom Žilina</Link></li>
+                            </ul>
+                        </li> 
+                        <li className={styles.navItem}>
+                            <span className={`${styles.navLink} ${openOffers ? styles.opened : ""}`} onClick={() => {
+                                if (window.innerWidth <= 1140) {
+                                    setOpenOffers(!openOffers);
+                                }}}>
+                                Cars for sale
+                                <FaChevronDown className={styles.headerArrowDown} />
+                            </span>
+                            <ul className={styles.submenu}>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Certified used cars</Link></li>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>New & demo cars</Link></li>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Sold cars</Link></li>
+                            </ul>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="">Sales History</Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink} to="">Leasing</Link>
+                        </li>
+                        <li className={styles.navItem}>
+                            <span className={`${styles.navLink} ${openService ? styles.opened : ""}`} onClick={() => { 
+                                if (window.innerWidth <= 1140) {
+                                    setOpenService(!openService);
+                                }}}>
+                                Service
+                                <FaChevronDown className={styles.headerArrowDown} />
+                            </span>
+                            <ul className={styles.submenu}>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Service</Link></li>
+                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Car detailing</Link></li>
+                            </ul>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link className={styles.navLink}>Contact</Link>
+                        </li>
+                    </ul>
+                </nav>
+                <div className={styles.navOpener} onClick={() => {
+                    setOpenNav(!openNav);
+                    if (openLangs) {
+                        setOpenLangs(false);
+                    }}}>
+                    <FaBars className={styles.navOpenerIcon} />
+                    Menu
+                </div>
+                <div className={styles.headerLangs}>
+                    <div className={styles.langsOpener} onClick={() => { 
+                        setOpenLangs(!openLangs)
+                        if (openNav) {
+                            setOpenNav(false);
+                        }}}>
+                        <SKFlag className={styles.langsFlag} />
+                        <FaChevronDown className={`${styles.headerArrowDown} ${styles.langArrowDown}`} />
+                    </div>
+                    <ul className={`${styles.langsList} ${openLangs ? styles.opened : ""}`}>
+                        <li className={styles.langsItem} onClick={() => setOpenLangs(!openLangs)}>
+                            <SKFlag className={styles.langsFlag} /> SK
+                        </li>
+                        <li className={styles.langsItem} onClick={() => setOpenLangs(!openLangs)}>
+                            <CZFlag className={styles.langsFlag} /> CZ
+                        </li>
+                        <li className={styles.langsItem} onClick={() => setOpenLangs(!openLangs)}>
+                            <UKFlag className={styles.langsFlag} /> UK
+                      </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+    )
+}
