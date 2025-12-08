@@ -3,6 +3,7 @@ package com.jojo.car_mania.service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.jojo.car_mania.dto.CarCreationDTO;
@@ -21,6 +22,10 @@ public class CarService {
 
     public List<Car> getAll() {
         return carRepository.findAll();
+    }
+
+    public List<Car> getByCount(int count) {
+        return carRepository.findAll(PageRequest.of(0, count)).getContent();
     }
 
     public Car getById(Long id) {

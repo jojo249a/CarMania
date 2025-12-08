@@ -22,6 +22,7 @@ import com.jojo.car_mania.service.CarService;
 
 import jakarta.validation.Valid;
 
+
 @RestController
 @RequestMapping("/api/cars")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -36,6 +37,12 @@ public class CarController {
     @GetMapping
     public ResponseEntity<?> getCars() {
         List<Car> cars = carService.getAll();
+        return ResponseEntity.ok(cars);
+    }
+
+    @GetMapping("/count/{count}")
+    public ResponseEntity<?> getByCount(@PathVariable int count) {
+        List<Car> cars = carService.getByCount(count);
         return ResponseEntity.ok(cars);
     }
     

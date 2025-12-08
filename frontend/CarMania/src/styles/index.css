@@ -43,13 +43,13 @@ body {
 .link {
     text-decoration: underline;
 }
-.err-msg {
+.errMsg {
     display: flex;
     justify-content: center;
 }
 
 @media only screen and (max-width: 1140px) {
-    .cm-logo {
+    .cmLogo {
         width: 60px;
         height: 30px;
     }
