@@ -1,7 +1,6 @@
 package com.jojo.car_mania.controller;
 
 import java.util.List;
-import java.util.Map;
 import java.util.NoSuchElementException;
 
 import org.springframework.http.ResponseEntity;
@@ -10,17 +9,17 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jojo.car_mania.dto.CarCreationDTO;
-import com.jojo.car_mania.dto.CarUpdateDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.service.CarService;
 
 import jakarta.validation.Valid;
+
+
 
 
 @RestController
@@ -35,17 +34,11 @@ public class CarController {
     }
 
     @GetMapping
-    public ResponseEntity<?> getCars() {
+    public ResponseEntity<List<Car>> getCars() {
         List<Car> cars = carService.getAll();
         return ResponseEntity.ok(cars);
     }
 
-    @GetMapping("/count/{count}")
-    public ResponseEntity<?> getByCount(@PathVariable int count) {
-        List<Car> cars = carService.getByCount(count);
-        return ResponseEntity.ok(cars);
-    }
-    
     @GetMapping("/{id}")
     public ResponseEntity<?> getCar(@PathVariable Long id) {
         try {
@@ -56,27 +49,21 @@ public class CarController {
         }
     }
 
+    @GetMapping("/count/{count}")
+    public ResponseEntity<List<Car>> getCarsByCount(@PathVariable int count) {
+        List<Car> cars = carService.getByCount(count);
+        return ResponseEntity.ok(cars);
+    }
+    
+
     @PostMapping
-    public ResponseEntity<?> createCar(@Valid @RequestBody CarCreationDTO dto) {
+    public ResponseEntity<Car> createCar(@Valid @RequestBody CarCreationDTO dto) {
         Car car = carService.create(dto);
         return ResponseEntity.status(201).body(car);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<?> updateCar(@PathVariable Long id, @Valid @RequestBody CarUpdateDTO dto) {
-        try { 
-            Car car = carService.update(id, dto);
-            return ResponseEntity.ok(Map.of(
-                "Car", car,
-                "Message", "Car updated successfully"
-            ));
-        } catch (NoSuchElementException e) {
-            return ResponseEntity.status(404).body(e.getMessage());
-        }
-    }
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCar(@PathVariable Long id) {
+    public ResponseEntity<String> deleteCar(@PathVariable Long id) {
         try {
             carService.delete(id);
             return ResponseEntity.ok("Car deleted successfully");

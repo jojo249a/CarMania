@@ -7,7 +7,6 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import com.jojo.car_mania.dto.CarCreationDTO;
-import com.jojo.car_mania.dto.CarUpdateDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.repository.CarRepository;
 
@@ -51,31 +50,8 @@ public class CarService {
                 .bodyStyle(dto.getBodyStyle())
                 .price(dto.getPrice())
                 .location(dto.getLocation())
+                .status(dto.getStatus())
                 .build();
-
-        return carRepository.save(car);
-    }
-
-    public Car update(Long id, CarUpdateDTO dto) {
-        Car car = carRepository.findById(id)
-                            .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
-
-        if (dto.getImage() != null) car.setImage(dto.getImage());
-        if (dto.getDescription() != null) car.setDescription(dto.getDescription());
-        if (dto.getFeatures() != null) car.setFeatures(dto.getFeatures());
-        if (dto.getMake() != null) car.setMake(dto.getMake());
-        if (dto.getModel() != null) car.setModel(dto.getModel());
-        if (dto.getYear() != null) car.setYear(dto.getYear());
-        if (dto.getMileage() != null) car.setMileage(dto.getMileage());
-        if (dto.getFuelType() != null) car.setFuelType(dto.getFuelType());
-        if (dto.getPower() != null) car.setPower(dto.getPower());
-        if (dto.getDrivetrain() != null) car.setDrivetrain(dto.getDrivetrain());
-        if (dto.getTransmission() != null) car.setTransmission(dto.getTransmission());
-        if (dto.getColor() != null) car.setColor(dto.getColor());
-        if (dto.getBodyStyle() != null) car.setBodyStyle(dto.getBodyStyle());
-        if (dto.getPrice() != null) car.setPrice(dto.getPrice());
-        if (dto.getLocation() != null) car.setLocation(dto.getLocation());
-        if (dto.getEngineSize() != null) car.setEngineSize(dto.getEngineSize());
 
         return carRepository.save(car);
     }

@@ -1,15 +1,19 @@
 package com.jojo.car_mania.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -31,11 +35,9 @@ public class Car {
 
     private String image;
 
-    @Lob
     @Column(nullable = true)
     private String description;
 
-    @Lob
     @Column(nullable = true)
     private String features;
 
@@ -64,9 +66,11 @@ public class Car {
     @Column(name = "body_style")
     private String bodyStyle;
 
-    private Double price;
+    private Integer price;
     
     private String location;
+
+    private String status;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
@@ -75,4 +79,8 @@ public class Car {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<CarImage> carImage;
 }

@@ -19,11 +19,19 @@ export default function Home() {
     ];
     const [index, setIndex] = useState(0);
 
-    function getOffers() {
+    const getOffers = () => {
         fetch("http://localhost:8080/api/cars/count/6")
             .then(res => res.json())
             .then(data => setOffers(data))
             .catch(() => setError("Failed to load offers."));
+    }
+
+    const getNewCount = () => {
+        fetch("http://localhost:8080/api/cars/new/count")
+    }
+
+    const getUsedCount = () => {
+        fetch("http://localhost:8080/api/cars/used/count")
     }
 
     useEffect(() => {

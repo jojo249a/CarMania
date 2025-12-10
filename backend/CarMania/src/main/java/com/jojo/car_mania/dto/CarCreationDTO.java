@@ -27,29 +27,32 @@
         @NotNull(message = "Mileage is required.")
         private Integer mileage;
 
-        @NotNull(message = "Fuel type is required.")
+        @NotBlank(message = "Fuel type is required.")
         private String fuelType;
 
         @NotNull(message = "Power is required.")
         private Integer power;
 
-        @NotNull(message = "Drivetrain is required.")
+        @NotBlank(message = "Drivetrain is required.")
         private String drivetrain;
 
-        @NotNull(message = "Transmission is required.")
+        @NotBlank(message = "Transmission is required.")
         private String transmission;
         
         @NotBlank(message = "Color is required.")
         private String color;
     
-        @NotNull(message = "Body style is required.")
+        @NotBlank(message = "Body style is required.")
         private String bodyStyle;
 
         @NotNull(message = "Price is required.")
-        private Double price;
+        private Integer price;
 
-        @NotNull(message = "Location is required.")
+        @NotBlank(message = "Location is required.")
         private String location;
 
         private Double engineSize;
+
+        @NotBlank(message = "Status is required.")
+        private String status;
     }
