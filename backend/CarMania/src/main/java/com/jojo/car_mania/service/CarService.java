@@ -15,7 +15,7 @@ public class CarService {
     
     private final CarRepository carRepository;
 
-    public CarService(CarRepository carRepository) {
+    public CarService (CarRepository carRepository) {
         this.carRepository = carRepository;
     }
 
@@ -61,6 +61,18 @@ public class CarService {
                             .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
         
         carRepository.delete(car);
+    }
+
+    public Long getNewCount() {
+        Long count = carRepository.countByStatus("New");
+
+        return count;
+    }
+
+    public Long getUsedCount() {
+        Long count = carRepository.countByStatus("Used");
+        
+        return count;
     }
 }
 

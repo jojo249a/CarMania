@@ -5,6 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import com.jojo.car_mania.entity.Car;
 
+
 @Repository
 public interface CarRepository extends JpaRepository<Car, Long> {   
+    long countByStatus(String status);
 }

@@ -1,0 +1,115 @@
+.offers {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+} 
+.offersList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+.offersItem {
+    display: flex;
+    color: white;
+    background: black;
+}
+.offersItemLink {
+    display: flex;
+    flex-direction: column;
+}
+.offersItemTop {
+    position: relative;
+}
+.offersItemTop::before {
+    content: "";
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    background: linear-gradient(to top, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0) 80%);
+    transition: height .3s;
+}
+.offersItem:hover .offersItemTop::before {
+    height: 50%;
+}
+.offersItemImg {
+    width: 100%;
+}
+.offersItemLabel {
+    background: var(--red);
+    padding: 8px 16px;
+    font-size: 1rem;
+    z-index: 99;
+    text-wrap: nowrap;
+}
+.offersItemBrand {
+    font-weight: 300;
+}
+.offersItemModel {
+    font-size: 2rem;
+    line-height: 35px;
+    font-weight: 600;
+}
+.offersItemPrice {
+    margin-top: 10px;
+}
+.offersItemBottom {
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;;
+    position: relative;
+    gap: 1rem;
+    align-items: end;
+    padding: 0 30px 30px 30px;
+}
+.offersItemText {
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    padding-left: 40px;
+}
+
+@media only screen and (max-width: 1140px) {
+    .offersItemBottom {
+        padding: 0 20px 20px 20px;
+        flex-direction: column-reverse;
+    }
+    .offersItemModel {
+        font-size: 1.75rem;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .offersItemBrand {
+        font-size: 1.4rem;
+    }
+    .offersItemModel {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .offersListWrap {
+        max-width: 540px;
+    }
+    .offersList {
+        grid-template-columns: 1fr;
+    }
+    .offersItemBrand {
+        font-size: 1.75rem;
+    }
+    .offersItemModel {
+        font-size: 2.25rem;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .offersItemBrand {
+        font-size: 1.5rem;
+    }
+    .offersItemModel {
+        font-size: 1.75rem;
+    }
+}

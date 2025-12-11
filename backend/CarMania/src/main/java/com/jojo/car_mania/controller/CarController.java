@@ -20,8 +20,6 @@ import com.jojo.car_mania.service.CarService;
 import jakarta.validation.Valid;
 
 
-
-
 @RestController
 @RequestMapping("/api/cars")
 @CrossOrigin(origins = "http://localhost:5173")
@@ -54,7 +52,6 @@ public class CarController {
         List<Car> cars = carService.getByCount(count);
         return ResponseEntity.ok(cars);
     }
-    
 
     @PostMapping
     public ResponseEntity<Car> createCar(@Valid @RequestBody CarCreationDTO dto) {
@@ -70,6 +67,21 @@ public class CarController {
         } catch (NoSuchElementException e) {
             return ResponseEntity.status(404).body(e.getMessage());
         }
+    }
+    
+    @GetMapping("/new/count")
+    public ResponseEntity<Long> getNewCount() {
+        Long count = carService.getNewCount();
+
+        return ResponseEntity.ok(count);
+    }
+    
+
+    @GetMapping("/used/count")
+    public ResponseEntity<Long> getUsedCount() {
+        Long count = carService.getUsedCount();
+
+        return ResponseEntity.ok(count);
     }
     
 }

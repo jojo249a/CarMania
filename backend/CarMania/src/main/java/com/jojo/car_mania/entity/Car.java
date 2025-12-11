@@ -35,10 +35,10 @@ public class Car {
 
     private String image;
 
-    @Column(nullable = true)
+    @Column(columnDefinition = "TEXT", nullable = true)
     private String description;
 
-    @Column(nullable = true)
+    @Column(columnDefinition = "TEXT", nullable = true)
     private String features;
 
     private String make;

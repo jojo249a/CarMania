@@ -92,97 +92,6 @@
     background: var(--red);;
     color: white;
 }
-.offers {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.offersHeading {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    padding-inline: 20px;
-}
-.offersHeadingLogo {
-    width: 70px;
-    height: 35px;
-    margin-right: 40px;
-}   
-.offersList {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    width: 100%;
-}
-.offersItem {
-    display: flex;
-    color: white;
-    background: black;
-}
-.offersItemLink {
-    display: flex;
-    flex-direction: column;
-}
-.offersItemTop {
-    position: relative;
-}
-.offersItemTop::before {
-    content: "";
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    height: 70%;
-    width: 100%;
-    background: linear-gradient(to top, rgb(0, 0, 0) 10%, rgba(0, 0, 0, 0) 80%);
-    transition: height .3s;
-}
-.offersItem:hover .offersItemTop::before {
-    height: 50%;
-}
-.offersItemImg {
-    width: 100%;
-}
-.offersItemLabel {
-    background: var(--red);
-    padding: 8px 16px;
-    font-size: 1rem;
-    z-index: 99;
-    text-wrap: nowrap;
-}
-.offersItemBrand {
-    font-weight: 300;
-}
-.offersItemModel {
-    font-size: 2rem;
-    line-height: 35px;
-    font-weight: 600;
-}
-.offersItemPrice {
-    margin-top: 10px;
-}
-.offersItemBottom {
-    display: flex;
-    margin-top: auto;
-    justify-content: space-between;;
-    position: relative;
-    gap: 1rem;
-    align-items: end;
-    padding: 0 30px 30px 30px;
-}
-.offersItemText {
-    display: flex;
-    flex-direction: column;
-    text-align: end;
-    padding-left: 40px;
-}
-.offersButtons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.offersButton {
-    margin: 0 8px 16px;
-}
 
 @media only screen and (max-width: 1140px) {
     .introBgImg {
@@ -230,55 +139,15 @@
     .introBgImg {
         height: 600px;
     }
-    .offersHeadingLogo {
-        width: 60px;
-        height: 30px;
-    }   
-    .offersItemBrand {
-        font-size: 1.4rem;
-    }
-    .offersItemModel {
-        font-size: 1.6rem;
-    }
 }
 
 @media only screen and (max-width: 768px) {
-    .offersHeadingLogo {
-        width: 45px;
-        height: 22.5px;
-        margin-right: 30px;
-    }   
-    .offersListWrap {
-        max-width: 540px;
-    }
-    .offersList {
-        grid-template-columns: 1fr;
-    }
-    .offersItemBrand {
-        font-size: 1.75rem;
-    }
-    .offersItemModel {
-        font-size: 2.25rem;
-    }
+
 }
 
 @media only screen and (max-width: 540px) {
     .introHeading {
         font-size: 3.25rem;
-    }
-    .offersHeading {
-        font-size: 1.6rem;
-    }
-    .offersHeadingLogo {
-        width: 40px;
-        height: 20px;
-        margin-right: 20px;
-    } 
-    .offersItemBrand {
-        font-size: 1.5rem;
-    }
-    .offersItemModel {
-        font-size: 1.75rem;
     }
     .introText {  
         background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));

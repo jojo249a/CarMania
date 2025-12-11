@@ -5,12 +5,14 @@ import SecondLogo from "../assets/second-logo.svg?react"
 
 import Banner from "../components/Banner"
 import Ig from "../components/Ig"
+import Offers from "../components/Offers"
 
 import styles from "../styles/pages/Home.module.css"
 
 export default function Home() {
-    const [offers, setOffers] = useState([]);
-    const [error, setError] = useState("");
+    const [newCount, setNewCount] = useState(0);
+    const [usedCount, setUsedCount] = useState(0);
+
     const images = [
         "/showroom2.jpg",
         "/showroom6.avif",
@@ -19,23 +21,21 @@ export default function Home() {
     ];
     const [index, setIndex] = useState(0);
 
-    const getOffers = () => {
-        fetch("http://localhost:8080/api/cars/count/6")
-            .then(res => res.json())
-            .then(data => setOffers(data))
-            .catch(() => setError("Failed to load offers."));
-    }
-
     const getNewCount = () => {
         fetch("http://localhost:8080/api/cars/new/count")
+            .then(res => res.json())
+            .then(count => setNewCount(count));
     }
 
     const getUsedCount = () => {
         fetch("http://localhost:8080/api/cars/used/count")
+            .then(res => res.json())
+            .then(count => setUsedCount(count));
     }
 
     useEffect(() => {
-        getOffers();
+        getNewCount();
+        getUsedCount();
     }, []);
     
     useEffect(() => {
@@ -76,50 +76,19 @@ export default function Home() {
                 </section>
                 <section>
                     <div className="inner spaced">
-                        <h2 className={`${styles.offersHeading} heading`}>
-                            <SecondLogo className={`cm-logo ${styles.offersHeadingLogo}`}/>
+                        <h2 className="heading">
+                            <SecondLogo className={`cmLogo headingLogo`}/>
                             Current range of new and used cars
                         </h2>
                     </div>
-                    {error ? 
-                    <div className="inner spaced errMsg"> 
-                        {error}
-                    </div> :
-                    <div className={`inner spaced ${styles.offersListWrap}`}>
-                        <ul className={styles.offersList}>
-                            {
-                                offers.map(offer => (
-                                    <li className={styles.offersItem} key={offer.id}>
-                                        <Link className={styles.offersItemLink} to="/shop">
-                                            <div className={styles.offersItemTop}>
-                                                <img className={styles.offersItemImg} 
-                                                src={`http://localhost:8080/${offer.image}`} 
-                                                alt={offer.name} />
-                                            </div>  
-                                            <div className={styles.offersItemBottom}>
-                                                <div className={styles.offersItemLabel} to="">
-                                                    {offer.year} | {offer.mileage} km | {offer.fuelType}
-                                                </div>
-                                                <div className={styles.offersItemText}>
-                                                    <h2 className={styles.offersItemBrand}>{offer.make}</h2>
-                                                    <h2 className={styles.offersItemModel}>{offer.model}</h2>
-                                                    <div className={styles.offersItemPrice}>{offer.price}€ Tax included</div>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </li>
-                                ))
-                            }
-                        </ul>   
-                    </div>
-                    }
+                    <Offers />
                     <div className="inner spaced">
-                        <div className={styles.offersButtons}>
-                            <Link to="/" className={`button buttonWhite ${styles.offersButton}`}>
-                                Certified used cars <FaChevronRight className={styles.buttonArrow} />
+                        <div className="buttons">
+                            <Link to="/" className="button buttonWhite buttonsButton">
+                                Certified used cars ({usedCount}) <FaChevronRight className="buttonArrow" />
                             </Link>
-                            <Link to="/" className={`button ${styles.offersButton}`}>
-                                New and demonstrator cars <FaChevronRight className={styles.buttonArrow} />
+                            <Link to="/" className="button buttonsButton">
+                                New and demonstrator cars ({newCount})<FaChevronRight className="buttonArrow" />
                             </Link>
                         </div>   
                     </div>        
