@@ -6,6 +6,8 @@ import SecondLogo from "../assets/second-logo.svg?react"
 import Banner from "../components/Banner"
 import Ig from "../components/Ig"
 import Offers from "../components/Offers"
+import Heading from "../components/Heading"
+import Buttons from "../components/Buttons"
 
 import styles from "../styles/pages/Home.module.css"
 
@@ -75,23 +77,19 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
-                    <div className="inner spaced">
-                        <h2 className="heading">
-                            <SecondLogo className={`cmLogo headingLogo`}/>
-                            Current range of new and used cars
-                        </h2>
-                    </div>
+                    <Heading>
+                        <SecondLogo className={`cmLogo headingLogo`}/>
+                        Current range of new and used cars
+                    </Heading>
                     <Offers />
-                    <div className="inner spaced">
-                        <div className="buttons">
-                            <Link to="/" className="button buttonWhite buttonsButton">
-                                Certified used cars ({usedCount}) <FaChevronRight className="buttonArrow" />
-                            </Link>
-                            <Link to="/" className="button buttonsButton">
-                                New and demonstrator cars ({newCount})<FaChevronRight className="buttonArrow" />
-                            </Link>
-                        </div>   
-                    </div>        
+                    <Buttons>
+                        <Link to="/used-cars" className="button buttonWhite buttonsButton">
+                            Certified used cars ({usedCount}) <FaChevronRight className="buttonArrow" />
+                        </Link>
+                        <Link to="/new-cars" className="button buttonsButton">
+                            New and demonstrator cars ({newCount})<FaChevronRight className="buttonArrow" />
+                        </Link>
+                    </Buttons>    
                 </section>
             </main>
             <Banner />

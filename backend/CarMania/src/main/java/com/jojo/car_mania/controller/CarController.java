@@ -75,7 +75,6 @@ public class CarController {
 
         return ResponseEntity.ok(count);
     }
-    
 
     @GetMapping("/used/count")
     public ResponseEntity<Long> getUsedCount() {

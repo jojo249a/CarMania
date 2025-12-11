@@ -25,7 +25,7 @@ const Banner = () => {
                 </div>
             </div>
         </aside>
-    );
+    )
 }
 
 export default Banner;
