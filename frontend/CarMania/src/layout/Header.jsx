@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import PrimaryLogo from "../assets/primary-logo.svg?react"
 import CZFlag from "../assets/cz-flag.svg?react"
 import SKFlag from "../assets/sk-flag.svg?react"
@@ -6,34 +6,35 @@ import UKFlag from "../assets/uk-flag.svg?react"
 import { FaChevronDown, FaBars } from "react-icons/fa"
 import { useEffect, useState } from "react"
 
+
 import styles from "../styles/layout/Header.module.css"
 
 export default function Header() {
-    const [bg, setBg] = useState(false);
+    const [headerBg, setHeaderBg] = useState(false);
     const [openLangs, setOpenLangs] = useState(false);
     const [openNav, setOpenNav] = useState(false);
     const [openShowrooms, setOpenShowrooms] = useState(false);
     const [openService, setOpenService] = useState(false);
     const [openOffers, setOpenOffers] = useState(false);
-
-    function handleScroll() {
-        if (window.scrollY > 0) {
-            setBg(true);
-        } else {
-            setBg(false);
-        }
-    }
+    const location = useLocation();
+    
+    const handleScroll = () => setHeaderBg(window.scrollY > 0);
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-
+        if (location.pathname != "/") {
+            setHeaderBg(true);
+        } else {
+            setHeaderBg(false);
+            window.addEventListener("scroll", handleScroll);
+        }
+        
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, []);
+    }, [location.pathname]); //
 
     return (
-        <header className={bg ? styles.bg : ""}>
+        <header className={headerBg ? styles.bg : undefined}>
             <div className={`${styles.headerInner} inner`}>
                 <Link className={styles.headerHomeLink} to="/"><PrimaryLogo className={styles.headerHomeLogo} /></Link>
                 <nav className={openNav ? styles.opened : ""}>
@@ -60,16 +61,16 @@ export default function Header() {
                                 <FaChevronDown className={styles.headerArrowDown} />
                             </span>
                             <ul className={styles.submenu}>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Certified used cars</Link></li>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>New & demo cars</Link></li>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Sold cars</Link></li>
+                                <li className={styles.submenuItem}><Link to="/used-cars" className={styles.submenuLink}>Certified used cars</Link></li>
+                                <li className={styles.submenuItem}><Link to="/new-cars" className={styles.submenuLink}>New & demo cars</Link></li>
+                                <li className={styles.submenuItem}><Link to="/sales-history"className={styles.submenuLink}>Sold cars</Link></li>
                             </ul>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="">Sales History</Link>
+                            <Link to="" className={styles.navLink}>Sales History</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink} to="">Leasing</Link>
+                            <Link to="" className={styles.navLink}>Leasing</Link>
                         </li>
                         <li className={styles.navItem}>
                             <span className={`${styles.navLink} ${openService ? styles.opened : ""}`} onClick={() => { 

@@ -70,7 +70,7 @@ export default function Home() {
                                     <FaChevronRight />
                                 </div>
                                 <div className={styles.introButtonText}>
-                                    View Offers
+                                    View New Offers
                                 </div>
                             </Link>
                         </div>

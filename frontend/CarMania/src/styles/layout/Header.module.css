@@ -21,6 +21,9 @@ header::before {
 .bg::before {
     opacity: 1;
 }
+.relative {
+    position: relative;
+}
 .headerInner {
     display: flex;
     align-items: center;
