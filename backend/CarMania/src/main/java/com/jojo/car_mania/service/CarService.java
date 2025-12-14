@@ -33,6 +33,12 @@ public class CarService {
         return car;
     }
 
+    public List<Car> getByStatus(String status) {
+        List<Car> cars = carRepository.findByStatus(status);
+        
+        return cars;
+    }
+
     public Car create(CarCreationDTO dto) {
         Car car = Car.builder()
                 .image(dto.getImage())

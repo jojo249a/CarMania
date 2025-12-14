@@ -3,27 +3,17 @@ import { Link } from "react-router-dom";
 
 import styles from "../styles/components/Offers.module.css"
 
-const Offers = () => {
-    const [offers, setOffers] = useState([]);
-    const [error, setError] = useState("");
-
-    const getOffers = () => {
-        fetch("http://localhost:8080/api/cars/count/6")
-            .then(res => res.json())
-            .then(data => setOffers(data))
-            .catch(() => setError("Failed to load offers."));
+const Offers = ({ offers, error }) => {
+    if (error) {
+        return <div className="inner spaced errMsg">{error}</div>
     }
 
-    useEffect(() => {
-        getOffers();
-    }, []);
+    if (offers.length == 0) {
+        return <div className="inner spaced errMsg">No offers found.</div>
+    }
 
     return (
-        error ? 
-        <div className="inner spaced errMsg"> 
-            {error}
-        </div> :
-        <div className={`inner spaced ${styles.offersListWrap}`}>
+        <div className={styles.offersListWrap}>
             <ul className={styles.offersList}>
                 {
                     offers.map(offer => (

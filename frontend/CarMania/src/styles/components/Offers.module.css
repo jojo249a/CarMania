@@ -1,7 +1,6 @@
-.offers {
+.offersListWrap {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin-inline: auto;
 } 
 .offersList {
     display: grid;

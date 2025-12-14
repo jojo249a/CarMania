@@ -48,8 +48,12 @@ export default function Header() {
                                 <FaChevronDown className={styles.headerArrowDown} />
                             </span>
                             <ul className={styles.submenu}>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Showroom Ostrava</Link></li>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Showroom Žilina</Link></li>
+                                <li className={styles.submenuItem}>
+                                    <Link className={styles.submenuLink}>Showroom Ostrava</Link>
+                                </li>
+                                <li className={styles.submenuItem}>
+                                    <Link className={styles.submenuLink}>Showroom Žilina</Link>
+                                </li>
                             </ul>
                         </li> 
                         <li className={styles.navItem}>
@@ -61,13 +65,19 @@ export default function Header() {
                                 <FaChevronDown className={styles.headerArrowDown} />
                             </span>
                             <ul className={styles.submenu}>
-                                <li className={styles.submenuItem}><Link to="/used-cars" className={styles.submenuLink}>Certified used cars</Link></li>
-                                <li className={styles.submenuItem}><Link to="/new-cars" className={styles.submenuLink}>New & demo cars</Link></li>
-                                <li className={styles.submenuItem}><Link to="/sales-history"className={styles.submenuLink}>Sold cars</Link></li>
+                                <li className={styles.submenuItem}>
+                                    <Link to="/used-cars" className={styles.submenuLink}>Certified used cars</Link>
+                                </li>
+                                <li className={styles.submenuItem}>
+                                    <Link to="/new-cars" className={styles.submenuLink}>New & demo cars</Link>
+                                    </li>
+                                <li className={styles.submenuItem}>
+                                    <Link to="/sales-history"className={styles.submenuLink}>Sold cars</Link>
+                                </li>
                             </ul>
                         </li>
                         <li className={styles.navItem}>
-                            <Link to="" className={styles.navLink}>Sales History</Link>
+                            <Link to="/sales-history" className={styles.navLink}>Sales History</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link to="" className={styles.navLink}>Leasing</Link>
@@ -81,8 +91,12 @@ export default function Header() {
                                 <FaChevronDown className={styles.headerArrowDown} />
                             </span>
                             <ul className={styles.submenu}>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Service</Link></li>
-                                <li className={styles.submenuItem}><Link className={styles.submenuLink}>Car detailing</Link></li>
+                                <li className={styles.submenuItem}>
+                                    <Link className={styles.submenuLink}>Service</Link>
+                                </li>
+                                <li className={styles.submenuItem}>
+                                    <Link className={styles.submenuLink}>Car detailing</Link>
+                                </li>
                             </ul>
                         </li>
                         <li className={styles.navItem}>

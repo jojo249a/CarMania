@@ -1,6 +1,7 @@
 footer {
     color: white;
     font-weight: 200;
+    margin-top: auto;
 }
 .footerTop {
     background: var(--dark);
@@ -12,6 +13,7 @@ footer {
     flex-wrap: wrap;
     gap: 5px;
     max-width: 1100px;
+    margin-inline: auto;
 }
 .footerBottom {
     background: var(--dark2);
@@ -21,6 +23,7 @@ footer {
     justify-content: space-between;
     padding: 16px;
     max-width: 1020px;
+    margin-inline: auto;
 }
 .footerColumn {
     display: flex;
