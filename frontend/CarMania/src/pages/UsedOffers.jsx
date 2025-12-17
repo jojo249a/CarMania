@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaChevronRight } from "react-icons/fa"
-import { Link } from "react-router-dom"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Breadcrumbs from "../components/Breadcrumbs"
@@ -11,22 +10,7 @@ import Button from "../components/Button"
 import Filter from "../components/Filter"
 
 export default function UsedOffers() {
-    const [offers, setOffers] = useState([]);
-    const [error, setError] = useState("");
-
-    const getOffers = async () => {
-        try {
-            const res = await fetch("http://localhost:8080/api/cars?status=Used");
-            const data = await res.json();
-            setOffers(data);
-        } catch (err) {
-            setError(err.message);
-        }
-    }
-
-    useEffect(() => {
-        getOffers();
-    }, []);
+    const [make, setMake] = useState("All");
 
     return (
         <>
@@ -38,12 +22,12 @@ export default function UsedOffers() {
                             Used cars for sale
                         </Heading>
                     </div>
-                    <div className="inner spaced">
-                        <Filter status="Used"/>
+                     <div className="inner spaced">
+                        <Filter status="Used" onMakeChange={setMake} currentMake={make} />
                     </div>
                     <div className="inner spaced">
-                        <Offers offers={offers} error={error} />
-                    </div>
+                        <Offers status="Used" make={make}/>
+                    </div> 
                     <div className="inner spaced">
                         <Buttons>
                             <Button to="/new-cars">

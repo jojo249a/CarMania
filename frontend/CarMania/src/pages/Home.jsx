@@ -13,11 +13,8 @@ import Button from "../components/Button";
 import styles from "../styles/pages/Home.module.css"
 
 export default function Home() {
-    const [offers, setOffers] = useState([]);
     const [newCount, setNewCount] = useState(0);
     const [usedCount, setUsedCount] = useState(0);
-
-    const [error, setError] = useState("");
 
     const images = [
         "/showroom2.jpg",
@@ -26,13 +23,6 @@ export default function Home() {
         "/showroom8.avif"
     ];
     const [index, setIndex] = useState(0);
-
-    const getOffers = () => {
-        fetch("http://localhost:8080/api/cars?count=6")
-            .then(res => res.json())
-            .then(data => setOffers(data))
-            .catch(() => setError("Failed to load offers."));
-    }
 
     const getNewCount = () => {
         fetch("http://localhost:8080/api/cars/count?status=New")
@@ -47,7 +37,6 @@ export default function Home() {
     }
 
     useEffect(() => {
-        getOffers();
         getNewCount();
         getUsedCount();
     }, []);
@@ -96,7 +85,7 @@ export default function Home() {
                         </Heading> 
                     </div>
                     <div className="inner spaced">
-                        <Offers offers={offers} error={error} />
+                        <Offers count={6} />
                     </div>
                     <div className="inner spaced">
                         <Buttons>

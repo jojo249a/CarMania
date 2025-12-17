@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { FaChevronRight } from "react-icons/fa";
 import Offers from "../components/Offers"
 import Breadcrumbs from "../components/Breadcrumbs";
@@ -10,22 +10,7 @@ import Button from "../components/Button";
 import Filter from "../components/Filter";
 
 export default function SalesHistory() {
-    const [offers, setOffers] = useState([])
-    const [error, setError] = useState("");
-
-    const getOffers = async () => {
-        try {
-            const res = await fetch("http://localhost:8080/api/cars?status=Sold");
-            const data = await res.json();
-            setOffers(data);
-        } catch (err) {
-            setError(err.message);
-        }
-    }
-
-    useEffect(() => {
-        getOffers();
-    }, []);
+    const [make, setMake] = useState("All");  
 
     return (
         <>
@@ -38,10 +23,10 @@ export default function SalesHistory() {
                         </Heading>
                     </div>
                     <div className="inner spaced">
-                        <Filter status="Sold"/>
+                        <Filter status="Sold" onMakeChange={setMake} currentMake={make} />
                     </div>
                     <div className="inner spaced">
-                        <Offers offers={offers} error={error} />
+                        <Offers status="Sold" make={make}/>
                     </div> 
                     <div className="inner spaced">
                         <Buttons>

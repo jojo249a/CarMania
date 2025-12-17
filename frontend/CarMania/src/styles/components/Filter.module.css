@@ -1,7 +1,10 @@
 .filter {   
-    display: flex;
-    gap: 12px;
     margin-inline: 20px;
+}
+.optionsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 }
 .filterButton {
     font-size: 1rem;
@@ -10,16 +13,62 @@
     padding: 10px 20px;
     color: var(--grey);
     cursor: pointer;
+    text-align: start;
 }
 .filterButton:hover {
     background: var(--red);
     color: white;
 }
-.active {
+.filterButton.active {
     background: var(--red);
     color: white;
 }
+.currentOption {
+    display: none;
+}
+.optionsArrow {
+    margin-left: auto;
+}
 
 @media only screen and (max-width: 768px) {
-    
+    .filter {
+        position: relative;
+        margin-inline: 40px;
+        z-index: 99;
+    }
+    .filter.opened .optionsList {
+        max-height: 200px;
+    }   
+    .optionsList {
+        position: absolute;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        gap: 0px;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+    .filterButton {
+        display: block;
+        text-transform: none;
+        padding: 8px 12px;
+        width: 100%;
+    }
+    .filterButton.active {
+        background: white;
+        color: var(--grey);
+    }
+    .currentOption {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .filter {
+        margin-inline: 12px;
+    }
 }

@@ -3,7 +3,34 @@ import { Link } from "react-router-dom";
 
 import styles from "../styles/components/Offers.module.css"
 
-const Offers = ({ offers, error }) => {
+const Offers = ({ status, make, count }) => {
+    const [offers, setOffers] = useState([]);  
+    const [error, setError] = useState("");
+
+    const getOffers = async() => {
+        let url = `http://localhost:8080/api/cars?status=${status}`;
+
+        if (make != "All") {
+            url = `http://localhost:8080/api/cars?status=${status}&make=${make}`;
+        }
+
+        if (count) {
+            url = `http://localhost:8080/api/cars?count=${count}`;
+        }
+
+        try {
+            const res = await fetch(url);
+            const data = await res.json();
+            setOffers(data);
+        } catch (err) {
+            setError(err.message);
+        }
+    }
+
+    useEffect(() => {
+        getOffers();
+    }, [make]);
+
     if (error) {
         return <div className="inner spaced errMsg">{error}</div>
     }
