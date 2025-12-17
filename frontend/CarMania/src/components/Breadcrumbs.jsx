@@ -1,12 +1,17 @@
 import { Link, useLocation } from "react-router-dom";
 
-import styles from "../styles/components/breadcrumbs.module.css"
-
 const Breadcrumbs = () =>{
-    const location = useLocation();
+    const { pathname } = useLocation();
+    const pathsMap = {
+        "/used-cars": "/ Cars for sale / Used cars",
+        "/new-cars": "/ Cars for sale / New cars",
+        "/sales-history": "/ Cars for sale / Sales history"
+    };
 
     return (
-        <div className={styles.breadcrumbs}>
+        <div className="breadcrumbs">
+            <Link to="/" className="clickable">CarMania </Link>
+            {pathsMap[pathname]}
         </div>
     )
 }

@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import com.jojo.car_mania.dto.CarCreationDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.repository.CarRepository;
+import com.jojo.car_mania.specs.CarSpecification;
 
 @Service
 public class CarService {
@@ -19,12 +21,17 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public List<Car> getAll() {
-        return carRepository.findAll();
-    }
+    public List<Car> getFiltered(String status, String make, Integer count) {
+        
+        Specification<Car> spec = Specification
+            .where(CarSpecification.hasStatus(status))
+            .and(CarSpecification.hasMake(make));
 
-    public List<Car> getByCount(int count) {
-        return carRepository.findAll(PageRequest.of(0, count)).getContent();
+        if (count == null) {
+            return carRepository.findAll(spec);
+        }
+
+        return carRepository.findAll(spec, PageRequest.of(0, count)).getContent();
     }
 
     public Car getById(Long id) {
@@ -32,13 +39,7 @@ public class CarService {
                             .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
         return car;
     }
-
-    public List<Car> getByStatus(String status) {
-        List<Car> cars = carRepository.findByStatus(status);
-        
-        return cars;
-    }
-
+    
     public Car create(CarCreationDTO dto) {
         Car car = Car.builder()
                 .image(dto.getImage())
@@ -69,16 +70,12 @@ public class CarService {
         carRepository.delete(car);
     }
 
-    public Long getNewCount() {
-        Long count = carRepository.countByStatus("New");
-
-        return count;
+    public Long getCountByStatus(String status) {
+        return carRepository.countByStatus(status);
     }
 
-    public Long getUsedCount() {
-        Long count = carRepository.countByStatus("Used");
-        
-        return count;
+    public List<String> getMakesByStatus(String status) {
+        return carRepository.findMakesByStatus(status);
     }
 }
 

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jojo.car_mania.dto.CarCreationDTO;
@@ -33,9 +34,13 @@ public class CarController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Car>> getCars() {
-        List<Car> cars = carService.getAll();
-        
+    public ResponseEntity<List<Car>> getCars(
+        @RequestParam(required = false) String status,
+        @RequestParam(required = false) String make,
+        @RequestParam(required = false) Integer count) {
+
+        List<Car> cars = carService.getFiltered(status, make, count);
+
         return ResponseEntity.ok(cars);
     }
 
@@ -47,21 +52,6 @@ public class CarController {
         } catch (NoSuchElementException e) {
             return ResponseEntity.status(404).body(e.getMessage());
         }
-    }
-
-    @GetMapping("/status/{status}")
-    public ResponseEntity<List<Car>> getCarsByStatus(@PathVariable String status) {
-        List<Car> cars = carService.getByStatus(status);
-
-        return ResponseEntity.ok(cars);
-    }
-    
-
-    @GetMapping("/count/{count}")
-    public ResponseEntity<List<Car>> getCarsByCount(@PathVariable int count) {
-        List<Car> cars = carService.getByCount(count);
-
-        return ResponseEntity.ok(cars);
     }
 
     @PostMapping
@@ -81,18 +71,17 @@ public class CarController {
         }
     }
     
-    @GetMapping("/new/count")
-    public ResponseEntity<Long> getNewCount() {
-        Long count = carService.getNewCount();
+    @GetMapping("/count")
+    public ResponseEntity<Long> getCountByStatus(@RequestParam String status) {
+        Long count = carService.getCountByStatus(status);
 
         return ResponseEntity.ok(count);
     }
 
-    @GetMapping("/used/count")
-    public ResponseEntity<Long> getUsedCount() {
-        Long count = carService.getUsedCount();
+    @GetMapping("/makes")
+    public ResponseEntity<List<String>> getMakesByStatus(@RequestParam String status) {
+        List<String> makes = carService.getMakesByStatus(status);
 
-        return ResponseEntity.ok(count);
+        return ResponseEntity.ok(makes);
     }
-    
 }

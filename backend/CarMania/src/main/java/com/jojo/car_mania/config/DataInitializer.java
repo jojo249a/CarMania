@@ -69,5 +69,44 @@ public class DataInitializer implements CommandLineRunner {
 
             carRepository.save(car);
         }
+
+        Car car2 = Car.builder()
+                    .image("/images/812superfast_1.jpeg")
+                    .description(null)
+                    .features(null)
+                    .make("Ferrari")
+                    .model("812 Superfast")
+                    .year(2018)
+                    .mileage(3180)
+                    .fuelType("Petrol")
+                    .power(515)
+                    .drivetrain("RWD")     
+                    .transmission("Automatic")
+                    .color("GT Silver Metallic")
+                    .bodyStyle("Coupe")
+                    .price(225000)
+                    .location("Ostrava")
+                    .status("New")
+                    .build();
+        
+        List<CarImage> car2Images = new ArrayList<>();
+
+        CarImage img4 = CarImage.builder()
+                            .image("812superfast_2.jpeg")
+                            .car(car2)
+                            .build();
+
+
+        CarImage img5 = CarImage.builder()
+                            .image("812superfast_3.jpeg")
+                            .car(car2)
+                            .build();
+
+        car2Images.add(img4);
+        car2Images.add(img5);
+
+        car2.setCarImage(car2Images);
+
+        carRepository.save(car2);
     }
 }
