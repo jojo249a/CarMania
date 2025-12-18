@@ -2,7 +2,8 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
-import Banner from "../components/Banner"
+import ServiceBanner from "../components/ServiceBanner"
+import ShowroomsBanner from "../components/ShowroomsBanner"
 import Ig from "../components/Ig"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
@@ -98,7 +99,8 @@ export default function Home() {
                     </div> 
                 </section>
             </main>     
-            <Banner />
+            <ShowroomsBanner />
+            <ServiceBanner />
             <Ig />
         </>
     )

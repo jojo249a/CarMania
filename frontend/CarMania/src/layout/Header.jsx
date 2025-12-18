@@ -16,22 +16,22 @@ export default function Header() {
     const [openShowrooms, setOpenShowrooms] = useState(false);
     const [openService, setOpenService] = useState(false);
     const [openOffers, setOpenOffers] = useState(false);
-    const location = useLocation();
+    const { pathname } = useLocation();
     
     const handleScroll = () => setHeaderBg(window.scrollY > 0);
 
     useEffect(() => {
-        if (location.pathname != "/") {
-            setHeaderBg(true);
-        } else {
-            setHeaderBg(false);
-            window.addEventListener("scroll", handleScroll);
-        }
+            if (pathname != "/") {
+                setHeaderBg(true);
+            } else {
+                setHeaderBg(false);
+                window.addEventListener("scroll", handleScroll);
+            }
         
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, [location.pathname]); //
+    }, [pathname]); //
 
     return (
         <header className={headerBg ? styles.bg : undefined}>

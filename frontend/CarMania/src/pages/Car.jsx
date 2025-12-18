@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import SecondLogo from "../assets/second-logo.svg?react"
+import Offers from "../components/Offers"
+import Heading from "../components/Heading"
+
+import styles from "../styles/components/Car.module.css"
 
 const Car = () => {
     const { slug } = useParams();
@@ -34,13 +39,35 @@ const Car = () => {
     }
 
     if (car == null) {
-        return <div className="inner spaced errMsg">No car found.</div>
+        return <div className="inner spaced errMsg">Car not found.</div>
     }
-
 
     return (
         <>
-            {car.make}
+            <main>
+                <section className="sectionFirst">
+                    <div className={styles.carIntro}>
+                        <div className={styles.carIntroText}>
+                            <div className={styles.carIntroHeading}>{car.make}</div>
+                            <div className={styles.carIntroModel}>{car.model}</div>
+                        </div>
+                        <div className={styles.carIntroImgWrap}>
+                            <img src={`http://localhost:8080/${car.image}`} alt={car.model} className={styles.carIntroImg}/>
+                        </div>
+                    </div>
+                </section>
+                <aside>
+                    <div className="inner spaced">
+                        <Heading>
+                            <SecondLogo className={`cmLogo headingLogo`}/>
+                            Current range of new and used cars
+                        </Heading>
+                    </div>
+                    <div className="inner spaced">
+                        <Offers count={4} />
+                    </div>
+                </aside>
+            </main>
         </>
     )
 }

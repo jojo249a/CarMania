@@ -37,7 +37,7 @@ public class CarService {
 
     public Car getById(Long id) {
         Car car = carRepository.findById(id)
-                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
+                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found."));
         return car;
     }
     
@@ -70,7 +70,7 @@ public class CarService {
 
     public void delete(Long id) {
         Car car = carRepository.findById(id)
-                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
+                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found."));
         
         carRepository.delete(car);
     }
@@ -85,7 +85,7 @@ public class CarService {
 
     public Car getBySlug(String slug) {
         Car car = carRepository.findBySlug(slug)
-                        .orElseThrow(() -> new NoSuchElementException("Car not found"));
+                        .orElseThrow(() -> new NoSuchElementException("Car not found."));
      
         return car;
     }

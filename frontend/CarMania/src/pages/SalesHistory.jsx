@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { FaChevronRight } from "react-icons/fa";
 import Offers from "../components/Offers"
-import Breadcrumbs from "../components/Breadcrumbs";
 import Heading from "../components/Heading";
-import Banner from "../components/Banner";
+import Breadcrumbs from "../components/Breadcrumbs";
 import Ig from "../components/Ig";
+import ServiceBanner from "../components/ServiceBanner"
+import ShowroomsBanner from "../components/ShowroomsBanner";
 import Buttons from "../components/Buttons";
 import Button from "../components/Button";
 import Filter from "../components/Filter";
@@ -40,8 +41,8 @@ export default function SalesHistory() {
                     </div>
                 </section>
             </main>
-            <Banner />
-            <Ig />
+            <ShowroomsBanner />
+            <ServiceBanner />
         </>
     )
 }

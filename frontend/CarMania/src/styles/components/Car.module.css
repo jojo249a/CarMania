@@ -1,0 +1,25 @@
+.carIntro {
+    display: flex;
+    background-color: white;
+}
+.carIntroText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%;
+}
+.carIntroHeading {
+    font-weight: 500;
+    font-size: 5rem;
+}
+.carIntroModel {
+    font-size: 2.5rem;
+}
+.carIntroImgWrap {
+    flex-basis: 50%;
+}
+.carIntroImg {
+    width: 100%;
+    display: block;
+}

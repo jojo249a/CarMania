@@ -4,7 +4,8 @@ import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Breadcrumbs from "../components/Breadcrumbs"
 import Ig from "../components/Ig"
-import Banner from "../components/Banner"
+import ServiceBanner from "../components/ServiceBanner"
+import ShowroomsBanner from "../components/ShowroomsBanner"
 import Buttons from "../components/Buttons"
 import Button from "../components/Button"
 import Filter from "../components/Filter"
@@ -37,8 +38,8 @@ export default function NewOffers() {
                     </div>
                 </section>
             </main>
-            <Banner />
-            <Ig />
+            <ShowroomsBanner />
+            <ServiceBanner />
         </>
     )
 }
