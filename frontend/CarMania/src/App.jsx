@@ -5,6 +5,7 @@ import Home from "./pages/Home"
 import NewOffers from "./pages/NewOffers"
 import UsedOffers from "./pages/UsedOffers"
 import SalesHistory from "./pages/SalesHistory"
+import Car from "./pages/Car"
 import { useEffect } from "react"
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/used-cars" element={<UsedOffers />} />
         <Route path="/new-cars" element={<NewOffers />} />
         <Route path="/sales-history" element={<SalesHistory />} />
+        <Route path="/car/:slug" element={<Car />} />
       </Routes>
       <Footer />
     </>

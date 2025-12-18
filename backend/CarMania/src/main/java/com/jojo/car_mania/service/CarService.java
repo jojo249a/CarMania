@@ -11,6 +11,7 @@ import com.jojo.car_mania.dto.CarCreationDTO;
 import com.jojo.car_mania.entity.Car;
 import com.jojo.car_mania.repository.CarRepository;
 import com.jojo.car_mania.specs.CarSpecification;
+import com.jojo.car_mania.util.SlugUtil;
 
 @Service
 public class CarService {
@@ -36,7 +37,7 @@ public class CarService {
 
     public Car getById(Long id) {
         Car car = carRepository.findById(id)
-                            .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
+                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
         return car;
     }
     
@@ -60,12 +61,16 @@ public class CarService {
                 .status(dto.getStatus())
                 .build();
 
+        String slug = SlugUtil.slugify(car.getModel());
+
+        car.setSlug(slug);
+
         return carRepository.save(car);
     }
 
     public void delete(Long id) {
         Car car = carRepository.findById(id)
-                            .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
+                        .orElseThrow(() -> new NoSuchElementException("Car with ID " + id + " not found"));
         
         carRepository.delete(car);
     }
@@ -76,6 +81,13 @@ public class CarService {
 
     public List<String> getMakesByStatus(String status) {
         return carRepository.findMakesByStatus(status);
+    }
+
+    public Car getBySlug(String slug) {
+        Car car = carRepository.findBySlug(slug)
+                        .orElseThrow(() -> new NoSuchElementException("Car not found"));
+     
+        return car;
     }
 }
 

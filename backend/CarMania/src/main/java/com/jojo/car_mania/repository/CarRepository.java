@@ -1,6 +1,7 @@
 package com.jojo.car_mania.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -19,4 +20,6 @@ public interface CarRepository extends JpaRepository<Car, Long>, JpaSpecificatio
 
     @Query("SELECT DISTINCT c.make FROM Car c WHERE c.status = :status")
     List<String> findMakesByStatus(@Param("status") String status);
+
+    Optional<Car> findBySlug(String slug);
 }

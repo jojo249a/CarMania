@@ -84,4 +84,15 @@ public class CarController {
 
         return ResponseEntity.ok(makes);
     }
+
+    @GetMapping("/car")
+    public ResponseEntity<?> getCarBySlug(@RequestParam String slug) {
+        try {
+            Car car = carService.getBySlug(slug);
+            return ResponseEntity.ok(car);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(404).body(e.getMessage());
+        }
+    }
+    
 }

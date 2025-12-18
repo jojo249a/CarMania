@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { FaChevronRight } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
-
 import Banner from "../components/Banner"
 import Ig from "../components/Ig"
 import Offers from "../components/Offers"

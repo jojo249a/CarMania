@@ -45,11 +45,11 @@ const Offers = ({ status, make, count }) => {
                 {
                     offers.map(offer => (
                         <li className={styles.offersItem} key={offer.id}>
-                            <Link className={styles.offersItemLink} to="/shop">
+                            <Link className={styles.offersItemLink} to={`/car/${offer.slug}`}>
                                 <div className={styles.offersItemTop}>
                                     <img className={styles.offersItemImg} 
                                     src={`http://localhost:8080/${offer.image}`} 
-                                    alt={offer.name} />
+                                    alt={offer.model} />
                                 </div>  
                                 <div className={styles.offersItemBottom}>
                                     <div className={styles.offersItemLabel} to="">
