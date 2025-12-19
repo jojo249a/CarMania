@@ -49,7 +49,7 @@ const Offers = ({ status, make, count }) => {
                                 <div className={styles.offersItemTop}>
                                     <img className={styles.offersItemImg} 
                                     src={`http://localhost:8080/${offer.image}`} 
-                                    alt={offer.model} />
+                                    alt={`${offer.make + " " + offer.model}`} />
                                 </div>  
                                 <div className={styles.offersItemBottom}>
                                     <div className={styles.offersItemLabel} to="">

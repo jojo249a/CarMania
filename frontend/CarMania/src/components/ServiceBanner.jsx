@@ -7,7 +7,7 @@ const ServiceBanner = () => {
         <Banner src="service.jpg" alt="Car service room" heading="Car Service CarMania">
             <BannerButton>
                 <CZFlag className="buttonIcon" />
-                <span>Order service in <strong>Ostrava</strong></span>
+                <span>Order service in <strong>OSTRAVA</strong></span>
             </BannerButton>
         </Banner>
     )

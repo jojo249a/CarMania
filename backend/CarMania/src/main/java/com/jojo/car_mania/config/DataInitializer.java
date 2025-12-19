@@ -46,27 +46,17 @@ public class DataInitializer implements CommandLineRunner {
                     .build();
 
             car.setSlug(SlugUtil.slugify(car.getModel()));
+            
+            for (int j = 0; j < 12; j++) {
 
-            CarImage img1 = CarImage.builder()
-                            .image("911_2.jpeg")
-                            .car(car)
-                            .build();
+                CarImage img = CarImage.builder()
+                                .image("/images/911_1.jpeg")
+                                .car(car)
+                                .build();
 
+                carImages.add(img);
 
-            CarImage img2 = CarImage.builder()
-                            .image("911_3.jpeg")
-                            .car(car)
-                            .build();
-
-
-            CarImage img3 = CarImage.builder()
-                            .image("911_4.jpeg")
-                            .car(car)
-                            .build();
-
-            carImages.add(img1);
-            carImages.add(img2);
-            carImages.add(img3);
+            }
 
             car.setCarImage(carImages);
 
@@ -97,13 +87,13 @@ public class DataInitializer implements CommandLineRunner {
         List<CarImage> car2Images = new ArrayList<>();
 
         CarImage img4 = CarImage.builder()
-                            .image("812superfast_2.jpeg")
+                            .image("/images/812superfast_2.jpeg")
                             .car(car2)
                             .build();
 
 
         CarImage img5 = CarImage.builder()
-                            .image("812superfast_3.jpeg")
+                            .image("/images/812superfast_3.jpeg")
                             .car(car2)
                             .build();
 
