@@ -28,10 +28,10 @@ const Car = () => {
             setError(err.message);
         }
     }
-
+    
     useEffect(() => {
         getCar();
-    }, []);
+    }, [slug]);
 
     if (error) {
         return <div className="inner spaced errMsg">{error}</div>
@@ -59,11 +59,17 @@ const Car = () => {
                     <div className="inner">
                         <div className={styles.carGallery}>
                             <div className={styles.carGalleryImgWrap} >
-                                <img src={`http://localhost:8080${car.image}`} alt={car.model} className={styles.carGalleryImg}/>
+                                <img src={`http://localhost:8080${car.image}`} 
+                                    alt={car.model} 
+                                    className={styles.carGalleryImg} 
+                                />
                             </div>
                             {car.carImage.map((image) => (
                             <div key={image.id} className={styles.carGalleryImgWrap} >
-                                <img src={`http://localhost:8080${image.image}`} alt={car.model} className={styles.carGalleryImg}/>
+                                <img src={`http://localhost:8080${image.image}`} 
+                                    alt={car.model} 
+                                    className={styles.carGalleryImg}
+                                />
                             </div>
                             ))}
                         </div>
@@ -71,95 +77,100 @@ const Car = () => {
                     <div className="inner spaced">
                         <div className={styles.carDetails}>
                             <div className={styles.carDetailsParams}>
-                                <div className={styles.carDetailsParamsLeft}>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Year
+                                <h2 className={styles.carDetailsHeading}>
+                                    Car specifications
+                                </h2>
+                                <div className={styles.carDetailsParamList}>
+                                    <div className={styles.carDetailsParamsLeft}>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Year
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.year}
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.year}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Mileage
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.mileage} km 
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Mileage
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Power
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.power} kW
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.mileage} km 
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Fuel type
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.fuelType}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Power
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Engine size
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.engineSize}L
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.power} kW
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Fuel type
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.fuelType}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Engine size
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.engineSize}L
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Drivetrain
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.drivetrain}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={styles.carDetailsParamsRight}>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Transmission
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.transmission}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Drivetrain
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.drivetrain}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Body style
+                                    <div className={styles.carDetailsParamsRight}>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Transmission
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.transmission}
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.bodyStyle}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Body style
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.bodyStyle}
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Color
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Color
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.color}
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.color}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Price
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.price}€
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Price
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.price}€
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Location
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.location}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Location
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.location}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -176,12 +187,12 @@ const Car = () => {
                                         Aenean interdum felis libero, vitae dapibus lectus efficitur eget. Donec ut venenatis mi. Morbi a tellus elementum, mollis purus ut, tristique lacus.
                                     </div>
                                 </div>
-                                <div className={styles.carDetailsFeaturesWrap}>
+                                <div className={styles.carDetailsEquipmentWrap}>
                                     <div className={styles.carDetailsHeading}>
                                         Equipment <SecondLogo className={`cmLogo ${styles.carDetailsHeadingLogo}`}/> 
                                     </div>
-                                    <div className={styles.carDetailsFeatures}>
-                                        {car.features}
+                                    <div className={styles.carDetailsEquipment}>
+                                        {car.equipment}
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis, nisi ac bibendum venenatis, nibh nisl auctor justo, eget facilisis lectus leo in nunc. 
                                         Sed consequat dolor a purus ultrices, non scelerisque arcu dapibus. Nam rhoncus a nulla id congue. Etiam pellentesque sit amet dolor ac commodo. 
                                         Aenean interdum felis libero, vitae dapibus lectus efficitur eget. Donec ut venenatis mi. Morbi a tellus elementum, mollis purus ut, tristique lacus.

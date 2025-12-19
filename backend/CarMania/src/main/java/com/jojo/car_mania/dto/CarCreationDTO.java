@@ -13,7 +13,7 @@
 
         private String description;
 
-        private String features;
+        private String equipment;
 
         @NotBlank(message = "Make is required.")
         private String make;

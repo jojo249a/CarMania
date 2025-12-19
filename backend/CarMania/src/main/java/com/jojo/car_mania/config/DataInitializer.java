@@ -28,8 +28,8 @@ public class DataInitializer implements CommandLineRunner {
 
             Car car = Car.builder()
                     .image("/images/911_1.jpeg")
-                    .description(null)
-                    .features(null)
+                    .description("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis, nisi ac bibendum venenatis, nibh nisl auctor justo, eget facilisis lectus leo in nunc. Sed consequat dolor a purus ultrices, non scelerisque arcu dapibus. Nam rhoncus a nulla id congue. Etiam pellentesque sit amet dolor ac commodo. Aenean interdum felis libero, vitae dapibus lectus efficitur eget. Donec ut venenatis mi. Morbi a tellus elementum, mollis purus ut, tristique lacus.")
+                    .equipment("")
                     .make("Porsche")
                     .model("911 GT2 RS")
                     .year(2018)
@@ -65,8 +65,8 @@ public class DataInitializer implements CommandLineRunner {
 
         Car car2 = Car.builder()
                 .image("/images/812superfast_1.jpeg")
-                .description(null)
-                .features(null)
+                .description("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit tortor sed sollicitudin pellentesque. Vivamus metus odio, fringilla pharetra facilisis sit amet, aliquet ac augue. Sed id justo sodales, rutrum arcu ac, facilisis odio. Donec et lobortis sapien. Nullam viverra turpis nunc, eget ullamcorper eros scelerisque nec. Ut turpis ante, dictum quis convallis at, facilisis in dolor. Phasellus tristique eleifend dolor a rutrum. Suspendisse porta congue nulla sit amet facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque nibh urna, mollis quis placerat ac, interdum et augue. Vivamus sit amet magna id tellus fermentum ullamcorper non elementum metus.")
+                .equipment(null)
                 .make("Ferrari")
                 .model("812 Superfast")
                 .year(2018)
@@ -106,8 +106,8 @@ public class DataInitializer implements CommandLineRunner {
 
         Car car3 = Car.builder()
                 .image("/images/m4.jpeg")
-                .description(null)
-                .features(null)
+                .description("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit tortor sed sollicitudin pellentesque. Vivamus metus odio, fringilla pharetra facilisis sit amet, aliquet ac augue. Sed id justo sodales, rutrum arcu ac, facilisis odio. Donec et lobortis sapien. Nullam viverra turpis nunc, eget ullamcorper eros scelerisque nec. Ut turpis ante, dictum quis convallis at, facilisis in dolor. Phasellus tristique eleifend dolor a rutrum. Suspendisse porta congue nulla sit amet facilisis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque nibh urna, mollis quis placerat ac, interdum et augue. Vivamus sit amet magna id tellus fermentum ullamcorper non elementum metus.")
+                .equipment(null)
                 .make("BMW")
                 .model("M4 Competition")
                 .year(2017)

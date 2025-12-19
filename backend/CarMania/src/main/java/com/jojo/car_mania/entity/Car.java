@@ -39,7 +39,7 @@ public class Car {
     private String description;
 
     @Column(columnDefinition = "TEXT", nullable = true)
-    private String features;
+    private String equipment;
 
     private String make;
 

@@ -45,7 +45,7 @@ public class CarService {
         Car car = Car.builder()
                 .image(dto.getImage())
                 .description(dto.getDescription())
-                .features(dto.getFeatures())
+                .equipment(dto.getEquipment())
                 .make(dto.getMake())
                 .model(dto.getModel())
                 .year(dto.getYear())

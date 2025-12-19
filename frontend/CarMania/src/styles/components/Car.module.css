@@ -80,13 +80,24 @@
     display: flex;
     gap: 40px;
 }
+.carDetailsHeading {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    border-bottom: 1px solid var(--lightgrey);
+}
 .carDetailsParams {
-    display: flex;
-    gap: 8px;
-    flex-basis: 30%;
     background-color: white;
     padding: 20px 30px;
+    flex-basis: 30%;
     border-radius: 5px;
+    align-self: flex-start;
+    text-align: center;
+}
+.carDetailsParamList {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
 }
 .carDetailsParamsLeft {
     flex-basis: 50%;
@@ -97,13 +108,15 @@
 .carDetailsParam {
     margin-bottom: 10px;
     display: inline-block;
+    text-align: start;
     width: 100%;
 }
 .carDetailsParamLabel {
     font-size: 1.25rem;
+    font-weight: 300;
 }
 .carDetailsParamValue {
-    font-weight: 500;
+    font-weight: 400;
     font-size: 1.75rem;
 }
 .carDetailsMain {
@@ -115,10 +128,6 @@
     padding: 20px 30px;
     border-radius: 5px;
 }
-.carDetailsHeading {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
 .carDetailsHeadingLogo {
     width: 40px;
     height: 20px;
@@ -126,5 +135,8 @@
     vertical-align: baseline;
 }
 .carDetailsDesc {
-    font-size: 1.25rem;
+    line-height: 1.75;
+}
+.carDetailsEquipment {
+    line-height: 1.75;
 }
