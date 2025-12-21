@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft } from "react-icons/fa"
+import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft, FaChevronRight, FaChevronLeft } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import LoadingScreen from "../components/LoadingScreen"
+import Button from "../components/Button"
 
 import styles from "../styles/components/Car.module.css"
 
@@ -15,6 +16,7 @@ const Car = () => {
     const [image, setImage] = useState("");
     const [loaded, setLoaded] = useState(false);
     const [sliderIndex, setSliderIndex] = useState(0);
+    const [galleryIndex, setGalleryIndex] = useState(0);
 
     const getCar = async () => {
         try {
@@ -42,17 +44,42 @@ const Car = () => {
     const handleSlider = () => {
         if (sliderIndex > car.carImage.length) {
             setSliderIndex(0);
+            return;
         }
         if (sliderIndex < 0) {
             setSliderIndex(car.carImage.length);
         }
     }
-    
+
+    const handleGallery = () => {
+        if (galleryIndex == 0) {
+            setImage(car.image);
+            return;
+        }
+        if (galleryIndex > car.carImage.length) {
+            setImage(car.image);
+            return;
+        }
+        if (galleryIndex < 0) {
+            setImage(car.carImage[car.carImage.length - 1].image);
+            return;
+        }
+
+        setImage(car.carImage[galleryIndex - 1].image);
+    }
+
     useEffect(() => {
         if (car != null) {
             handleSlider();
         }   
     }, [sliderIndex]); 
+
+
+    useEffect(() => {
+        if (car != null) {
+            handleGallery();
+        }
+    }, [galleryIndex]);
 
     useEffect(() => {
         if (image) {
@@ -83,10 +110,17 @@ const Car = () => {
             {!loaded && <LoadingScreen />}
             {image && 
                 <div className={styles.carImageWrap} onClick={hideImg}>
+                    <FaChevronLeft className={`${styles.swipeLeftIcon} 
+                        ${styles.swipeIcon} ${styles.gallerySwipeIcon}`}
+                        onClick={() => {setGalleryIndex(prev => prev - 1)}}            
+                    />
                     <img src={`http://localhost:8080${image}`} 
                         alt={`${car.make + " " + car.model}`}
                         className={styles.carImage} 
                     />
+                    <FaChevronRight className={`${styles.swipeRightIcon}
+                        ${styles.swipeIcon} ${styles.gallerySwipeIcon}`}
+                        onClick={() => {setGalleryIndex(prev => prev + 1)}}/>
                 </div>
             }
             <main>
@@ -126,15 +160,15 @@ const Car = () => {
                                 <img src={`http://localhost:8080${car.image}`} 
                                     alt={car.model} 
                                     className={styles.carGalleryImg} 
-                                    onClick={() => setImage(car.image)}
+                                    onClick={() => {setImage(car.image); setGalleryIndex(0)}}
                                 />
                             </div>
-                            {car.carImage.map((image) => (
+                            {car.carImage.map((image, id) => (
                             <div key={image.id} className={styles.carGalleryImgWrap} >
                                 <img src={`http://localhost:8080${image.image}`} 
                                     alt={car.model} 
                                     className={styles.carGalleryImg}
-                                    onClick={() => setImage(image.image)}
+                                    onClick={() => {setImage(image.image); setGalleryIndex(id + 1)}}           
                                 />
                             </div>
                             ))}
@@ -224,14 +258,6 @@ const Car = () => {
                                         </div>
                                         <div className={styles.carDetailsParam}>
                                             <div className={styles.carDetailsParamLabel}>
-                                                Price
-                                            </div>
-                                            <div className={styles.carDetailsParamValue}>
-                                                {car.price}€
-                                            </div>
-                                        </div>
-                                        <div className={styles.carDetailsParam}>
-                                            <div className={styles.carDetailsParamLabel}>
                                                 Location
                                             </div>
                                             <div className={styles.carDetailsParamValue}>
@@ -239,6 +265,17 @@ const Car = () => {
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                                <div className={styles.carDetailsPriceWrap}>
+                                    <div className={styles.carDetailsPrice}>
+                                        <div className={styles.carDetailsPriceLabel}>Price</div>
+                                        <span className={styles.carDetailsPriceValue}>€ {car.price} </span>
+                                        with VAT
+                                    </div>
+                                    <Button to="/contact">
+                                        Contact seller
+                                        <FaChevronRight className="buttonArrow" />
+                                    </Button>
                                 </div>
                             </div>
                             <div className={styles.carDetailsMain}>
@@ -280,6 +317,37 @@ const Car = () => {
                     </div>
                 </aside>
             </main>
+            <aside>
+                <div className="inner">
+                    <div className={styles.contactForm}>
+                        <h2 className={styles.contactFormHeading}>
+                            Interested in this {car.make} {car.model}? <SecondLogo className={`cmLogo`} />
+                        </h2>
+                        <div className={styles.contactFormFields}>
+                            <div className={styles.contactFormFieldWrapper}>
+                                <label className={styles.contactFormLabel}>First name</label>
+                                <input type="text" className={styles.contactFormField}/>
+                            </div>
+                            <div className={styles.contactFormFieldWrapper}>
+                                <label className={styles.contactFormLabel}>Last name</label>
+                                <input type="text" className={styles.contactFormField}/>
+                            </div>
+                            <div className={styles.contactFormFieldWrapper}>
+                                <label className={styles.contactFormLabel}>E-mail address</label>
+                                <input type="text" className={styles.contactFormField}/>
+                            </div>
+                            <div className={styles.contactFormFieldWrapper}>
+                                <label className={styles.contactFormLabel}>Phone number</label>
+                                <input type="text" className={styles.contactFormField}/>
+                            </div>
+                            <div className={styles.contactFormFieldWrapper}>
+                                <label className={styles.contactFormLabel}>Message</label>
+                                <textarea name="" id="" className={styles.contactFormField}></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
         </>
     )
 }
