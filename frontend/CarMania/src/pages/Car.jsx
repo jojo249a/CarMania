@@ -4,6 +4,7 @@ import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft } from "react-icons/f
 import SecondLogo from "../assets/second-logo.svg?react"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
+import LoadingScreen from "../components/LoadingScreen"
 
 import styles from "../styles/components/Car.module.css"
 
@@ -11,6 +12,9 @@ const Car = () => {
     const { slug } = useParams();
     const [car, setCar] = useState(null);
     const [error, setError] = useState("");
+    const [image, setImage] = useState("");
+    const [loaded, setLoaded] = useState(false);
+    const [sliderIndex, setSliderIndex] = useState(0);
 
     const getCar = async () => {
         try {
@@ -28,7 +32,40 @@ const Car = () => {
             setError(err.message);
         }
     }
+
+    const hideImg = (e) => {
+        if (e.target == e.currentTarget) {
+            setImage("");
+        }
+    }
+
+    const handleSlider = () => {
+        if (sliderIndex > car.carImage.length) {
+            setSliderIndex(0);
+        }
+        if (sliderIndex < 0) {
+            setSliderIndex(car.carImage.length);
+        }
+    }
     
+    useEffect(() => {
+        if (car != null) {
+            handleSlider();
+        }   
+    }, [sliderIndex]); 
+
+    useEffect(() => {
+        if (image) {
+            document.body.style.overflow = "hidden";
+            document.body.style.marginRight = "15px";
+        }
+
+        return () => {
+            document.body.style.overflow = "";
+            document.body.style.marginRight = "";
+        }
+    }, [image]);
+
     useEffect(() => {
         getCar();
     }, [slug]);
@@ -38,11 +75,20 @@ const Car = () => {
     }
 
     if (car == null) {
-        return <div className="inner spaced errMsg">Car not found.</div>
+        return <LoadingScreen />
     }
 
     return (
         <>
+            {!loaded && <LoadingScreen />}
+            {image && 
+                <div className={styles.carImageWrap} onClick={hideImg}>
+                    <img src={`http://localhost:8080${image}`} 
+                        alt={`${car.make + " " + car.model}`}
+                        className={styles.carImage} 
+                    />
+                </div>
+            }
             <main>
                 <section className="sectionFirst">
                     <div className={styles.carIntro}>
@@ -51,17 +97,36 @@ const Car = () => {
                             <div className={styles.carIntroModel}>{car.model}</div>
                         </div>
                         <div className={styles.carIntroImgWrap}>
-                            <FaRegArrowAltCircleLeft className={`${styles.swipeLeftIcon} ${styles.swipeIcon}`}></FaRegArrowAltCircleLeft>
-                            <img src={`http://localhost:8080${car.image}`} alt={`${car.make + " " + car.model}`} className={styles.carIntroImg}/>
-                            <FaRegArrowAltCircleRight className={`${styles.swipeRightIcon} ${styles.swipeIcon}`}></FaRegArrowAltCircleRight>
+                            <FaRegArrowAltCircleLeft className={`${styles.swipeLeftIcon} 
+                                ${styles.swipeIcon}`}
+                                onClick={() => setSliderIndex(prev => prev - 1)}
+                            />
+                            <div className={styles.carIntroSlider} style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
+                                <img src={`http://localhost:8080${car.image}`} 
+                                    alt={`${car.make + " " + car.model}`} 
+                                    className={styles.carIntroImg}
+                                    onLoad={() => setLoaded(true)}
+                                />
+                                {car.carImage.map((image, id) => (
+                                    <img key={id}src={`http://localhost:8080${image.image}`} 
+                                        alt={`${car.make + " " + car.model}`} 
+                                        className={styles.carIntroImg}
+                                    />
+                                ))}
+                            </div>
+                            <FaRegArrowAltCircleRight className={`${styles.swipeRightIcon} 
+                                ${styles.swipeIcon}`} 
+                                onClick={() => setSliderIndex(prev => prev + 1)}
+                            />
                         </div>
                     </div>
                     <div className="inner">
                         <div className={styles.carGallery}>
-                            <div className={styles.carGalleryImgWrap} >
+                            <div className={styles.carGalleryImgWrap}>
                                 <img src={`http://localhost:8080${car.image}`} 
                                     alt={car.model} 
                                     className={styles.carGalleryImg} 
+                                    onClick={() => setImage(car.image)}
                                 />
                             </div>
                             {car.carImage.map((image) => (
@@ -69,6 +134,7 @@ const Car = () => {
                                 <img src={`http://localhost:8080${image.image}`} 
                                     alt={car.model} 
                                     className={styles.carGalleryImg}
+                                    onClick={() => setImage(image.image)}
                                 />
                             </div>
                             ))}

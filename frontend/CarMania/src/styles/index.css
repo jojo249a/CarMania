@@ -79,6 +79,37 @@ body {
     margin-bottom: 8px;
     padding-top: 100px;
 }
+.loading {
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    position: absolute;
+    background: white;
+    font-weight: 500;
+    font-size: 2.25rem;
+    height: 100%;
+    width: 100%;
+}
+.loadingText {
+    animation: load 5s infinite;
+}
+.loadingLogo {
+    width: 50px;
+    height: 25px;
+    margin-left: 15px;
+}
+
+@keyframes load {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 
 @media only screen and (max-width: 1140px) {
     .cmLogo {
@@ -118,4 +149,9 @@ body {
     .headingLogo {
         margin-right: 20px;
     } 
+    .loadingLogo {
+        display: block;
+        margin-inline: auto;
+        margin-top: 10px;
+    }
 }
