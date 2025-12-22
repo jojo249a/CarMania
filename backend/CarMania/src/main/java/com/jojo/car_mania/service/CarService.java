@@ -43,9 +43,6 @@ public class CarService {
     
     public Car create(CarCreationDTO dto) {
         Car car = Car.builder()
-                .image(dto.getImage())
-                .description(dto.getDescription())
-                .equipment(dto.getEquipment())
                 .make(dto.getMake())
                 .model(dto.getModel())
                 .year(dto.getYear())

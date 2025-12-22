@@ -11,10 +11,6 @@
         @NotBlank(message = "Image is required.")
         private String image;
 
-        private String description;
-
-        private String equipment;
-
         @NotBlank(message = "Make is required.")
         private String make;
 

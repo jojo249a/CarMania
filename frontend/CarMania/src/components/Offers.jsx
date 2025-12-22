@@ -48,7 +48,7 @@ const Offers = ({ status, make, count }) => {
                             <Link className={styles.offersItemLink} to={`/car/${offer.slug}`}>
                                 <div className={styles.offersItemTop}>
                                     <img className={styles.offersItemImg} 
-                                    src={`http://localhost:8080/${offer.image}`} 
+                                    src={`http://localhost:8080/${offer.carImages[0].image}`} 
                                     alt={`${offer.make + " " + offer.model}`} />
                                 </div>  
                                 <div className={styles.offersItemBottom}>

@@ -13,6 +13,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -33,13 +36,8 @@ public class Car {
     @GeneratedValue
     private Long id;
 
-    private String image;
-
     @Column(columnDefinition = "TEXT", nullable = true)
     private String description;
-
-    @Column(columnDefinition = "TEXT", nullable = true)
-    private String equipment;
 
     private String make;
 
@@ -85,5 +83,14 @@ public class Car {
 
     @OneToMany(mappedBy = "car", cascade = CascadeType.ALL)
     @JsonManagedReference
-    private List<CarImage> carImage;
+    private List<CarImage> carImages;
+
+    @ManyToMany
+    @JoinTable(
+        name = "car_equipment",
+        joinColumns = @JoinColumn(name = "car_id"),
+        inverseJoinColumns = @JoinColumn(name = "equipment_id")
+    )
+    @JsonManagedReference
+    private List<Equipment> equipment;
 }
