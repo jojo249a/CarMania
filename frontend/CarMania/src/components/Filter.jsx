@@ -33,13 +33,13 @@ const Filter = ({ status, onMakeChange, currentMake }) => {
             <ul className={styles.optionsList}>
                 <li className={styles.optionsOption}>
                     <button className={`${styles.filterButton} ${currentMake == "All" ? styles.active : ""}`} 
-                        onClick={() => {onMakeChange("All")}}>All vehicles ({count})
+                        onClick={() => {onMakeChange("All"); setOpened(!opened)}}>All vehicles ({count})
                     </button>
                 </li>
                 {makes.map((make) => (
                     <li key={make} className={styles.optionsOption}>
                         <button className={`${styles.filterButton} ${currentMake == make ? styles.active : ""}`} 
-                                onClick={() => {onMakeChange(make)}}>{make}
+                                onClick={() => {onMakeChange(make); setOpened(!opened)}}>{make}
                         </button>
                     </li>
                 ))}

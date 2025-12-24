@@ -7,7 +7,7 @@ export default function Footer() {
     return (
         <footer>
             <div className={styles.footerTop}>
-                <div className="inner">
+                <div className="container">
                     <div className={styles.footerTopInner}>
                         <div className={styles.footerColumn}>
                             <div className={styles.footerHeading}>Billing information</div>
@@ -50,7 +50,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className={styles.footerBottom}>
-                <div className="inner">
+                <div className="container">
                     <div className={styles.footerBottomInner}>
                         2025 © CarMania, s.r.o.
                         <div>

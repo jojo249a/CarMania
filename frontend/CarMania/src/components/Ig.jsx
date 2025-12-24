@@ -5,8 +5,8 @@ import styles from "../styles/components/Ig.module.css"
 
 const Ig = () => {
     return (
-        <aside className={`inner`}>
-            <div className={styles.ig}>
+        <aside>
+            <div className={`container ${styles.ig}`}>
                 <div className={styles.igSideText}>
                     <div>
                         Follow us on Instagram!
@@ -14,7 +14,7 @@ const Ig = () => {
                             <strong><a href="https://www.instagram.com/bavaria.motors">@car.mania</a></strong>
                         </div>
                     </div>
-                    <SecondLogo className={`cm-logo ${styles.igSideTextLogo}`} />
+                    <SecondLogo className={`${styles.igSideTextLogo}`} />
                 </div>
                 <div className={styles.igPosts}>
                     <a href="https://www.instagram.com/p/DRb_sJcjPCy" className={styles.igPostsLink}>

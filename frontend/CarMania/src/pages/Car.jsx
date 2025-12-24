@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft, FaChevronRight, FaChevronLeft, FaRegCheckCircle } from "react-icons/fa"
+import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft, 
+FaChevronRight, FaChevronLeft, FaRegCheckCircle, FaEye } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import LoadingScreen from "../components/LoadingScreen"
 import Button from "../components/Button"
+import Contact from "../components/Contact"
+import Buttons from "../components/Buttons"
 
-import styles from "../styles/components/Car.module.css"
+import styles from "../styles/pages/Car.module.css"
 
 const Car = () => {
     const { slug } = useParams();
@@ -90,7 +93,7 @@ const Car = () => {
     }, [slug]);
 
     if (error) {
-        return <div className="inner spaced errMsg">{error}</div>
+        return <div className="inner sectionSpacing errMsg">{error}</div>
     }
 
     if (car == null) {
@@ -140,194 +143,174 @@ const Car = () => {
                             />
                         </div>
                     </div>
-                    <div className="inner">
+                    <div className="container">
                         <div className={styles.carGallery}>
                             {car.carImages.map((image, id) => (
-                                <div key={id} className={styles.carGalleryImgWrap} >
+                                <div key={id} className={styles.carGalleryPreview} >
                                     <img src={`http://localhost:8080${image.image}`} 
                                         alt={car.model} 
                                         className={styles.carGalleryImg}
                                         onClick={() => {setImageShown(true); setGalleryIndex(id)}}           
                                     />
+                                    <FaEye className={styles.previewIcon}/>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="inner spaced">
-                        <div className={styles.carDetails}>
-                            <div className={styles.carDetailsParams}>
-                                <div className={styles.carDetailsParamsTop}></div>
-                                <h2 className={styles.carDetailsHeading}>
-                                    Car specifications
-                                </h2>
-                                <div className={styles.carDetailsParamList}>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Year
+                    <div className="sectionWhite">
+                        <div className={`container`}>
+                            <div className={styles.carDetails}>
+                                <div className={styles.carDetailsParams}>
+                                    <h2 className={styles.carDetailsHeading}>
+                                        Car specifications
+                                    </h2>
+                                    <div className={styles.carDetailsParamList}>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Year
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.year}
+                                            </div>
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.year}
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Mileage
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.mileage} km 
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Power
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.power} kW
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Fuel type
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.fuelType}
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Engine size
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.engineSize}L
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Drivetrain
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.drivetrain}
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Transmission
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.transmission}
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Body style
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.bodyStyle}
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Color
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.color}
+                                            </div>
+                                        </div>
+                                        <div className={styles.carDetailsParam}>
+                                            <div className={styles.carDetailsParamLabel}>
+                                                Location
+                                            </div>
+                                            <div className={styles.carDetailsParamValue}>
+                                                {car.location}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Mileage
+                                    <div className={styles.carDetailsPriceWrap}>
+                                        <div className={styles.carDetailsPrice}>
+                                            <div className={styles.carDetailsPriceLabel}>Price</div>
+                                            <span className={styles.carDetailsPriceValue}>€ {car.price} </span>
+                                            with VAT
                                         </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.mileage} km 
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Power
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.power} kW
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Fuel type
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.fuelType}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Engine size
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.engineSize}L
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Drivetrain
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.drivetrain}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Transmission
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.transmission}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Body style
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.bodyStyle}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Color
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.color}
-                                        </div>
-                                    </div>
-                                    <div className={styles.carDetailsParam}>
-                                        <div className={styles.carDetailsParamLabel}>
-                                            Location
-                                        </div>
-                                        <div className={styles.carDetailsParamValue}>
-                                            {car.location}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className={styles.carDetailsPriceWrap}>
-                                    <div className={styles.carDetailsPrice}>
-                                        <div className={styles.carDetailsPriceLabel}>Price</div>
-                                        <span className={styles.carDetailsPriceValue}>€ {car.price} </span>
-                                        with VAT
-                                    </div>
-                                    <Button to="/contact">
-                                        Contact seller
-                                        <FaChevronRight className="buttonArrow" />
-                                    </Button>
-                                </div>
-                            </div>
-                            <div className={styles.carDetailsMain}>
-                                <div className={styles.carDetailsDescWrap}>
-                                    <div className={styles.carDetailsHeading}>
-                                        Basic information <SecondLogo className={`cmLogo ${styles.carDetailsHeadingLogo}`}/> 
-                                    </div>
-                                    <div className={styles.carDetailsDesc}>
-                                        {car.description}
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis, nisi ac bibendum venenatis, nibh nisl auctor justo, eget facilisis lectus leo in nunc. 
-                                        Sed consequat dolor a purus ultrices, non scelerisque arcu dapibus. Nam rhoncus a nulla id congue. Etiam pellentesque sit amet dolor ac commodo. 
-                                        Aenean interdum felis libero, vitae dapibus lectus efficitur eget. Donec ut venenatis mi. Morbi a tellus elementum, mollis purus ut, tristique lacus.
+                                        <Button to="/contact">
+                                            Contact seller
+                                            <FaChevronRight className="buttonArrow" />
+                                        </Button>
                                     </div>
                                 </div>
-                                <div className={styles.carDetailsEquipmentWrap}>
-                                    <div className={styles.carDetailsHeading}>
-                                        Equipment <SecondLogo className={`cmLogo ${styles.carDetailsHeadingLogo}`}/> 
+                                <div className={styles.carDetailsMain}>
+                                    <div className={styles.carDetailsDescWrap}>
+                                        <div className={styles.carDetailsHeading}>
+                                            Basic information <SecondLogo className={`${styles.carDetailsHeadingLogo}`}/> 
+                                        </div>
+                                        <div className={styles.carDetailsDesc}>
+                                            {car.description}
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla mattis, nisi ac bibendum venenatis, nibh nisl auctor justo, eget facilisis lectus leo in nunc. 
+                                            Sed consequat dolor a purus ultrices, non scelerisque arcu dapibus. Nam rhoncus a nulla id congue. Etiam pellentesque sit amet dolor ac commodo. 
+                                            Aenean interdum felis libero, vitae dapibus lectus efficitur eget. Donec ut venenatis mi. Morbi a tellus elementum, mollis purus ut, tristique lacus.
+                                        </div>
                                     </div>
-                                    <ul className={styles.carDetailsEquipmentList}>
-                                        {car.equipment.map((equipment, id) => (
-                                            <li key={id} className={styles.carDetailsEquipmentItem}>
-                                                <FaRegCheckCircle className={styles.carDetailsEquipmentCheckIcon}/>
-                                                {equipment.name}
-                                            </li>
-                                        ))}
-                                    </ul>
+                                    <div className={styles.carDetailsEquipmentWrap}>
+                                        <div className={styles.carDetailsHeading}>
+                                            Equipment <SecondLogo className={`${styles.carDetailsHeadingLogo}`}/> 
+                                        </div>
+                                        <ul className={styles.carDetailsEquipmentList}>
+                                            {car.equipment.map((equipment, id) => (
+                                                <li key={id} className={styles.carDetailsEquipmentItem}>
+                                                    <FaRegCheckCircle className={styles.carDetailsEquipmentCheckIcon}/>
+                                                    {equipment.name}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
                 <aside>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Heading>
-                            <SecondLogo className={`cmLogo headingLogo`}/>
+                            <SecondLogo className={`headingLogo`}/>
                             Current range of new and used cars
                         </Heading>
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Offers count={4} />
                     </div>
+                    <div className="container sectionSpacing">
+                        <Buttons>
+                            <Button to="/used-cars" className="buttonWhite buttonsButton">
+                                Certified used cars <FaChevronRight className="buttonArrow" />
+                            </Button>
+                            <Button to="/new-cars" className="buttonsButton">
+                                New and demonstrator cars <FaChevronRight className="buttonArrow" />
+                            </Button>
+                        </Buttons>
+                    </div> 
                 </aside>
             </main>
-            <aside>
-                <div className="inner">
-                    <div className={styles.contactForm}>
-                        <h2 className={styles.contactFormHeading}>
-                            Interested in this {car.make} {car.model}? <SecondLogo className={`cmLogo`} />
-                        </h2>
-                        <div className={styles.contactFormFields}>
-                            <div className={styles.contactFormUserDetails}>
-                                <div className={styles.contactFormFieldWrapper}>
-                                    <label className={styles.contactFormLabel}>First name</label>
-                                    <input type="text" className={styles.contactFormField}/>
-                                </div>
-                                <div className={styles.contactFormFieldWrapper}>
-                                    <label className={styles.contactFormLabel}>Last name</label>
-                                    <input type="text" className={styles.contactFormField}/>
-                                </div>
-                                <div className={styles.contactFormFieldWrapper}>
-                                    <label className={styles.contactFormLabel}>E-mail address</label>
-                                    <input type="text" className={styles.contactFormField}/>
-                                </div>
-                                <div className={styles.contactFormFieldWrapper}>
-                                    <label className={styles.contactFormLabel}>Phone number</label>
-                                    <input type="text" className={styles.contactFormField}/>
-                                </div>
-                            </div>
-                            <div className={styles.contactFormMessage}>
-                                <label className={styles.contactFormLabel}>Message</label>
-                                <textarea name="" id="" className={`${styles.contactFormMessageField} ${styles.contactFormField}`}></textarea>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
+            <Contact carName={car.make + " " + car.model}/>
         </>
     )
 }

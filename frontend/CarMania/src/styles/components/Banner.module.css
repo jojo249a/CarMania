@@ -5,7 +5,9 @@
     align-items: center;
     height: 400px;
     width: 100%;
-    margin-bottom: 20px;
+}
+.banner:last-child {
+    margin-bottom: 0px;
 }
 .bannerImg {
     object-fit: cover;

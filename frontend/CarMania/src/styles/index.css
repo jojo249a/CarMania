@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wdth,wght@0,76.4,100..900;1,76.4,100..900&display=swap');
 :root {
     --light: #e2e2e2;
+    --light2: #f1f1f1;
     --dark: #222222;
     --dark2: #121212;
     --lightgrey: #a3a3a3;
@@ -30,6 +31,9 @@ a {
 li {
     list-style: none;
 }
+textarea {
+    resize: none;
+}
 body {
     background: var(--light);
     color: var(--grey);
@@ -41,16 +45,16 @@ body {
     text-align: center;
 }
 .headingLogo {
-    width: 70px;
-    height: 35px;
+    width: 1.3em;
+    height: .65em;
     margin-right: 40px;
 }   
-.inner {
+.container {
     margin-inline: auto;
     max-width: 1440px;
 }
-.spaced {
-    margin-block: 4rem;
+.sectionSpacing {
+    margin-block: 64px;
 }
 .link {
     text-decoration: underline;
@@ -62,22 +66,22 @@ body {
     display: flex;
     justify-content: center;
 }
-.buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-.buttonsButton {
-    margin: 0 8px 12px;
-}
 .sectionFirst {
     margin-top: 96px;
+}
+.sectionWhite {
+    background-color: white;
+}
+.sectionLight {
+    background-color: var(--light);
+}
+.sectionLighter {
+    background-color: var(--light2);
 }
 .breadcrumbs {
     text-align: center;
     margin-bottom: 8px;
-    padding-top: 100px;
+    padding-top: 7%;
 }
 .loading {
     display: flex;
@@ -98,6 +102,11 @@ body {
     height: 25px;
     margin-left: 15px;
 }
+.banners {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
 @keyframes load {
     0% {
@@ -112,10 +121,6 @@ body {
 }
 
 @media only screen and (max-width: 1140px) {
-    .cmLogo {
-        width: 60px;
-        height: 30px;
-    }
     .sectionFirst {
         margin-top: 0;
     }
@@ -125,10 +130,6 @@ body {
     .heading {
         font-size: 2.5rem;
     }
-    .headingLogo {
-        width: 60px;
-        height: 30px;
-    }   
 }
 
 @media only screen and (max-width: 768px) {
@@ -136,8 +137,6 @@ body {
         font-size: 2rem;
     }
     .headingLogo {
-        width: 45px;
-        height: 22.5px;
         margin-right: 30px;
     }  
     .spaced {
@@ -146,6 +145,9 @@ body {
 }
 
 @media only screen and (max-width: 540px) {
+    .sectionSpacing {
+        margin-block: 48px;
+    }
     .headingLogo {
         margin-right: 20px;
     } 

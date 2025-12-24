@@ -32,11 +32,11 @@ const Offers = ({ status, make, count }) => {
     }, [make]);
 
     if (error) {
-        return <div className="inner spaced errMsg">{error}</div>
+        return <div className="container sectionSpacing errMsg">{error}</div>
     }
 
     if (offers.length == 0) {
-        return <div className="inner spaced errMsg">No offers found.</div>
+        return <div className="container sectionSpacing errMsg">No offers found.</div>
     }
 
     return (

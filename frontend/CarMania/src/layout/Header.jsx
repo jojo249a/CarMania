@@ -35,7 +35,7 @@ export default function Header() {
 
     return (
         <header className={headerBg ? styles.bg : undefined}>
-            <div className={`${styles.headerInner} inner`}>
+            <div className={`${styles.headerInner} container`}>
                 <Link className={styles.headerHomeLink} to="/"><PrimaryLogo className={styles.headerHomeLogo} /></Link>
                 <nav className={openNav ? styles.opened : ""}>
                     <ul className={styles.navItemsList}>

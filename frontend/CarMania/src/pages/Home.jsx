@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 import { FaChevronRight } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
 import ServiceBanner from "../components/ServiceBanner"
@@ -8,7 +8,7 @@ import Ig from "../components/Ig"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Buttons from "../components/Buttons"
-import Button from "../components/Button";
+import Button from "../components/Button"
 
 import styles from "../styles/pages/Home.module.css"
 
@@ -54,7 +54,7 @@ export default function Home() {
             <main>
                 <section>
                     <div className={styles.intro}>
-                        <div className={styles.introBgImgWrap}>
+                        <div key={index} className={styles.introBgImgWrap}>
                             <img src={images[index]} alt="Showroom" className={styles.introBgImg} />
                         </div>
                         <div className={styles.introText}>
@@ -63,7 +63,7 @@ export default function Home() {
                             </div>
                             <div className={styles.introDesc}>
                                 LUXURY
-                                <SecondLogo className={`cmLogo ${styles.introDescLogo}`}/>
+                                <SecondLogo className={`${styles.introDescLogo}`}/>
                                 PERFORMANCE
                             </div>
                             <Link className={styles.introButton} to="/new-cars">
@@ -78,29 +78,31 @@ export default function Home() {
                     </div>
                 </section>
                 <section>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Heading>
-                            <SecondLogo className={`cmLogo headingLogo`}/>
+                            <SecondLogo className={`headingLogo`}/>
                             Current range of new and used cars
                         </Heading> 
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Offers count={6} />
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Buttons>
-                            <Button to="/used-cars" className="buttonWhite">
+                            <Button to="/used-cars" className="buttonWhite buttonsButton">
                                 Certified used cars ({usedCount}) <FaChevronRight className="buttonArrow" />
                             </Button>
-                            <Button to="/new-cars">
+                            <Button to="/new-cars" className="buttonsButton">
                                 New and demonstrator cars ({newCount})<FaChevronRight className="buttonArrow" />
                             </Button>
                         </Buttons>
                     </div> 
                 </section>
             </main>     
-            <ShowroomsBanner />
-            <ServiceBanner />
+            <div className="banners">
+                <ShowroomsBanner />
+                <ServiceBanner />
+            </div>
             <Ig />
         </>
     )

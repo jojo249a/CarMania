@@ -6,19 +6,20 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex-basis: 45%;
+    flex-basis: 50%;
     background-color: white;
 }
 .carIntroHeading {
     font-weight: 500;
-    font-size: 5rem;
+    font-size: 4rem;
 }
 .carIntroModel {
-    font-size: 2.5rem;
+    font-weight: 200;
+    font-size: 2.75rem;
 }
 .carIntroImgWrap {
     position: relative;
-    flex-basis: 55%;
+    flex-basis: 50%;
 }
 .carIntroImgWrap::before {
     content: "";
@@ -45,18 +46,28 @@
     aspect-ratio: 16 / 9;
 }
 .carGallery {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
     gap: 1px;
 }
-.carGalleryImgWrap {
-    flex-basis: 100px;
-    height: 100px;
+.carGalleryPreview {
+    aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.carGalleryPreview::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    transition: background-color 0.1s;
+}
+.carGalleryPreview:hover::before {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .carGalleryImg {
     height: 100%;
@@ -66,21 +77,22 @@
     user-select: none;
     -webkit-user-drag: none;
 }
-.carGalleryImgWrap:hover::before {
-    content: "";
-    height: 100%;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+.previewIcon {
     position: absolute;
-    pointer-events: none;
+    color: white;
+    display: none;
+    font-size: 1.75rem;
+}
+.carGalleryPreview:hover .previewIcon {
+    display: block;
 }
 .swipeIcon {
     position: absolute;
     bottom: 0;
     transform: translateY(-50%);
     color: white;
-    width: 55px;
-    height: 55px;
+    width: 8%;
+    height: 12%;
     cursor: pointer;
     transition: color 0.1s;
 }
@@ -88,10 +100,10 @@
     color: var(--red);
 }
 .swipeRightIcon {
-    right: 30px;
+    right: 5%;
 }
 .swipeLeftIcon {
-    left: 30px;
+    left: 5%;
 }
 .gallerySwipeIcon {
     top: 50%;
@@ -102,6 +114,9 @@
     gap: 40px;
     align-items: flex-start;
     flex-wrap: wrap;
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-block: 64px;
 }
 .carDetailsHeading {
     padding-inline: 5px;
@@ -111,18 +126,11 @@
     border-bottom: 1px solid var(--lightgrey);
 }
 .carDetailsParams {
-    background-color: white;
     flex: 3;
     border-radius: 20px;
     text-align: center;
-}
-.carDetailsParamsTop {
-    background-color: var(--red);
-    height: 40px;
-    width: 100%;
-    margin-bottom: 20px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    padding-block: 35px;
+    background-color: var(--light2);
 }
 .carDetailsParamList {
     display: flex;
@@ -156,10 +164,8 @@
     flex-direction: column;
     gap: 30px;
     flex: 7;
-    background-color: white;
     padding: 20px 30px;
     border-radius: 5px;
-    height: 100%;
 }
 .carDetailsHeadingLogo {
     width: 40px;
@@ -186,7 +192,7 @@
     vertical-align: baseline;
 }
 .carDetailsPriceWrap {
-    padding-block: 30px;
+    margin-top: 30px;
     color: var(--dark2);
 }
 .carDetailsPrice {
@@ -218,43 +224,7 @@
 .carImage {
     max-width: 1200px;
     user-select: none;
-    animation: fadeIn 0.8s;
-}
-.contactForm {
-    background-color: white;
-    padding: 100px;
-}
-.contactFormHeading {
-    font-size: 2.25rem;
-    font-weight: 300;
-}
-.contactFormFields {
-    display: flex;
-    gap: 30px;
-    margin-top: 20px;
-}
-.contactFormUserDetails {
-    flex: 1;
-}
-.contactFormMessage {
-    flex: 1;
-}
-.contactFormFieldWrapper {
-    margin-bottom: 20px;
-}
-.contactFormField {
-    background-color: var(--light);
-    font-size: 1rem;
-    padding: 10px;
-    width: 100%;
-    color: var(--dark);
-}
-.contactFormMessageField {
-    height: 100%;
-}
-.contactFormLabel {
-    display: block;
-    margin-bottom: 10px;
+    animation: fadeIn 0.6s;
 }
 
 @keyframes fadeIn {
@@ -263,5 +233,56 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1140px) {
+    .carIntroHeading {
+        font-size: 3.25rem;
+    }
+    .carIntroModel {
+        font-size: 2rem;
+    }
+}   
+
+@media only screen and (max-width: 940px) {
+    .carIntro {
+        flex-direction: column;
+    }
+    .carIntroText {
+        padding-block: 10%;
+    }
+    .carIntroHeading {
+        font-size: 3rem;
+    }
+    .carIntroModel {
+        font-size: 1.75rem;
+    }
+    .carGallery {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .carIntroHeading {
+        font-size: 2.75rem;
+    }
+    .carIntroModel {
+        font-size: 1.5rem;
+    }
+    .carGallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .carIntroHeading {
+        font-size: 2.33rem;
+    }
+    .carIntroModel {
+        font-size: 1.25rem;
+    }
+    .carGallery {
+        grid-template-columns: repeat(5, 1fr);
     }
 }

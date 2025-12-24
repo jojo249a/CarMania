@@ -3,7 +3,7 @@ import { FaChevronRight } from "react-icons/fa"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Breadcrumbs from "../components/Breadcrumbs"
-import Ig from "../components/Ig"
+import Contact from "../components/Contact"
 import ServiceBanner from "../components/ServiceBanner"
 import ShowroomsBanner from "../components/ShowroomsBanner"
 import Buttons from "../components/Buttons"
@@ -17,29 +17,32 @@ export default function NewOffers() {
         <>
             <main>
                 <section className="sectionFirst">
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
                             Current range of new & demo cars
                         </Heading>
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Filter status="New" onMakeChange={setMake} currentMake={make} />
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Offers status="New" make={make}/>
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Buttons>
-                            <Button to="/used-cars">
+                            <Button to="/used-cars" className="buttonsButton">
                                 Certified used cars <FaChevronRight className="buttonArrow" />
                             </Button>
                         </Buttons>
                     </div>
                 </section>
             </main>
-            <ShowroomsBanner />
-            <ServiceBanner />
+            <Contact />  
+            <div className="banners">
+                <ShowroomsBanner />
+                <ServiceBanner />
+            </div>
         </>
     )
 }

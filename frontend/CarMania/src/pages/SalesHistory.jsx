@@ -3,7 +3,7 @@ import { FaChevronRight } from "react-icons/fa";
 import Offers from "../components/Offers"
 import Heading from "../components/Heading";
 import Breadcrumbs from "../components/Breadcrumbs";
-import Ig from "../components/Ig";
+import Contact from "../components/Contact";
 import ServiceBanner from "../components/ServiceBanner"
 import ShowroomsBanner from "../components/ShowroomsBanner";
 import Buttons from "../components/Buttons";
@@ -17,32 +17,35 @@ export default function SalesHistory() {
         <>
             <main>
                 <section className="sectionFirst">
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
                             Sales history
                         </Heading>
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Filter status="Sold" onMakeChange={setMake} currentMake={make} />
                     </div>
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Offers status="Sold" make={make}/>
                     </div> 
-                    <div className="inner spaced">
+                    <div className="container sectionSpacing">
                         <Buttons>
-                            <Button to="/used-cars" className="buttonWhite">
+                            <Button to="/used-cars" className="buttonWhite buttonsButton">
                                 Certified used cars <FaChevronRight className="buttonArrow" />
                             </Button>
-                            <Button to="/new-cars">
+                            <Button to="/new-cars" className="buttonsButton">
                                 New and demonstrator cars <FaChevronRight className="buttonArrow" />
                             </Button>
                         </Buttons> 
                     </div>
                 </section>
             </main>
-            <ShowroomsBanner />
-            <ServiceBanner />
+            <Contact />
+             <div className="banners">
+                <ShowroomsBanner />
+                <ServiceBanner />
+            </div>
         </>
     )
 }
