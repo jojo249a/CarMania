@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useParams, useLocation } from "react-router-dom"
 import { FaRegArrowAltCircleRight, FaRegArrowAltCircleLeft, 
 FaChevronRight, FaChevronLeft, FaRegCheckCircle, FaEye } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
@@ -9,16 +9,17 @@ import LoadingScreen from "../components/LoadingScreen"
 import Button from "../components/Button"
 import Contact from "../components/Contact"
 import Buttons from "../components/Buttons"
+import ImagePreview from "../components/ImagePreview"
 
 import styles from "../styles/pages/Car.module.css"
 
 const Car = () => {
+    const { pathname } = useLocation();
     const { slug } = useParams();
     const [car, setCar] = useState(null);
     const [error, setError] = useState("");
-    const [imageShown, setImageShown] = useState(false);
-    const [loaded, setLoaded] = useState(false);
     const [sliderIndex, setSliderIndex] = useState(0);
+    const [imageShown, setImageShown] = useState(false);
     const [galleryIndex, setGalleryIndex] = useState(0);
 
     const getCar = async () => {
@@ -38,12 +39,6 @@ const Car = () => {
         }
     }
 
-    const hideImg = (e) => {
-        if (e.target == e.currentTarget) {
-            setImageShown(false);
-        }
-    }
-
     const handleSlider = () => {
         if (sliderIndex >= car.carImages.length) {
             setSliderIndex(0);
@@ -54,40 +49,16 @@ const Car = () => {
         }
     }
 
-    const prevImage = () => {
-        if (galleryIndex - 1 < 0) {
-            setGalleryIndex(car.carImages.length - 1);
-            return; 
-        }
-        setGalleryIndex(galleryIndex - 1);
-    };
-
-    const nextImage = () => {
-        if (galleryIndex + 1 >= car.carImages.length) {
-            setGalleryIndex(0)
-            return;
-        }
-        setGalleryIndex(galleryIndex + 1);
-    };
+    useEffect(() => {
+        setSliderIndex(0);
+    }, [pathname]);
 
     useEffect(() => {
         if (car != null) {
             handleSlider();
         }   
     }, [sliderIndex]); 
-
-    useEffect(() => {
-        if (imageShown) {
-            document.body.style.overflow = "hidden";
-            document.body.style.marginRight = "15px";
-        }
-
-        return () => {
-            document.body.style.overflow = "";
-            document.body.style.marginRight = "";
-        }
-    }, [imageShown]);
-
+    
     useEffect(() => {
         getCar();
     }, [slug]);
@@ -102,21 +73,7 @@ const Car = () => {
 
     return (
         <>
-            {imageShown && 
-                <div key={galleryIndex} className={styles.carImageWrap} onClick={hideImg}>
-                    <FaChevronLeft className={`${styles.swipeLeftIcon} 
-                        ${styles.swipeIcon} ${styles.gallerySwipeIcon}`}
-                        onClick={prevImage}            
-                    />
-                    <img src={`http://localhost:8080${car.carImages[galleryIndex].image}`} 
-                        alt={`${car.make + " " + car.model}`}
-                        className={styles.carImage} 
-                    />
-                    <FaChevronRight className={`${styles.swipeRightIcon}
-                        ${styles.swipeIcon} ${styles.gallerySwipeIcon}`}
-                        onClick={nextImage}/>
-                </div>
-            }
+            <ImagePreview car={car} index={galleryIndex} setIndex={setGalleryIndex} setIsOpen={setImageShown} isOpen={imageShown} />
             <main>
                 <section className="sectionFirst">
                     <div className={styles.carIntro}>
@@ -129,9 +86,9 @@ const Car = () => {
                                 ${styles.swipeIcon}`}
                                 onClick={() => setSliderIndex(prev => prev - 1)}
                             />
-                            <div className={styles.carIntroSlider} style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
+                            <div key={car.id} className={styles.carIntroSlider} style={{ transform: `translateX(-${sliderIndex * 100}%)` }}>
                                 {car.carImages.map((image, id) => (
-                                    <img key={id}src={`http://localhost:8080${image.image}`} 
+                                    <img key={id} src={`http://localhost:8080${image.image}`} 
                                         alt={`${car.make + " " + car.model}`} 
                                         className={styles.carIntroImg}
                                     />
@@ -252,7 +209,7 @@ const Car = () => {
                                             <span className={styles.carDetailsPriceValue}>€ {car.price} </span>
                                             with VAT
                                         </div>
-                                        <Button to="/contact">
+                                        <Button className="buttonSmall">
                                             Contact seller
                                             <FaChevronRight className="buttonArrow" />
                                         </Button>

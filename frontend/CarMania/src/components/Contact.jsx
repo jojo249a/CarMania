@@ -7,12 +7,12 @@ import styles from "../styles/components/Contact.module.css"
 
 const Contact = ({ carName }) => {
     return (
-        <aside className="sectionLighter">
-            <div className="container sectionSpacing">
+        <aside className="sectionWhite">
+            <div className="container">
                 <div className={styles.contactInner}>
                     <Heading className={styles.contactHeading}>
+                        <SecondLogo className={`headingLogo`} />
                         {carName ? `Interested in this ${carName}?` : `Interested in a car?`}
-                        <SecondLogo className={`headingLogo ${styles.contactHeadingLogo}`} />
                     </Heading>
                     <div className={styles.contactForm}>
                         <div className={styles.contactFormFields}>
@@ -57,10 +57,11 @@ const Contact = ({ carName }) => {
                                 <div className={styles.contactDealerLocation}>
                                     Located in <strong>Ostrava</strong> 
                                 </div>
-                                <div className={`${styles.contactDealerPhone} ${styles.contactDealerIconRow}`}>
-                                    <FaPhone className={styles.contactDealerIcon}/> +421 948871383
+                                <div className={styles.contactDealerIconRow}>
+                                    <FaPhone className={styles.contactDealerIcon}/>
+                                    +421 948871383
                                 </div>
-                                <div className={`${styles.contactDealerMail} ${styles.contactDealerIconRow}`}>
+                                <div className={styles.contactDealerIconRow}>
                                     <FaEnvelope className={styles.contactDealerIcon}/><span className="link">gerald.jarvis@car-mania.cz</span>
                                 </div>
                             </div>
@@ -76,10 +77,11 @@ const Contact = ({ carName }) => {
                                 <div className={styles.contactDealerLocation}>
                                     Located in <strong>Žilina</strong>
                                 </div>
-                                <div className={`${styles.contactDealerPhone} ${styles.contactDealerIconRow}`}>
-                                    <FaPhone className={styles.contactDealerIcon}/> +421 948871383
+                                <div className={styles.contactDealerIconRow}>
+                                    <FaPhone className={styles.contactDealerIcon}/>
+                                    +421 948871383
                                 </div>
-                                <div className={`${styles.contactDealerMail} ${styles.contactDealerIconRow}`}>
+                                <div className={styles.contactDealerIconRow}>
                                     <FaEnvelope className={styles.contactDealerIcon}/><span className="link">cory.allen@car-mania.sk</span>
                                 </div>
                             </div>

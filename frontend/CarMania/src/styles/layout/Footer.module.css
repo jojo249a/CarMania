@@ -44,7 +44,7 @@ footer {
 .footerLink:hover {
     color: var(--grey);
 }
-.footerIconrow {
+.footerIconRow {
     display: inline-flex;
     align-items: center;
     gap: 16px;

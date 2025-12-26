@@ -1,18 +1,10 @@
 .contactInner {
-    padding-inline: 50px;
-    margin-bottom: 90px;
     margin-inline: auto;
     max-width: 1200px;
+    padding: 64px;
 }
 .contactHeading {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 0.5em;
     margin-bottom: 40px;
-}
-.contactHeadingLogo {
-    margin-right: 0 !important;
 }
 .contactForm {
     margin-bottom: 40px;
@@ -32,7 +24,7 @@
     flex-direction: column;
 }
 .contactFormField {
-    background-color: var(--light);
+    background-color: var(--light2);
     font-size: 1rem;
     padding: 10px;
     width: 90%;
@@ -52,15 +44,16 @@
 }
 .contactFormButton {
     margin-left: auto;
-}   
+}
+.contactDealers {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
 .contactDealerCard {
     display: flex;
     align-items: center;
     gap: 50px;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    background-color: white;
-    padding: 30px;
 }
 .contactDealerCard:last-child {
     margin-bottom: 0;
@@ -88,14 +81,14 @@
     font-size: 2.5rem;
 }
 .contactDealerIcon {
+    position: relative;
+    top: 0.12em;
     width: 0.9em;
     height: 0.9em;
     margin-right: 8px;
-    vertical-align: baseline;
 }
 .contactDealerIconRow {
-    display: flex;
-    align-items: center;
+    position: relative;
 }
 
 @media only screen and (max-width: 1140px) {
@@ -103,13 +96,6 @@
 }   
 
 @media only screen and (max-width: 940px) {
-    .contactInner {
-        max-width: 800px;
-        padding-inline: 0;
-    }
-    .contactForm {
-        padding-inline: 50px;
-    }
     .contactFormFields {
         flex-direction: column;
         gap: 20px;
@@ -135,19 +121,11 @@
 }
 
 @media only screen and (max-width: 540px) {
+    .contactInner {
+        padding-inline: 32px;
+    }
     .contactDealerImageWrap {
         width: 200px;
-    }
-    .contactInner {
-        margin-bottom: 60px;
-    }
-    .contactForm {
-        padding-inline: 25px;
-    }
-    .contactHeading {
-        flex-direction: column-reverse;
-        gap: 10px;
-        align-items: center;
     }
     .contactDealerCard {
         flex-direction: column;
@@ -156,8 +134,5 @@
     }
     .contactDealerText {
         font-size: 1.25rem;
-    }
-    .contactDealerIconRow {
-        justify-content: center;
     }
 }

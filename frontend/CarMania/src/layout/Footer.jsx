@@ -15,7 +15,7 @@ export default function Footer() {
                                 <div>CarMania, s.r.o.</div>
                                 <div>Krmelínská 736/7, 720 00 Ostrava</div>
                                 <div>IČ: 26848023</div>
-                                <a href="" className={`${styles.footerIconrow} link`}>
+                                <a href="" className={`${styles.footerIconRow} link`}>
                                     <FaRegEnvelope />
                                     info@carmania.sk
                                 </a>

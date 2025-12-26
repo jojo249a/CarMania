@@ -28,6 +28,10 @@
 }
 .optionsArrow {
     margin-left: auto;
+    transition: transform .2s;
+}
+.filter.opened .optionsArrow {
+    transform: rotate(180deg);
 }
 
 @media only screen and (max-width: 768px) {

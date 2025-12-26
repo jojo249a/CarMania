@@ -21,17 +21,18 @@ export default function Header() {
     const handleScroll = () => setHeaderBg(window.scrollY > 0);
 
     useEffect(() => {
-            if (pathname != "/") {
-                setHeaderBg(true);
-            } else {
-                setHeaderBg(false);
-                window.addEventListener("scroll", handleScroll);
-            }
+        if (pathname != "/") {
+            setHeaderBg(true);
+        } else {
+            setHeaderBg(false);
+            window.addEventListener("scroll", handleScroll);
+        }
+        setOpenLangs(false);
         
         return () => {
             window.removeEventListener("scroll", handleScroll);
         }
-    }, [pathname]); //
+    }, [pathname]);
 
     return (
         <header className={headerBg ? styles.bg : undefined}>
@@ -113,7 +114,7 @@ export default function Header() {
                     Menu
                 </div>
                 <div className={styles.headerLangs}>
-                    <div className={styles.langsOpener} onClick={() => { 
+                    <div className={`${styles.langsOpener} ${openLangs ? styles.opened : ""}`} onClick={() => { 
                         setOpenLangs(!openLangs)
                         if (openNav) {
                             setOpenNav(false);
@@ -121,7 +122,7 @@ export default function Header() {
                         <SKFlag className={styles.langsFlag} />
                         <FaChevronDown className={`${styles.headerArrowDown} ${styles.langArrowDown}`} />
                     </div>
-                    <ul className={`${styles.langsList} ${openLangs ? styles.opened : ""}`}>
+                    <ul className={`${styles.langsList}`}>
                         <li className={styles.langsItem} onClick={() => setOpenLangs(!openLangs)}>
                             <SKFlag className={styles.langsFlag} /> SK
                         </li>

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { FaChevronRight } from "react-icons/fa"
+import SecondLogo from "../assets/second-logo.svg?react"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Breadcrumbs from "../components/Breadcrumbs"
@@ -20,6 +21,7 @@ export default function NewOffers() {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
+                            <SecondLogo className={`headingLogo`}/>
                             Current range of new & demo cars
                         </Heading>
                     </div>

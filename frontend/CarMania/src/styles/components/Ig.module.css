@@ -1,6 +1,6 @@
 .ig {
     display: flex;
-    background: rgb(243, 243, 243);
+    background-color: white;
     color: var(--grey);
     font-size: 1.5rem;
     margin: 150px auto 0;

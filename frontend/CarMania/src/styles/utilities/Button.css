@@ -46,9 +46,13 @@
 .buttonsButton {
     margin: 0 12px;
 }
+
 @media only screen and (max-width: 940px) {
     .button {
         font-size: 1.33rem;
+    }
+    .buttonSmall {
+        font-size: 1.1rem;
     }
 }
 
