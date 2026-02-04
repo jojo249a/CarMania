@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { FaRegEnvelope, FaInstagram, FaFacebookF } from "react-icons/fa"
+import { FaRegEnvelope } from "react-icons/fa"
 
 import styles from "../styles/layout/Footer.module.css"
 
@@ -24,9 +24,9 @@ export default function Footer() {
                         <div className={styles.footerColumn}>
                             <div className={styles.footerHeading}>Car sales</div>
                             <ul className={styles.footerList}>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Certified used cars</Link></li>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>New and demo cars</Link></li>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Sales history</Link></li>
+                                <li className={styles.footerItem}><Link to="/used-cars" className={styles.footerLink}>Certified used cars</Link></li>
+                                <li className={styles.footerItem}><Link to="/new-cars" className={styles.footerLink}>New and demo cars</Link></li>
+                                <li className={styles.footerItem}><Link to="/sales-history" className={styles.footerLink}>Sales history</Link></li>
                             </ul>
                             <div className={styles.footerHeading}>Service and car detailing</div>
                             <ul className={styles.footerList}>
@@ -37,8 +37,8 @@ export default function Footer() {
                         <div className={styles.footerColumn}>
                             <div className={styles.footerHeading}>Showrooms</div>
                             <ul className={styles.footerList}>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Showroom Ostrava</Link></li>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Showroom Žilina</Link></li>
+                                <li className={styles.footerItem}><Link to="/showroom/ostrava" className={styles.footerLink}>Showroom Ostrava</Link></li>
+                                <li className={styles.footerItem}><Link to="/showroom/ostrava" className={styles.footerLink}>Showroom Žilina</Link></li>
 
                             </ul>
                             <ul className={styles.footerList}>

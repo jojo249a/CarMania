@@ -6,7 +6,6 @@ import UKFlag from "../assets/uk-flag.svg?react"
 import { FaChevronDown, FaBars } from "react-icons/fa"
 import { useEffect, useState } from "react"
 
-
 import styles from "../styles/layout/Header.module.css"
 
 export default function Header() {
@@ -50,10 +49,10 @@ export default function Header() {
                             </span>
                             <ul className={styles.submenu}>
                                 <li className={styles.submenuItem}>
-                                    <Link className={styles.submenuLink}>Showroom Ostrava</Link>
+                                    <Link to="/showroom/ostrava" className={styles.submenuLink}>Showroom Ostrava</Link>
                                 </li>
                                 <li className={styles.submenuItem}>
-                                    <Link className={styles.submenuLink}>Showroom Žilina</Link>
+                                    <Link to="/showroom/zilina" className={styles.submenuLink}>Showroom Žilina</Link>
                                 </li>
                             </ul>
                         </li> 

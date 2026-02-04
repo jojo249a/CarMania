@@ -5,13 +5,15 @@ const Breadcrumbs = () =>{
     const pathsMap = {
         "/used-cars": "/ Cars for sale / Used cars",
         "/new-cars": "/ Cars for sale / New cars",
-        "/sales-history": "/ Cars for sale / Sales history"
+        "/sales-history": "/ Cars for sale / Sales history",
+        "/showroom/ostrava": "/ Showroom / Ostrava",
+        "/showroom/zilina": "/ Showroom / Žilina"
     };
 
     return (
         <div className="breadcrumbs">
-            <Link to="/" className="clickable">CarMania </Link>
-            {pathsMap[pathname]}
+            <Link to="/" className="clickable">CarMania</Link>
+            <span> {pathsMap[pathname]}</span>
         </div>
     )
 }
