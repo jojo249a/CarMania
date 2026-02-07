@@ -5,7 +5,7 @@ import CZFlag from "../assets/cz-flag.svg?react"
 const ServiceBanner = () => {
     return (
         <Banner src="service.jpg" alt="Car service room" heading="Car Service CarMania">
-            <BannerButton>
+            <BannerButton link="/service">
                 <CZFlag className="buttonIcon" />
                 <span>Order service in <strong>OSTRAVA</strong></span>
             </BannerButton>

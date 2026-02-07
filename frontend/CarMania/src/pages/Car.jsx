@@ -73,7 +73,7 @@ const Car = () => {
 
     return (
         <>
-            <ImagePreview car={car} index={galleryIndex} setIndex={setGalleryIndex} setIsOpen={setImageShown} isOpen={imageShown} />
+            <ImagePreview imgs={car.carImages} index={galleryIndex} setIndex={setGalleryIndex} setIsOpen={setImageShown} isOpen={imageShown} />
             <main>
                 <section className="sectionFirst">
                     <div className={styles.carIntro}>

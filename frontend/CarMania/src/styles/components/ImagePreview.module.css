@@ -1,4 +1,4 @@
-.carImageWrap {
+.imageWrap {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@
     padding-block: 40px;
     text-align: center;
 }
-.carImage {
+.image {
     max-width: 1200px;
     width: 100%;
     user-select: none;

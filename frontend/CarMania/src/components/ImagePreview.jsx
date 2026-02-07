@@ -3,7 +3,9 @@ import { useEffect } from "react";
 
 import styles from "../styles/components/ImagePreview.module.css"
 
-const ImagePreview = ({ car, index, setIndex, setIsOpen, isOpen }) => {
+const ImagePreview = ({ imgs, index, setIndex, setIsOpen, isOpen }) => {
+    let imgSrc = imgs[index].image ? `http://localhost:8080${imgs[index].image}` : imgs[index];
+
     const hideImg = (e) => {
         if (e.target == e.currentTarget) {
             setIsOpen(false);
@@ -12,14 +14,14 @@ const ImagePreview = ({ car, index, setIndex, setIsOpen, isOpen }) => {
 
     const prevImage = () => {
         if (index - 1 < 0) {
-            setIndex(car.carImages.length - 1);
+            setIndex(imgs.length - 1);
             return; 
         }
         setIndex(index - 1);
     };
 
     const nextImage = () => {
-        if (index + 1 >= car.carImages.length) {
+        if (index + 1 >= imgs.length) {
             setIndex(0);
             return;
         }
@@ -40,10 +42,10 @@ const ImagePreview = ({ car, index, setIndex, setIsOpen, isOpen }) => {
 
     return (
         isOpen && 
-        <div className={styles.carImageWrap} onClick={hideImg}>
-            <img src={`http://localhost:8080${car.carImages[index].image}`} 
-                alt={`${car.make + " " + car.model}`}
-                className={styles.carImage} 
+        <div className={styles.imageWrap} onClick={hideImg}>
+            <img src={imgSrc} 
+                alt="Preview"
+                className={styles.image} 
             />
             <FaChevronLeft className={`${styles.swipeLeftIcon} 
                 ${styles.swipeIcon}`}

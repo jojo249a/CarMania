@@ -38,7 +38,7 @@ export default function Footer() {
                             <div className={styles.footerHeading}>Showrooms</div>
                             <ul className={styles.footerList}>
                                 <li className={styles.footerItem}><Link to="/showroom/ostrava" className={styles.footerLink}>Showroom Ostrava</Link></li>
-                                <li className={styles.footerItem}><Link to="/showroom/ostrava" className={styles.footerLink}>Showroom Žilina</Link></li>
+                                <li className={styles.footerItem}><Link to="/showroom/zilina" className={styles.footerLink}>Showroom Žilina</Link></li>
 
                             </ul>
                             <ul className={styles.footerList}>

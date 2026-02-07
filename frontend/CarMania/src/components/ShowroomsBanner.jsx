@@ -6,11 +6,11 @@ import SKFlag from "../assets/sk-flag.svg?react"
 const ShowroomsBanner = () => {
     return (
         <Banner src="showroom2.jpg" alt="Showroom" heading="Showrooms CarMania">
-            <BannerButton>
+            <BannerButton link="/showroom/zilina">
                 <SKFlag className="buttonIcon" />
                 <span><strong>ŽILINA</strong> Showroom</span>
             </BannerButton>
-            <BannerButton>
+            <BannerButton link="/showroom/ostrava">
                 <CZFlag className="buttonIcon" />
                 <span><strong>OSTRAVA</strong> Showroom</span>
             </BannerButton>

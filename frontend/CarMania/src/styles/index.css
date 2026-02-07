@@ -53,6 +53,9 @@ body {
 .sectionSpacing {
     margin-block: 64px;
 }
+.sectionInner {
+    padding-inline: 20px;
+}
 .link {
     text-decoration: underline;
 }
@@ -130,6 +133,9 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+    .sectionSpacing {
+        margin-block: 48px;
+    }
     .heading {
         font-size: 2rem;
     }
@@ -142,9 +148,6 @@ body {
 }
 
 @media only screen and (max-width: 540px) {
-    .sectionSpacing {
-        margin-block: 48px;
-    }
     .headingLogo {
         margin-right: 20px;
     } 
