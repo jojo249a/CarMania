@@ -8,6 +8,7 @@ import SalesHistory from "./pages/SalesHistory"
 import Car from "./pages/Car"
 import ShowroomOstrava from "./pages/ShowroomOstrava"
 import ShowroomZilina from "./pages/ShowroomZilina"
+import Contact from "./pages/Contact"
 import { useEffect } from "react"
 
 export default function App() {
@@ -32,6 +33,7 @@ export default function App() {
         <Route path="/car/:slug" element={<Car />} />
         <Route path="/showroom/ostrava" element={<ShowroomOstrava />} />
         <Route path="/showroom/zilina" element={<ShowroomZilina />}/>
+        <Route path="/contact" element={<Contact /> }/>
       </Routes>
       <Footer />
     </>

@@ -42,7 +42,7 @@ export default function Footer() {
 
                             </ul>
                             <ul className={styles.footerList}>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Contact</Link></li>
+                                <li className={styles.footerItem}><Link to="/contact" className={styles.footerLink}>Contact</Link></li>
                                 <li className={styles.footerItem}><Link className={styles.footerLink}>Leasing</Link></li>
                             </ul>
                         </div>

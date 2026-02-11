@@ -54,7 +54,7 @@ export default function Home() {
             <main>
                 <section>
                     <div className={styles.intro}>
-                        <div key={index} className={styles.introBgImgWrap}>
+                        <div className={styles.introBgImgWrap}>
                             <img src={images[index]} alt="Showroom" className={styles.introBgImg} />
                         </div>
                         <div className={styles.introText}>

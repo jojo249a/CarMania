@@ -1,0 +1,47 @@
+.contactWrap {
+    display: flex;
+    font-size: 1.1rem;
+    max-width: 1200px;   
+    margin-inline: auto;
+}
+.contactHeading {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+.showroomsWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    flex: 1;
+}
+.showroomsAddress {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.showroomsContact {
+    color: var(--grey);
+}  
+.contactIcon {
+    position: relative;
+    top: 0.15em;
+    margin-right: 8px;
+    line-height: 1.5;
+}
+.timetableWrap {
+    flex: 1;
+}
+.showroomSelect {
+    display: flex;
+    text-transform: uppercase;
+}
+.showroomSelect span {
+    border-left: 1px solid var(--dark);
+    padding-inline: 20px;
+}
+.showroomSelect span:first-child {
+    border-left: 0;
+}
+.timetableWrap tr {
+    display: block;
+    padding: 10px;
+}

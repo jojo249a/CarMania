@@ -100,7 +100,7 @@ export default function Header() {
                             </ul>
                         </li>
                         <li className={styles.navItem}>
-                            <Link className={styles.navLink}>Contact</Link>
+                            <Link to="/contact" className={styles.navLink}>Contact</Link>
                         </li>
                     </ul>
                 </nav>

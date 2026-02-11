@@ -8,6 +8,7 @@
     text-align: center;
     padding: 8px 20px;
     font-size: 1.5rem;
+    cursor: pointer;
     transition: background .2s;
 }
 .button:hover {
