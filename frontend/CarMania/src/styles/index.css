@@ -54,10 +54,11 @@ body {
     margin-block: 64px;
 }
 .sectionInner {
-    padding-inline: 20px;
+    padding-inline: 30px;
 }
 .link {
     text-decoration: underline;
+    cursor: pointer;
 }
 .clickable:hover {
     text-decoration: underline;

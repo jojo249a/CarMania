@@ -9,6 +9,7 @@ import Car from "./pages/Car"
 import ShowroomOstrava from "./pages/ShowroomOstrava"
 import ShowroomZilina from "./pages/ShowroomZilina"
 import Contact from "./pages/Contact"
+import AboutUs from "./pages/AboutUs"
 import { useEffect } from "react"
 
 export default function App() {
@@ -32,8 +33,9 @@ export default function App() {
         <Route path="/sales-history" element={<SalesHistory />} />
         <Route path="/car/:slug" element={<Car />} />
         <Route path="/showroom/ostrava" element={<ShowroomOstrava />} />
-        <Route path="/showroom/zilina" element={<ShowroomZilina />}/>
-        <Route path="/contact" element={<Contact /> }/>
+        <Route path="/showroom/zilina" element={<ShowroomZilina />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
       <Footer />
     </>

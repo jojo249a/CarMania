@@ -93,41 +93,43 @@ const Contact = ({ carName }) => {
                         <div className={styles.contactDealers}>
                             <div className={styles.contactDealerCard}>
                                 <div className={styles.contactDealerImageWrap}>
-                                    <img className={styles.contactDealerImage} src="/car-dealer.jpg" alt="Car dealer" />
+                                    <img className={styles.contactDealerImage} src="/car-dealer2.jpeg" alt="Car dealer" />
                                 </div>
                                 <div className={styles.contactDealerText}>
                                     <h2 className={styles.contactDealerName}>
-                                        Gerald Jarvis
+                                        Jozef Vydra
                                     </h2>
-                                    <div className={styles.contactDealerLocation}>
-                                        Located in <strong>Ostrava</strong> 
+                                    <div className={styles.contactDealerJob}>
+                                        Sales Manager <strong>Žilina</strong>
                                     </div>
-                                    <div className={styles.contactDealerIconRow}>
+                                    <div>
                                         <FaPhone className={styles.contactDealerIcon}/>
-                                        +421 948871383
+                                        <span className="link">+421 950 580 240</span>
                                     </div>
-                                    <div className={styles.contactDealerIconRow}>
-                                        <FaEnvelope className={styles.contactDealerIcon}/><span className="link">gerald.jarvis@car-mania.cz</span>
+                                    <div>
+                                        <FaEnvelope className={styles.contactDealerIcon}/>
+                                        <span className="link">jozef.vydra@car-mania.sk</span>
                                     </div>
                                 </div>
                             </div>
                             <div className={styles.contactDealerCard}>
                                 <div className={styles.contactDealerImageWrap}>
-                                    <img className={styles.contactDealerImage} src="/car-dealer2.jpeg" alt="Car dealer" />
+                                    <img className={styles.contactDealerImage} src="/car-dealer.jpg" alt="Car dealer" />
                                 </div>
                                 <div className={styles.contactDealerText}>
                                     <h2 className={styles.contactDealerName}>
-                                        Cory Allen
+                                        Ján Měkký 
                                     </h2>
-                                    <div className={styles.contactDealerLocation}>
-                                        Located in <strong>Žilina</strong>
+                                    <div className={styles.contactDealerJob}>
+                                        Sales Manager <strong>Ostrava</strong> 
                                     </div>
-                                    <div className={styles.contactDealerIconRow}>
+                                    <div>
                                         <FaPhone className={styles.contactDealerIcon}/>
-                                        +421 948871383
+                                         <span className="link">+420 948 871 383</span>
                                     </div>
-                                    <div className={styles.contactDealerIconRow}>
-                                        <FaEnvelope className={styles.contactDealerIcon}/><span className="link">cory.allen@car-mania.sk</span>
+                                    <div>
+                                        <FaEnvelope className={styles.contactDealerIcon}/>
+                                        <span className="link">jan.mekky@car-mania.cz</span>
                                     </div>
                                 </div>
                             </div>

@@ -1,14 +1,21 @@
-import { FaChevronRight, FaPhone, FaRegEnvelope} from "react-icons/fa";
+import { FaPhone, FaRegEnvelope, FaYoutube, FaInstagram, FaFacebook, FaLinkedinIn} from "react-icons/fa"
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import SecondLogo from "../assets/second-logo.svg?react"
 import ContactForm from "../components/Contact"
-import Breadcrumbs from "../components/Breadcrumbs";
-import Heading from "../components/Heading";
-import Buttons from "../components/Buttons";
-import Button from "../components/Button";
+import Breadcrumbs from "../components/Breadcrumbs"
+import Heading from "../components/Heading"
+import Buttons from "../components/Buttons"
+import Button from "../components/Button"
+import Ig from "../components/Ig"
 
 import styles from "../styles/pages/Contact.module.css"
 
 const Contact = () => {
+    const [selectedCity , setSelectedCity] = useState("Zilina");
+    const today = new Date();
+    const dayName = today.toLocaleDateString("en-US", { weekday: "long" });
+
     return (
         <>  
             <main>
@@ -20,10 +27,10 @@ const Contact = () => {
                             Contact
                         </Heading>
                     </div>
-                    <div className="container sectionSpacing">
+                    <div className="container sectionSpacing sectionInner">
                         <div className={styles.contactWrap}>
                             <div className={styles.showroomsWrap}>
-                                <div className={styles.showroomZilina}>
+                                <div className={styles.showroomsDetails}>
                                     <h3 className={styles.contactHeading}>
                                         Showroom Žilina
                                     </h3>
@@ -36,8 +43,14 @@ const Contact = () => {
                                         <div className="link"><FaPhone className={styles.contactIcon}/>+420 596 710 183</div>
                                         <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@ar-cars.cz</div>
                                     </div>
+                                    <div className={styles.showroomsMedia}>
+                                        <Link to=""><FaFacebook className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaInstagram className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaYoutube className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaLinkedinIn className={styles.showroomsMediaIcon}/></Link>
+                                    </div>
                                 </div>
-                                <div className={styles.showroomOstrava}>
+                                <div className={styles.showroomsDetails}>
                                     <h3 className={styles.contactHeading}>
                                         Showroom Ostrava
                                     </h3>
@@ -50,22 +63,103 @@ const Contact = () => {
                                         <div className="link"><FaPhone className={styles.contactIcon}/>+420 596 710 183</div>
                                         <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@ar-cars.cz</div>
                                     </div>
+                                    <div className={styles.showroomsMedia}>
+                                        <Link to=""><FaFacebook className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaInstagram className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaYoutube className={styles.showroomsMediaIcon}/></Link>
+                                        <Link to=""><FaLinkedinIn className={styles.showroomsMediaIcon}/></Link>
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.timetableWrap}>
                                 <h3 className={styles.contactHeading}>Opening hours</h3>
                                 <div className={styles.showroomSelect}>
-                                    <span>Žilina</span>
-                                    <span>Ostrava</span>
+                                    <button 
+                                        onClick={() => setSelectedCity("Zilina")} 
+                                        className={`${styles.showroomSelectOption} ${selectedCity == "Zilina" ? styles.active : ""}`}>
+                                        Žilina
+                                    </button>
+                                    <button 
+                                        onClick={() => setSelectedCity("Ostrava")}
+                                        className={`${styles.showroomSelectOption} ${selectedCity == "Ostrava" ? styles.active : ""}`}>
+                                        Ostrava
+                                    </button>
                                 </div>
-                                <table>
-                                    <tr>a</tr>
-                                    <tr>a</tr>
-                                    <tr>a</tr>
-                                    <tr></tr>
-                                    <tr></tr>
-                                    <tr></tr>
-                                    <tr></tr>
+                                <table className={`${styles.timetable} ${selectedCity == "Zilina" && styles.active}`}>
+                                    <tbody>
+                                        <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
+                                            <td>Monday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Tuesday" ? styles.active : ""}`}>
+                                            <td>Tuesday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Wednesday" ? styles.active : ""}`}>
+                                            <td>Wednesday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Thursday" ? styles.active : ""}`}>
+                                            <td>Thursday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Friday" ? styles.active : ""}`}>
+                                            <td>Friday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Saturday" ? styles.active : ""}`}>
+                                            <td>Saturday</td>
+                                            <td>8:30 - 12:00</td>
+                                            <td>13:30 - 18:30</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Sunday" ? styles.active : ""}`}>
+                                            <td>Sunday</td>
+                                            <td>Only by appointment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table className={`${styles.timetable} ${selectedCity == "Ostrava" && styles.active}`}>
+                                    <tbody>
+                                        <tr>
+                                            <td>Monday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Tuesday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Wednesday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Thursday" ? styles.active : ""}`}>
+                                            <td>Thursday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Friday" ? styles.active : ""}`}>
+                                            <td>Friday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Saturday" ? styles.active : ""}`}>
+                                            <td>Saturday</td>
+                                            <td>9:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Sunday" ? styles.active : ""}`}>
+                                            <td>Sunday</td>
+                                            <td>Only by appointment</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -73,6 +167,7 @@ const Contact = () => {
                 </section>
             </main>
             <ContactForm />  
+            <Ig />
         </>
     )
 }

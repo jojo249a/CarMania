@@ -78,13 +78,13 @@ const ShowroomOstrava = () => {
                                 <div className={styles.infoWrap}>
                                     <strong>CONTACT</strong>
                                     <span>+420 596 710 183</span>
-                                    <span>info@ar-cars.cz</span>
+                                    <span>info@car-mania.cz</span>
                                 </div>
                             </div>
                             <div className={styles.infoCard}>
                                 <div className={styles.infoWrap}>
                                     <strong>COMPANY</strong>
-                                    <span>AR CARS, sro</span>
+                                    <span>CarMania, s. r. o.</span>
                                     <span>I.C.: 26848023</span>
                                     <span>VAT No.: CZ26848023</span>
                                 </div>
@@ -96,7 +96,7 @@ const ShowroomOstrava = () => {
                                 <div className={styles.infoWrap}>
                                     <strong>CONTACT</strong>
                                     <span>+421 948 911 964</span>
-                                    <span>autosalon@ar-cars.cz</span>
+                                    <span>info@car-mania.cz</span>
                                 </div>
                             </div>
                         </div>

@@ -66,7 +66,7 @@ const ShowroomZilina = () => {
                                 <div className={styles.infoWrap}>
                                     <strong>OPENING HOURS</strong>
                                     <span>Mon–Fri</span>
-                                    <span>8:30–16:30</span>
+                                    <span>8:30–18:30</span>
                                 </div>
                                 <div className={styles.infoWrap}>
                                     <strong>ADDRESS</strong>
@@ -75,14 +75,14 @@ const ShowroomZilina = () => {
                                 </div>
                                 <div className={styles.infoWrap}>
                                     <strong>CONTACT</strong>
-                                    <span>+420 596 710 183</span>
-                                    <span>info@ar-cars.cz</span>
+                                    <span>+421 948 911 964</span>
+                                    <span>info@car-mania.sk</span>
                                 </div>
                             </div>
                             <div className={styles.infoCard}>
                                 <div className={styles.infoWrap}>
                                     <strong>COMPANY</strong>
-                                    <span>AR CARS, sro</span>
+                                    <span>CarMania, s. r. o.</span>
                                     <span>I.C.: 26848023</span>
                                     <span>VAT No.: CZ26848023</span>
                                 </div>
@@ -94,7 +94,7 @@ const ShowroomZilina = () => {
                                 <div className={styles.infoWrap}>
                                     <strong>CONTACT</strong>
                                     <span>+421 948 911 964</span>
-                                    <span>autosalon@ar-cars.cz</span>
+                                    <span>info@car-mania.cz</span>
                                 </div>
                             </div>
                         </div>

@@ -70,17 +70,11 @@ export default function Header() {
                                 </li>
                                 <li className={styles.submenuItem}>
                                     <Link to="/new-cars" className={styles.submenuLink}>New & demo cars</Link>
-                                    </li>
-                                <li className={styles.submenuItem}>
-                                    <Link to="/sales-history"className={styles.submenuLink}>Sold cars</Link>
                                 </li>
                             </ul>
                         </li>
                         <li className={styles.navItem}>
                             <Link to="/sales-history" className={styles.navLink}>Sales History</Link>
-                        </li>
-                        <li className={styles.navItem}>
-                            <Link to="" className={styles.navLink}>Leasing</Link>
                         </li>
                         <li className={styles.navItem}>
                             <span className={`${styles.navLink} ${openService ? styles.opened : ""}`} onClick={() => { 
@@ -98,6 +92,9 @@ export default function Header() {
                                     <Link className={styles.submenuLink}>Car detailing</Link>
                                 </li>
                             </ul>
+                        </li>
+                        <li className={styles.navItem}>
+                            <Link to="/about-us" className={styles.navLink}>About us</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link to="/contact" className={styles.navLink}>Contact</Link>
