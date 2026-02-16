@@ -9,6 +9,7 @@ import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Buttons from "../components/Buttons"
 import Button from "../components/Button"
+import Banners from "../components/Banners"
 
 import styles from "../styles/pages/Home.module.css"
 
@@ -99,10 +100,10 @@ export default function Home() {
                     </div> 
                 </section>
             </main>     
-            <div className="banners">
+            <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />
-            </div>
+            </Banners>
             <Ig />
         </>
     )

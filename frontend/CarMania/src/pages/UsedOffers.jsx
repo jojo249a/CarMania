@@ -10,6 +10,7 @@ import ShowroomsBanner from "../components/ShowroomsBanner"
 import Buttons from "../components/Buttons"
 import Button from "../components/Button"
 import Filter from "../components/Filter"
+import Banners from "../components/Banners"
 
 export default function UsedOffers() {
     const [make, setMake] = useState("All");
@@ -41,10 +42,10 @@ export default function UsedOffers() {
                 </section>
             </main>
             <Contact />
-            <div className="banners">
+            <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />
-            </div>
+            </Banners>
         </>
     )
 }

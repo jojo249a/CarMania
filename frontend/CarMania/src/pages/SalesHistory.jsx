@@ -10,6 +10,7 @@ import ShowroomsBanner from "../components/ShowroomsBanner";
 import Buttons from "../components/Buttons";
 import Button from "../components/Button";
 import Filter from "../components/Filter";
+import Banners from "../components/Banners"
 
 export default function SalesHistory() {
     const [make, setMake] = useState("All");  
@@ -44,10 +45,10 @@ export default function SalesHistory() {
                 </section>
             </main>
             <Contact />
-             <div className="banners">
+            <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />
-            </div>
+            </Banners>
         </>
     )
 }

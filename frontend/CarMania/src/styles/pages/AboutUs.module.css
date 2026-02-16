@@ -7,6 +7,8 @@
 .introImg {
     width: 100%;
     height: 100%;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 .introLogo {
     position: absolute;
@@ -27,14 +29,71 @@
 .introOverlay.active {
     background: rgba(0, 0, 0, 0.7);
 }
+.scrollDown {
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    bottom: 2%;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s;
+}
+.scrollDown:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+.arrowDown {
+    font-size: 1.5em;
+    color: white;
+}
 .aboutUsWrap {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 700px;
     line-height: 1.6;
+    margin-bottom: 120px;
 }
-.ourTeamWrap {
+.membersWrap {
     margin: 0 auto;
     max-width: 1000px;
     display: flex;
+    flex-direction: column;
+    gap: 80px;
 }
-
+.memberRow {
+    display: flex;
+    gap: 40px;
+}
+.memberImgWrap {
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.memberImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.memberDetails {
+    flex: 1;
+    padding: 20px;
+    background-color: var(--light2);
+    border-radius: 16px;
+}
+.memberName {
+    font-size: 2em;
+    margin-bottom: 8px;
+}
+.memberRole {
+    margin-bottom: 20px;
+}
+.memberDescription {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+}

@@ -35,12 +35,12 @@ const Contact = () => {
                                         Showroom Žilina
                                     </h3>
                                     <div className={styles.showroomsAddress}>
-                                        <div>Bavaria Motors NV</div>
-                                        <div>Kortrijksesteenweg 306</div>
-                                        <div>8530 Harelbeke</div>
+                                        <div>CarMania, s. r. o.</div>
+                                        <div>Einsteinova 3692/21,</div>
+                                        <div>851 01 Petržalka</div>
                                     </div>
                                     <div className={styles.showroomsContact}>
-                                        <div className="link"><FaPhone className={styles.contactIcon}/>+420 596 710 183</div>
+                                        <div className="link"><FaPhone className={styles.contactIcon}/>+421 948 911 964</div>
                                         <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@ar-cars.cz</div>
                                     </div>
                                     <div className={styles.showroomsMedia}>
@@ -55,9 +55,9 @@ const Contact = () => {
                                         Showroom Ostrava
                                     </h3>
                                     <div className={styles.showroomsAddress}>
-                                        <div>Bavaria Motors NV</div>
-                                        <div>Kortrijksesteenweg 306</div>
-                                        <div>8530 Harelbeke</div>
+                                        <div>CarMania, s. r. o.</div>
+                                        <div>Krmelínská 736/7,</div>
+                                        <div>720 00 Ostrava</div>
                                     </div>
                                     <div className={styles.showroomsContact}>
                                         <div className="link"><FaPhone className={styles.contactIcon}/>+420 596 710 183</div>
@@ -85,7 +85,7 @@ const Contact = () => {
                                         Ostrava
                                     </button>
                                 </div>
-                                <table className={`${styles.timetable} ${selectedCity == "Zilina" && styles.active}`}>
+                                <table className={`${styles.timetable} ${selectedCity == "Zilina" ? styles.active : ""}`}>
                                     <tbody>
                                         <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
                                             <td>Monday</td>
@@ -123,19 +123,19 @@ const Contact = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table className={`${styles.timetable} ${selectedCity == "Ostrava" && styles.active}`}>
+                                <table className={`${styles.timetable} ${selectedCity == "Ostrava" ? styles.active : ""}`}>
                                     <tbody>
-                                        <tr>
+                                        <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
                                             <td>Monday</td>
                                             <td>9:00 - 12:00</td>
                                             <td>13:30 - 17:00</td>
                                         </tr>
-                                        <tr>
+                                        <tr className={`${dayName == "Tuesday" ? styles.active : ""}`}>
                                             <td>Tuesday</td>
                                             <td>9:00 - 12:00</td>
                                             <td>13:30 - 17:00</td>
                                         </tr>
-                                        <tr>
+                                        <tr className={`${dayName == "Wednesday" ? styles.active : ""}`}>
                                             <td>Wednesday</td>
                                             <td>9:00 - 12:00</td>
                                             <td>13:30 - 17:00</td>
