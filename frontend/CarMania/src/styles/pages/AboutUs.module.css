@@ -10,12 +10,6 @@
     user-select: none;
     -webkit-user-drag: none;
 }
-.introLogo {
-    position: absolute;
-    z-index: 100;
-    height: 15%;
-    width: 20%;
-}
 .introOverlay {
     background: rgba(0, 0, 0, 0.2);
     position: absolute;
@@ -59,9 +53,22 @@
 .membersWrap {
     margin: 0 auto;
     max-width: 1000px;
+}
+.membersWrap .heading {
+    margin-bottom: 64px;
+    font-size: 2.33em;
+    font-weight: 300;
+}
+.membersWrap .headingLogo {
+    width: 1.3em;
+    height: 0.65em;
+    margin-right: 2%;
+}
+.membersList {
     display: flex;
     flex-direction: column;
     gap: 80px;
+    margin-bottom: 120px;
 }
 .memberRow {
     display: flex;
@@ -90,7 +97,8 @@
     margin-bottom: 8px;
 }
 .memberRole {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    font-size: 1.1em;
 }
 .memberDescription {
     display: flex;
