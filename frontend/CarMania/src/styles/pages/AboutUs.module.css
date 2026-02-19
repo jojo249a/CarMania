@@ -6,7 +6,8 @@
 }
 .introImg {
     width: 100%;
-    height: 100%;
+    object-fit: cover;
+    height: 78vh;
     user-select: none;
     -webkit-user-drag: none;
 }
@@ -44,11 +45,36 @@
     font-size: 1.5em;
     color: white;
 }
+.statsWrap {
+    position: absolute;
+    transform: translateY(40px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.statsBox {
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    text-transform: uppercase;
+    border-radius: 8px;
+    padding: 25px;
+}
+.statsBox .heading {
+    font-size: 1.5em;   
+    margin-bottom: 8px;
+}
+.statsBox .number {
+    font-size: 2em;
+}
+.statsBox .desc {
+    font-size: 0.9em;
+}
 .aboutUsWrap {
     margin: 0 auto;
     max-width: 700px;
     line-height: 1.6;
-    margin-bottom: 120px;
+    padding-block: 64px 128px;
 }
 .membersWrap {
     margin: 0 auto;
@@ -75,7 +101,7 @@
     gap: 40px;
 }
 .memberImgWrap {
-    border-radius: 100%;
+    border-radius: 8px;
     width: 200px;
     height: 200px;
     overflow: hidden;
@@ -104,4 +130,52 @@
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+}
+
+@media only screen and (max-width: 1140px) {
+    .statsWrap {
+        grid-template-columns: repeat(1, 1fr);  
+        margin-bottom: 150px;
+        gap: 10px;  
+        width: 100%;
+        padding-inline: 30px;
+        justify-items: end;
+    }
+    .statsBox {
+        max-width: 400px;
+        width: 100%;
+    }
+}   
+
+@media only screen and (max-width: 940px) {
+    .statsWrap {
+        grid-template-columns: repeat(1, 1fr);
+        font-size: 0.9em;   
+    }
+    .statsBox {
+        max-width: 350px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .memberRow {
+        flex-direction: column;
+    }
+    .memberRow:nth-child(even) .memberImgWrap  {
+        margin-left: auto;
+    }
+    .statsBox {
+        max-width: 250px;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .statsWrap {
+        margin-bottom: 280px;
+    }
+    .statsBox {
+        max-width: 100%;
+        padding: 15px;
+        font-size: 0.9em;
+    }
 }

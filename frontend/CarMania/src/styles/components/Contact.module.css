@@ -47,7 +47,6 @@
 }
 .contactDealers {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
@@ -56,13 +55,13 @@
     flex-direction: column;
     gap: 10px;
     flex: 1;
-    width: 300px;
+    width: 100%;
 }
 .contactDealerCard:last-child {
     margin-bottom: 0;
 }
 .contactDealerImageWrap {
-    height: 350px;
+    max-height: 350px;
     border-radius: 8px;
     overflow: hidden;
     aspect-ratio: 1 / 1;
@@ -114,13 +113,13 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .contactDealerName {
-        font-size: 1.75em;
+    .contactDealers {
+        flex-direction: column;
     }
 }
 
 @media only screen and (max-width: 540px) {
     .contactInner {
-        padding-inline: 32px;
+        padding-inline: 16px;
     }
 }

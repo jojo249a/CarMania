@@ -16,12 +16,16 @@ const AboutUs = () => {
     const nextSectionRef = useRef(null);
 
     const scrollDown = () => {
-        const headerHeight = 140;
+        let offset = 96;
+
+        if (window.innerWidth <= 1140) {
+            offset = 0;
+        }
 
         const elementTop = nextSectionRef.current.offsetTop;
 
         window.scrollTo({
-            top: elementTop - headerHeight,
+            top: elementTop - offset,
             behavior: "smooth"
         });
     };
@@ -44,14 +48,52 @@ const AboutUs = () => {
                 <section>
                     <div ref={introRef} className={styles.intro}>
                         <img src="/showroom9.jpg" alt="Showroom" className={styles.introImg} />
+                        <div className={`${styles.introOverlay} ${introOverlay ? styles.active : ""}`}></div>
+                        <div className={styles.statsWrap}>
+                            <div className={styles.statsBox}>
+                                <h3 className={styles.heading}>
+                                    <span className={styles.number}>20 </span>
+                                    Years
+                                </h3>
+                                <div className={styles.desc}>
+                                    We are on the market
+                                </div>
+                            </div>
+                            <div className={styles.statsBox}>
+                                <h3 className={styles.heading}>
+                                    <span className={styles.number}>2 </span>
+                                    Showrooms
+                                </h3>
+                                <div className={styles.desc}>
+                                    Ostrava and Žilina
+                                </div>
+                            </div>
+                            <div className={styles.statsBox}>
+                                <h3 className={styles.heading}>
+                                    <span className={styles.number}>3000 </span>
+                                    Cars
+                                </h3>
+                                <div className={styles.desc}>
+                                    We have sold
+                                </div>
+                            </div>
+                            <div className={styles.statsBox}>
+                                <h3 className={styles.heading}>
+                                    <span className={styles.number}>16 </span>
+                                    People
+                                </h3>
+                                <div className={styles.desc}>
+                                    Are in our team
+                                </div>
+                            </div>
+                        </div>
                         <div className={styles.scrollDown} onClick={scrollDown}>
                             <FaChevronDown className={styles.arrowDown} />
                         </div>
-                        <div className={`${styles.introOverlay} ${introOverlay ? styles.active : ""}`}></div>
                     </div>
                 </section>
-                <section ref={nextSectionRef}>
-                    <div className="container sectionSpacing sectionInner">
+                <section ref={nextSectionRef} className="sectionWhite">
+                    <div className="container sectionInner">
                         <div className={styles.aboutUsWrap}>  
                             <p> 
                                 <strong>
