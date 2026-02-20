@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { Routes, Route, useLocation } from "react-router-dom"
 import Header from "./layout/Header"
 import Footer from "./layout/Footer"
@@ -10,7 +11,7 @@ import ShowroomOstrava from "./pages/ShowroomOstrava"
 import ShowroomZilina from "./pages/ShowroomZilina"
 import Contact from "./pages/Contact"
 import AboutUs from "./pages/AboutUs"
-import { useEffect } from "react"
+import Services from "./pages/Services"
 
 export default function App() {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/showroom/zilina" element={<ShowroomZilina />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/services" element={<Services />}/>
       </Routes>
       <Footer />
     </>

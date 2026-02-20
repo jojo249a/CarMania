@@ -33,8 +33,8 @@ export default function Footer() {
                             </ul>
                             <div className={styles.footerHeading}>Service and car detailing</div>
                             <ul className={styles.footerList}>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Service</Link></li>
-                                <li className={styles.footerItem}><Link className={styles.footerLink}>Car detailing</Link></li>     
+                                <li className={styles.footerItem}><Link to="/services" className={styles.footerLink}>Service</Link></li>
+                                <li className={styles.footerItem}><Link to="/services" className={styles.footerLink}>Car detailing</Link></li>     
                             </ul>
                         </div>
                         <div className={styles.footerColumn}>
@@ -46,7 +46,7 @@ export default function Footer() {
                             </ul>
                             <ul className={styles.footerList}>
                                 <li className={styles.footerItem}><Link to="/contact" className={styles.footerLink}>Contact</Link></li>
-                                <li className={styles.footerItem}><Link to=""className={styles.footerLink}>About us</Link></li>
+                                <li className={styles.footerItem}><Link to="/about-us"className={styles.footerLink}>About us</Link></li>
                             </ul>
                         </div>
                     </div>

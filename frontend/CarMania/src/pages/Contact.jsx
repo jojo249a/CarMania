@@ -23,7 +23,6 @@ const Contact = () => {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Contact
                         </Heading>
                     </div>

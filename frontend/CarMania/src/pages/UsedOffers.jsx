@@ -22,7 +22,6 @@ export default function UsedOffers() {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Used cars for sale
                         </Heading>
                     </div>

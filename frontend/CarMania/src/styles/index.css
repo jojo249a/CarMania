@@ -44,7 +44,7 @@ body {
 .headingLogo {
     width: 1.3em;
     height: .65em;
-    margin-right: 40px;
+    margin-right: 3%;
 }   
 .container {
     margin-inline: auto;
@@ -140,9 +140,6 @@ body {
     .heading {
         font-size: 2.5em;
     }
-    .headingLogo {
-        margin-right: 30px;
-    }  
     .spaced {
         margin-block: 45px;
     }
@@ -152,9 +149,6 @@ body {
     .heading {
         font-size: 2em;
     }
-    .headingLogo {
-        margin-right: 20px;
-    } 
     .loadingLogo {
         display: block;
         margin-inline: auto;

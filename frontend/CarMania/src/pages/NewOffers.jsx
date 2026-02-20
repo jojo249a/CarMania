@@ -22,7 +22,6 @@ export default function NewOffers() {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Current range of new & demo cars
                         </Heading>
                     </div>

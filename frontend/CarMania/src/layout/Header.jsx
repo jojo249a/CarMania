@@ -86,10 +86,10 @@ export default function Header() {
                             </span>
                             <ul className={styles.submenu}>
                                 <li className={styles.submenuItem}>
-                                    <Link className={styles.submenuLink}>Service</Link>
+                                    <Link to="/services" className={styles.submenuLink}>Service</Link>
                                 </li>
                                 <li className={styles.submenuItem}>
-                                    <Link className={styles.submenuLink}>Car detailing</Link>
+                                    <Link to="/services" className={styles.submenuLink}>Car detailing</Link>
                                 </li>
                             </ul>
                         </li>

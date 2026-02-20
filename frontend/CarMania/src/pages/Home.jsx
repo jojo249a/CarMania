@@ -81,7 +81,6 @@ export default function Home() {
                 <section>
                     <div className="container sectionSpacing">
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Current range of new and used cars
                         </Heading> 
                     </div>

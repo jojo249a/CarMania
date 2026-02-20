@@ -7,12 +7,12 @@
 .introImg {
     width: 100%;
     object-fit: cover;
-    height: 78vh;
+    height: 750px;
     user-select: none;
     -webkit-user-drag: none;
 }
 .introOverlay {
-    background: rgba(0, 0, 0, 0.2);
+    background: transparent;
     position: absolute;
     top: 0;
     left: 0;

@@ -56,7 +56,6 @@ const Contact = ({ carName }) => {
                 <div className="container">
                     <div className={styles.contactInner}>
                         <Heading className={styles.contactHeading}>
-                            <SecondLogo className={`headingLogo`} />
                             {carName ? `Interested in this ${carName}?` : `Interested in a car?`}
                         </Heading>
                         <form className={styles.contactForm} onSubmit={handleSubmit}>

@@ -22,7 +22,6 @@ export default function SalesHistory() {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Sales history
                         </Heading>
                     </div>

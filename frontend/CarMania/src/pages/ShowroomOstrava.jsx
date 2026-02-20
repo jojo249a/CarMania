@@ -29,7 +29,6 @@ const ShowroomOstrava = () => {
                     <div className="container sectionSpacing">
                         <Breadcrumbs />
                         <Heading>
-                            <SecondLogo className={`headingLogo`}/>
                             Showroom Ostrava
                         </Heading>
                     </div>

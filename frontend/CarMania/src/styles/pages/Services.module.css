@@ -1,0 +1,51 @@
+.serviceList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-block: 20px;
+    width: 100%;
+    gap: 10px;
+}
+.serviceBlock {
+    position: relative;
+    height: 400px;  
+}
+.serviceBlock .textWrap {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    font-size: 1.6em;
+    width: 100%;
+    padding: 20px;
+}
+.serviceBlock .text {
+    display: block;
+    background: rgba(0, 0, 0, 0.747);
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+}
+.serviceImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+@media only screen and (max-width: 1140px) {
+
+}
+
+@media only screen and (max-width: 940px) {
+    .serviceList {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width: 540px) {
+
+}
