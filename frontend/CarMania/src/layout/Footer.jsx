@@ -20,8 +20,8 @@ export default function Footer() {
                                 <div>IČ: 26848023</div>
                                 <Link to="" className={`${styles.footerIconRow} link`}>
                                     <FaRegEnvelope />
-                                    info@carmania.sk
-                                </Link>
+                                    info@car-mania.cz
+                                </Link> 
                             </div>
                         </div>
                         <div className={styles.footerColumn}>
@@ -31,20 +31,15 @@ export default function Footer() {
                                 <li className={styles.footerItem}><Link to="/new-cars" className={styles.footerLink}>New and demo cars</Link></li>
                                 <li className={styles.footerItem}><Link to="/sales-history" className={styles.footerLink}>Sales history</Link></li>
                             </ul>
-                            <div className={styles.footerHeading}>Service and car detailing</div>
-                            <ul className={styles.footerList}>
-                                <li className={styles.footerItem}><Link to="/services" className={styles.footerLink}>Service</Link></li>
-                                <li className={styles.footerItem}><Link to="/services" className={styles.footerLink}>Car detailing</Link></li>     
-                            </ul>
                         </div>
                         <div className={styles.footerColumn}>
                             <div className={styles.footerHeading}>Showrooms</div>
                             <ul className={styles.footerList}>
                                 <li className={styles.footerItem}><Link to="/showroom/ostrava" className={styles.footerLink}>Showroom Ostrava</Link></li>
                                 <li className={styles.footerItem}><Link to="/showroom/zilina" className={styles.footerLink}>Showroom Žilina</Link></li>
-
                             </ul>
                             <ul className={styles.footerList}>
+                                <li className={styles.footerItem}><Link to="/services" className={styles.footerLink}>Services</Link></li>
                                 <li className={styles.footerItem}><Link to="/contact" className={styles.footerLink}>Contact</Link></li>
                                 <li className={styles.footerItem}><Link to="/about-us"className={styles.footerLink}>About us</Link></li>
                             </ul>

@@ -77,21 +77,7 @@ export default function Header() {
                             <Link to="/sales-history" className={styles.navLink}>Sales History</Link>
                         </li>
                         <li className={styles.navItem}>
-                            <span className={`${styles.navLink} ${openService ? styles.opened : ""}`} onClick={() => { 
-                                if (window.innerWidth <= 1140) {
-                                    setOpenService(!openService);
-                                }}}>
-                                Service
-                                <FaChevronDown className={styles.headerArrowDown} />
-                            </span>
-                            <ul className={styles.submenu}>
-                                <li className={styles.submenuItem}>
-                                    <Link to="/services" className={styles.submenuLink}>Service</Link>
-                                </li>
-                                <li className={styles.submenuItem}>
-                                    <Link to="/services" className={styles.submenuLink}>Car detailing</Link>
-                                </li>
-                            </ul>
+                            <Link to="/services" className={styles.navLink}>Services</Link>
                         </li>
                         <li className={styles.navItem}>
                             <Link to="/about-us" className={styles.navLink}>About us</Link>

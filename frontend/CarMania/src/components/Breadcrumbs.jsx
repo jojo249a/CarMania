@@ -8,7 +8,8 @@ const Breadcrumbs = () =>{
         "/sales-history": "/ Cars for sale / Sales history",
         "/showroom/ostrava": "/ Showroom / Ostrava",
         "/showroom/zilina": "/ Showroom / Žilina",
-        "/contact": "/ Contact"
+        "/contact": "/ Contact",
+        "/services": "/ Services"
     };
 
     return (
