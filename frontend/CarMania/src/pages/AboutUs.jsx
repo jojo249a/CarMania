@@ -3,7 +3,7 @@ import { FaChevronDown } from "react-icons/fa"
 import ShowroomsBanner from "../components/ShowroomsBanner"
 import ServiceBanner from "../components/ServiceBanner"
 import Banners from "../components/Banners"
-import Contact from "../components/Contact"
+import SalesContact from "../components/SalesContact"
 import Ig from "../components/Ig"
 import SecondLogo from "../assets/second-logo.svg?react"
 
@@ -139,7 +139,8 @@ const AboutUs = () => {
                                             <span><strong>Favorite car?</strong></span>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                             Mauris accumsan magna nisl, id vehicula metus sagittis vitae. 
-                                            Suspendisse ac convallis diam. Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
+                                            Suspendisse ac convallis diam. 
+                                            Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
                                             Praesent consectetur nunc vel augue dictum sagittis. 
                                             Mauris a ante varius, dictum tortor vel, consequat nunc. 
                                         </p>
@@ -160,7 +161,8 @@ const AboutUs = () => {
                                             <span><strong>Favorite car?</strong></span>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                             Mauris accumsan magna nisl, id vehicula metus sagittis vitae. 
-                                            Suspendisse ac convallis diam. Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
+                                            Suspendisse ac convallis diam. 
+                                            Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
                                             Praesent consectetur nunc vel augue dictum sagittis. 
                                             Mauris a ante varius, dictum tortor vel, consequat nunc. 
                                             Donec sed ex ac risus dignissim sollicitudin quis eu risus.                                     
@@ -188,7 +190,8 @@ const AboutUs = () => {
                                             <span><strong>Favorite car?</strong></span>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                                             Mauris accumsan magna nisl, id vehicula metus sagittis vitae. 
-                                            Suspendisse ac convallis diam. Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
+                                            Suspendisse ac convallis diam. 
+                                            Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
                                             Praesent consectetur nunc vel augue dictum sagittis. 
                                             Mauris a ante varius, dictum tortor vel, consequat nunc. 
                                             Donec sed ex ac risus dignissim sollicitudin quis eu risus.                                     
@@ -197,7 +200,7 @@ const AboutUs = () => {
                                 </div>
                                 <div className={styles.memberRow}>
                                     <div className={styles.memberImgWrap}>
-                                        <img src="/mechanic.jpg" alt="Ján Měkký" className={styles.memberImg} />
+                                        <img src="/head-of-service.png" alt="Vladimír Weiss" className={styles.memberImg} />
                                     </div>
                                     <div className={styles.memberDetails}>
                                         <h3 className={styles.memberName}>
@@ -214,12 +217,33 @@ const AboutUs = () => {
                                         </p>
                                     </div>
                                 </div>
+                                <div className={styles.memberRow}>
+                                    <div className={styles.memberImgWrap}>
+                                        <img src="/service-advisor.avif" alt="Stanislav Jančík" className={styles.memberImg} />
+                                    </div>
+                                    <div className={styles.memberDetails}>
+                                        <h3 className={styles.memberName}>
+                                            Stanislav Jančík
+                                        </h3>
+                                        <div className={styles.memberRole}>
+                                            Service advisor
+                                        </div>
+                                        <p className={styles.memberDescription}>
+                                            <span><strong>Favorite car?</strong></span>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                                            Mauris accumsan magna nisl, id vehicula metus sagittis vitae. 
+                                            Suspendisse ac convallis diam. 
+                                            Vestibulum quis ligula lacinia, ornare lacus in, rhoncus ligula.
+                                            Praesent consectetur nunc vel augue dictum sagittis.                           
+                                        </p>
+                                    </div>
+                                </div>
                             </div>  
                         </div>
                     </div>
                 </section>
             </main>
-            <Contact />
+            <SalesContact />
             <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />

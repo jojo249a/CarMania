@@ -1,10 +1,9 @@
 import { useState } from "react"
 import { FaChevronRight } from "react-icons/fa"
-import SecondLogo from "../assets/second-logo.svg?react"
 import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import Breadcrumbs from "../components/Breadcrumbs"
-import Contact from "../components/Contact"
+import SalesContact from "../components/SalesContact"
 import ServiceBanner from "../components/ServiceBanner"
 import ShowroomsBanner from "../components/ShowroomsBanner"
 import Buttons from "../components/Buttons"
@@ -40,7 +39,7 @@ export default function NewOffers() {
                     </div>
                 </section>
             </main>
-            <Contact />  
+            <SalesContact />  
             <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />

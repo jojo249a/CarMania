@@ -3,9 +3,9 @@ import { Link } from "react-router-dom"
 import ShowroomsBanner from "../components/ShowroomsBanner"
 import ServiceBanner from "../components/ServiceBanner"
 import Banners from "../components/Banners"
-import Contact from "../components/Contact"
 import Breadcrumbs from "../components/Breadcrumbs"
 import Heading from "../components/Heading"
+import ServiceContact from "../components/ServiceContact"
 
 import styles from "../styles/pages/Services.module.css"
 
@@ -83,7 +83,7 @@ const Services = () => {
 
                 </section>
             </main>
-            <Contact />
+            <ServiceContact />
             <Banners>
                 <ShowroomsBanner />
                 <ServiceBanner />

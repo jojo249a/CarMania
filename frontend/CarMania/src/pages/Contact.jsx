@@ -1,12 +1,9 @@
 import { FaPhone, FaRegEnvelope, FaYoutube, FaInstagram, FaFacebook, FaLinkedinIn} from "react-icons/fa"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import SecondLogo from "../assets/second-logo.svg?react"
-import ContactForm from "../components/Contact"
+import SalesContact from "../components/SalesContact"
 import Breadcrumbs from "../components/Breadcrumbs"
 import Heading from "../components/Heading"
-import Buttons from "../components/Buttons"
-import Button from "../components/Button"
 import Ig from "../components/Ig"
 
 import styles from "../styles/pages/Contact.module.css"
@@ -165,7 +162,7 @@ const Contact = () => {
                     </div>
                 </section>
             </main>
-            <ContactForm />  
+            <SalesContact />  
             <Ig />
         </>
     )

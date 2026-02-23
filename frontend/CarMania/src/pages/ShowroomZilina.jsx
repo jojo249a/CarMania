@@ -1,6 +1,5 @@
 import { useState } from "react"
 import { FaEye } from "react-icons/fa"
-import SecondLogo from "../assets/second-logo.svg?react"
 import Breadcrumbs from "../components/Breadcrumbs"
 import Heading from "../components/Heading" 
 import ImagePreview from "../components/ImagePreview"

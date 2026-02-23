@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
 import { FaPhone, FaEnvelope } from "react-icons/fa"
 import SecondLogo from "../assets/second-logo.svg?react"
 import Button from "./Button"
@@ -7,14 +8,26 @@ import Notification from "./Notification"
 
 import styles from "../styles/components/Contact.module.css"
 
-const Contact = ({ carName }) => {
+const Contact = ({ carName, children }) => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [message, setMessage] = useState("");
-    
+    const [heading, setHeading] = useState("Interested in a car?");
     const [formResponse, setFormResponse] = useState("");
+
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        if (carName) {
+            setHeading(`Interested in this ${carName}?`);
+        }
+        
+        if (pathname.includes("/services")) {
+            setHeading("Contact the service team directly");
+        }
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -56,7 +69,7 @@ const Contact = ({ carName }) => {
                 <div className="container">
                     <div className={styles.contactInner}>
                         <Heading className={styles.contactHeading}>
-                            {carName ? `Interested in this ${carName}?` : `Interested in a car?`}
+                            {heading}
                         </Heading>
                         <form className={styles.contactForm} onSubmit={handleSubmit}>
                             <div className={styles.contactFormFields}>
@@ -90,48 +103,7 @@ const Contact = ({ carName }) => {
                             </div>
                         </form>
                         <div className={styles.contactDealers}>
-                            <div className={styles.contactDealerCard}>
-                                <div className={styles.contactDealerImageWrap}>
-                                    <img className={styles.contactDealerImage} src="/car-dealer2.jpeg" alt="Car dealer" />
-                                </div>
-                                <div className={styles.contactDealerText}>
-                                    <h2 className={styles.contactDealerName}>
-                                        Jozef Vydra
-                                    </h2>
-                                    <div className={styles.contactDealerJob}>
-                                        Sales Manager <strong>Žilina</strong>
-                                    </div>
-                                    <div>
-                                        <FaPhone className={styles.contactDealerIcon}/>
-                                        <span className="link">+421 950 580 240</span>
-                                    </div>
-                                    <div>
-                                        <FaEnvelope className={styles.contactDealerIcon}/>
-                                        <span className="link">jozef.vydra@car-mania.sk</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className={styles.contactDealerCard}>
-                                <div className={styles.contactDealerImageWrap}>
-                                    <img className={styles.contactDealerImage} src="/car-dealer.jpg" alt="Car dealer" />
-                                </div>
-                                <div className={styles.contactDealerText}>
-                                    <h2 className={styles.contactDealerName}>
-                                        Ján Měkký 
-                                    </h2>
-                                    <div className={styles.contactDealerJob}>
-                                        Sales Manager <strong>Ostrava</strong> 
-                                    </div>
-                                    <div>
-                                        <FaPhone className={styles.contactDealerIcon}/>
-                                         <span className="link">+420 948 871 383</span>
-                                    </div>
-                                    <div>
-                                        <FaEnvelope className={styles.contactDealerIcon}/>
-                                        <span className="link">jan.mekky@car-mania.cz</span>
-                                    </div>
-                                </div>
-                            </div>
+                            {children}
                         </div>
                     </div>
                 </div>

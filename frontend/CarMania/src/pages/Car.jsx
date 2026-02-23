@@ -7,7 +7,7 @@ import Offers from "../components/Offers"
 import Heading from "../components/Heading"
 import LoadingScreen from "../components/LoadingScreen"
 import Button from "../components/Button"
-import Contact from "../components/Contact"
+import SalesContact from "../components/SalesContact"
 import Buttons from "../components/Buttons"
 import ImagePreview from "../components/ImagePreview"
 
@@ -266,7 +266,7 @@ const Car = () => {
                     </div> 
                 </aside>
             </main>
-            <Contact carName={car.make + " " + car.model}/>
+            <SalesContact carName={car.make + " " + car.model} />
         </>
     )
 }
