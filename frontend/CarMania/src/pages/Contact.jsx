@@ -9,7 +9,7 @@ import Ig from "../components/Ig"
 import styles from "../styles/pages/Contact.module.css"
 
 const Contact = () => {
-    const [selectedCity , setSelectedCity] = useState("Zilina");
+    const [selectedOption, setSelectedOption] = useState("Zilina");
     const today = new Date();
     const dayName = today.toLocaleDateString("en-US", { weekday: "long" });
 
@@ -71,17 +71,22 @@ const Contact = () => {
                                 <h3 className={styles.contactHeading}>Opening hours</h3>
                                 <div className={styles.showroomSelect}>
                                     <button 
-                                        onClick={() => setSelectedCity("Zilina")} 
-                                        className={`${styles.showroomSelectOption} ${selectedCity == "Zilina" ? styles.active : ""}`}>
-                                        Žilina
+                                        onClick={() => setSelectedOption("Zilina")} 
+                                        className={`${styles.showroomSelectOption} ${selectedOption == "Zilina" ? styles.active : ""}`}>
+                                        Showroom Žilina
                                     </button>
                                     <button 
-                                        onClick={() => setSelectedCity("Ostrava")}
-                                        className={`${styles.showroomSelectOption} ${selectedCity == "Ostrava" ? styles.active : ""}`}>
-                                        Ostrava
+                                        onClick={() => setSelectedOption("Ostrava")}
+                                        className={`${styles.showroomSelectOption} ${selectedOption == "Ostrava" ? styles.active : ""}`}>
+                                        Showroom Ostrava
+                                    </button>
+                                    <button 
+                                        onClick={() => setSelectedOption("Service")}
+                                        className={`${styles.showroomSelectOption} ${selectedOption == "Service" ? styles.active : ""}`}>
+                                        Service
                                     </button>
                                 </div>
-                                <table className={`${styles.timetable} ${selectedCity == "Zilina" ? styles.active : ""}`}>
+                                <table className={`${styles.timetable} ${selectedOption == "Zilina" ? styles.active : ""}`}>
                                     <tbody>
                                         <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
                                             <td>Monday</td>
@@ -119,7 +124,7 @@ const Contact = () => {
                                         </tr>
                                     </tbody>
                                 </table>
-                                <table className={`${styles.timetable} ${selectedCity == "Ostrava" ? styles.active : ""}`}>
+                                <table className={`${styles.timetable} ${selectedOption == "Ostrava" ? styles.active : ""}`}>
                                     <tbody>
                                         <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
                                             <td>Monday</td>
@@ -154,6 +159,43 @@ const Contact = () => {
                                         <tr className={`${dayName == "Sunday" ? styles.active : ""}`}>
                                             <td>Sunday</td>
                                             <td>Only by appointment</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <table className={`${styles.timetable} ${selectedOption == "Service" ? styles.active : ""}`}>
+                                    <tbody>
+                                        <tr className={`${dayName == "Monday" ? styles.active : ""}`}>
+                                            <td>Monday</td>
+                                            <td>8:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Tuesday" ? styles.active : ""}`}>
+                                            <td>Tuesday</td>
+                                            <td>8:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Wednesday" ? styles.active : ""}`}>
+                                            <td>Wednesday</td>
+                                            <td>8:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Thursday" ? styles.active : ""}`}>
+                                            <td>Thursday</td>
+                                            <td>8:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Friday" ? styles.active : ""}`}>
+                                            <td>Friday</td>
+                                            <td>8:00 - 12:00</td>
+                                            <td>13:30 - 17:00</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Saturday" ? styles.active : ""}`}>
+                                            <td>Saturday</td>
+                                            <td>Closed</td>
+                                        </tr>
+                                        <tr className={`${dayName == "Sunday" ? styles.active : ""}`}>
+                                            <td>Sunday</td>
+                                            <td>Closed</td>
                                         </tr>
                                     </tbody>
                                 </table>

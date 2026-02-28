@@ -129,7 +129,7 @@
 .memberDescription {
     display: flex;
     flex-direction: column;
-    line-height: 1.6;
+    line-height: 1.8;
 }
 
 @media only screen and (max-width: 1140px) {

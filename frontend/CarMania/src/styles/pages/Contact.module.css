@@ -61,6 +61,7 @@
     padding-inline: 20px;
     cursor: pointer;
     font: inherit;
+    flex: 1;
 }
 .showroomSelectOption.active {
     color: var(--grey2);
@@ -120,6 +121,13 @@
     .showroomsWrap {
         flex-direction: column;
     }
+    .showroomSelect {
+
+    }
+    .showroomSelectOption {
+        padding-inline: 15px;
+        font-size: 0.95em;
+    }
     .timetable td:first-child {
         flex-basis: 100%;
         color: var(--lightgrey);
@@ -128,4 +136,5 @@
     .timetable td {
         flex-basis: 50%;
     }
+
 }
