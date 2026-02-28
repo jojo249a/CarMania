@@ -20,6 +20,8 @@ export default function Header() {
     const handleScroll = () => setHeaderBg(window.scrollY > 0);
 
     useEffect(() => {
+        setOpenNav(false);
+
         if (pathname != "/") {
             setHeaderBg(true);
         } else {

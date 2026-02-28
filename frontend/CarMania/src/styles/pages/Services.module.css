@@ -36,12 +36,16 @@
     background: rgba(0, 0, 0, 0.75);
     border-radius: 16px;
 }
-.serviceImg {
+.serviceImgWrap {
     position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+.serviceImgWrap .serviceImg {
     border-radius: 16px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 .serviceBlock::before {
     content: "";
@@ -75,9 +79,39 @@
 }
 
 @media only screen and (max-width: 768px) {
-
+    .serviceBlock .textWrap {
+        font-size: 1.3em;
+    }
 }
 
 @media only screen and (max-width: 540px) {
-
+    .serviceBlock {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+    .serviceImgWrap {
+        height: 400px;
+    }
+    .serviceBlock .serviceImg {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .serviceBlock .textWrap {
+        position: static;
+        flex-direction: column;
+        gap: 8px;
+        background: white;
+        padding: 20px 10px;
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
+    }
+    .serviceBlock .text {
+        background: var(--grey);
+    }
+    .serviceBlock .arrowWrap {
+        background: var(--red);
+        display: flex;
+        justify-content: center;
+    }
 }

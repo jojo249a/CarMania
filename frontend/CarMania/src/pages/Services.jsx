@@ -24,58 +24,58 @@ const Services = () => {
                 <section>
                     <div className="container sectionSpacing sectionInner">
                         <div className={styles.serviceList}>
-                            <div className={styles.serviceBlock}>
-                                <Link to="/services/car-detailing">
+                            <Link to="/services/service" className={styles.serviceBlock}>
+                                <div className={styles.serviceImgWrap}>
                                     <img src="/service.jpg" alt="Service" className={styles.serviceImg} />
-                                    <div className={styles.textWrap}>
-                                        <span className={styles.text}>
-                                            Service of luxury and sports vehicles
-                                        </span>
-                                        <div className={styles.arrowWrap}>
-                                            <FaArrowRight className={styles.arrow}/>
-                                        </div>
+                                </div>
+                                <div className={styles.textWrap}>
+                                    <span className={styles.text}>
+                                        Service of luxury and sports vehicles
+                                    </span>
+                                    <div className={styles.arrowWrap}>
+                                        <FaArrowRight className={styles.arrow}/>
                                     </div>
-                                </Link>
-                            </div>
-                            <div className={styles.serviceBlock}>
-                                <Link to="/services/car-detailing">
+                                </div>
+                            </Link>
+                            <Link to="/services/parts-&-accessories" className={styles.serviceBlock}>
+                                <div className={styles.serviceImgWrap}>
                                     <img src="/service2.jpg" alt="Service" className={styles.serviceImg} />
-                                    <div className={styles.textWrap}>
-                                        <span className={styles.text}>
-                                            Spare parts and accessories
-                                        </span>
-                                        <div className={styles.arrowWrap}>
-                                            <FaArrowRight className={styles.arrow}/>
-                                        </div>
+                                </div>
+                                <div className={styles.textWrap}>
+                                    <span className={styles.text}>
+                                        Spare parts and accessories
+                                    </span>
+                                    <div className={styles.arrowWrap}>
+                                        <FaArrowRight className={styles.arrow}/>
                                     </div>
-                                </Link>
-                            </div>
-                            <div className={styles.serviceBlock}>
-                                <Link to="/services/car-detailing">
+                                </div>
+                            </Link>
+                            <Link to="/services/transport" className={styles.serviceBlock}>
+                                <div className={styles.serviceImgWrap}>
                                     <img src="/detailing.jpg" alt="Service" className={styles.serviceImg} />
-                                    <div className={styles.textWrap}>
-                                        <span className={styles.text}>
-                                            Pick-up & Door-to-Door Service
-                                        </span>
-                                        <div className={styles.arrowWrap}>
-                                            <FaArrowRight className={styles.arrow}/>
-                                        </div>
+                                </div>
+                                <div className={styles.textWrap}>
+                                    <span className={styles.text}>
+                                        Pick-up & door-to-door service
+                                    </span>
+                                    <div className={styles.arrowWrap}>
+                                        <FaArrowRight className={styles.arrow}/>
                                     </div>
-                                 </Link>
-                            </div>
-                            <div className={styles.serviceBlock}>
-                                <Link to="/services/car-detailing">
+                                </div>
+                            </Link>
+                            <Link to="/services/car-detailing" className={styles.serviceBlock}>
+                                <div className={styles.serviceImgWrap}>
                                     <img src="/detailing2.png" alt="Service" className={styles.serviceImg} />
-                                    <div className={styles.textWrap}>
-                                        <span className={styles.text}>
-                                            Professional detailing and car protection
-                                        </span>
-                                        <div className={styles.arrowWrap}>
-                                            <FaArrowRight className={styles.arrow}/>
-                                        </div>
+                                </div>
+                                <div className={styles.textWrap}>
+                                    <span className={styles.text}>
+                                        Professional detailing and car protection
+                                    </span>
+                                    <div className={styles.arrowWrap}>
+                                        <FaArrowRight className={styles.arrow}/>
                                     </div>
-                                </Link>
-                            </div>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </section>
