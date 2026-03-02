@@ -64,7 +64,6 @@
     object-fit: cover;
 }
 
-
 @media only screen and (max-width: 1140px) {
     .imgGallery {
         grid-template-columns: repeat(4, 1fr);

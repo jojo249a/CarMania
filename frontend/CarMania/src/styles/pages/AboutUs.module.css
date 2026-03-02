@@ -115,7 +115,7 @@
 .memberDetails {
     flex: 1;
     padding: 20px;
-    background-color: var(--light2);
+    background-color: white;
     border-radius: 16px;
 }
 .memberName {

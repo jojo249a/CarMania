@@ -8,7 +8,7 @@
 .contactHeading {
     margin-bottom: 32px;
     font-size: 2em;
-    font-weight: 200;
+    font-weight: 300;
 }
 .showroomsWrap {
     display: flex;
@@ -121,9 +121,6 @@
     .showroomsWrap {
         flex-direction: column;
     }
-    .showroomSelect {
-
-    }
     .showroomSelectOption {
         padding-inline: 15px;
         font-size: 0.95em;
@@ -136,5 +133,4 @@
     .timetable td {
         flex-basis: 50%;
     }
-
 }

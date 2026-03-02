@@ -26,7 +26,7 @@ const Services = () => {
                         <div className={styles.serviceList}>
                             <Link to="/services/service" className={styles.serviceBlock}>
                                 <div className={styles.serviceImgWrap}>
-                                    <img src="/service.jpg" alt="Service" className={styles.serviceImg} />
+                                    <img src="/service2.jpg" alt="Service of luxury and sports vehicles" className={styles.serviceImg} />
                                 </div>
                                 <div className={styles.textWrap}>
                                     <span className={styles.text}>
@@ -37,22 +37,9 @@ const Services = () => {
                                     </div>
                                 </div>
                             </Link>
-                            <Link to="/services/parts-&-accessories" className={styles.serviceBlock}>
-                                <div className={styles.serviceImgWrap}>
-                                    <img src="/service2.jpg" alt="Service" className={styles.serviceImg} />
-                                </div>
-                                <div className={styles.textWrap}>
-                                    <span className={styles.text}>
-                                        Spare parts and accessories
-                                    </span>
-                                    <div className={styles.arrowWrap}>
-                                        <FaArrowRight className={styles.arrow}/>
-                                    </div>
-                                </div>
-                            </Link>
                             <Link to="/services/transport" className={styles.serviceBlock}>
                                 <div className={styles.serviceImgWrap}>
-                                    <img src="/detailing.jpg" alt="Service" className={styles.serviceImg} />
+                                    <img src="/transport3.jpg" alt="Pick-up & door-to-door service" className={styles.serviceImg} />
                                 </div>
                                 <div className={styles.textWrap}>
                                     <span className={styles.text}>
@@ -63,9 +50,22 @@ const Services = () => {
                                     </div>
                                 </div>
                             </Link>
+                            <Link to="/services/parts-&-accessories" className={styles.serviceBlock}>
+                                <div className={styles.serviceImgWrap}>
+                                    <img src="/parts-and-accessories.jpg" alt="Spare parts and accessories" className={styles.serviceImg} />
+                                </div>
+                                <div className={styles.textWrap}>
+                                    <span className={styles.text}>
+                                        Spare parts and accessories
+                                    </span>
+                                    <div className={styles.arrowWrap}>
+                                        <FaArrowRight className={styles.arrow}/>
+                                    </div>
+                                </div>
+                            </Link>
                             <Link to="/services/car-detailing" className={styles.serviceBlock}>
                                 <div className={styles.serviceImgWrap}>
-                                    <img src="/detailing2.png" alt="Service" className={styles.serviceImg} />
+                                    <img src="/detailing2.png" alt="Professional detailing and car protection" className={styles.serviceImg} />
                                 </div>
                                 <div className={styles.textWrap}>
                                     <span className={styles.text}>
@@ -78,9 +78,6 @@ const Services = () => {
                             </Link>
                         </div>
                     </div>
-                </section>
-                <section>
-
                 </section>
             </main>
             <ServiceContact />

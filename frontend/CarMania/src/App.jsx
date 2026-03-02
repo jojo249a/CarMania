@@ -12,6 +12,10 @@ import ShowroomZilina from "./pages/ShowroomZilina"
 import Contact from "./pages/Contact"
 import AboutUs from "./pages/AboutUs"
 import Services from "./pages/Services"
+import CarDetailing from "./pages/services/CarDetailing"
+import Service from "./pages/services/Service"
+import Transport from "./pages/services/Transport"
+import PartsAndAccessories from "./pages/services/PartsAndAccessories"
 
 export default function App() {
   const { pathname } = useLocation();
@@ -37,7 +41,11 @@ export default function App() {
         <Route path="/showroom/zilina" element={<ShowroomZilina />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/services" element={<Services />}/>
+        <Route path="/services" element={<Services />} />
+        <Route path="/services/service" element={<Service />} />
+        <Route path="/services/parts-&-accessories" element={<PartsAndAccessories />} />
+        <Route path="/services/car-detailing" element={<CarDetailing />} />
+        <Route path="/services/transport" element={<Transport />} />
       </Routes>
       <Footer />
     </>
