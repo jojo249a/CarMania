@@ -42,31 +42,30 @@
     font-weight: 100;
     width: 1000px;
 }
-.infoSection {
+.infoWrap {
+    max-width: 700px;
     margin-inline: auto;
 }
 .serviceDescription {
-    max-width: 700px;
-    margin-inline: auto;
     line-height: 1.6;
 }
 .serviceList {
-    max-width: 700px;
-    margin-inline: auto;
     margin-top: 20px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 .serviceList li {
     list-style: disc;
 }
 .serviceImages {
-    display: flex;
+    display: grid;
     gap: 20px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin-inline: auto;
+    grid-template-columns: repeat(2, 1fr);
 }
-.serviceImages .imgWrap {
-    flex: 1;
+.imgWrap:last-child:nth-child(odd) {
+    height: 800px;
+    grid-column: span 2;
 }
 .serviceImages .img {
     width: 100%;
