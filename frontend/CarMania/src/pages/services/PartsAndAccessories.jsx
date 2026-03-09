@@ -25,20 +25,21 @@ const PartsAndAccessories = () => {
                     <div className="container sectionSpacing sectionInner">
                         <div className={styles.infoWrap}>
                             <div className={styles.serviceDescription}>
-                            Společnost AR CARS s.r.o. nabízí možnost objednávek originálních náhradních dílů a příslušenství. 
-                            Zajišťujeme také dodávky náhradních dílů pro neautorizované opravny v rámci programu NORA PRODEJNÍ CENTRUM (Neautorizovaní Odběratelé s Rabatem).
+                                CarMania s.r.o. offers the possibility to order original spare parts and accessories.
+                                We also provide the supply of spare parts for independent repair shops within the
+                                NORA SALES CENTER program (Unauthorized Customers with Discount).
                             </div>
                             <ul className={styles.serviceList}>
-                                <li>Audi a Volkswagen – originální díly přímo od výrobce</li>
-                                <li>Škoda a SEAT – kompletní sortiment dílů a příslušenství</li>
-                                <li>Luxusní vozy – Porsche, Ferrari, Bentley, BMW, Mercedes, Lamborghini aj.</li>
-                                <li>Rozsáhlý sortiment náhradních dílů skladem</li>
-                                <li>Rychlé objednávky a dodání do 24 hodin</li>
-                                <li>Realizace zakázek v nejkratším možném termínu</li>
-                                <li>Stálá a aktuální nabídka příslušenství</li>
-                                <li>Výhodné podmínky pro nezávislé servisy a partnery</li>
-                                <li>Odborné poradenství a technická podpora</li>
-                                <li>Rozvoz originálních dílů přímo do vaší provozovny</li>
+                                <li>Audi and Volkswagen – original parts directly from the manufacturer</li>
+                                <li>Škoda and SEAT – complete range of parts and accessories</li>
+                                <li>Luxury vehicles – Porsche, Ferrari, Bentley, BMW, Mercedes, Lamborghini, etc.</li>
+                                <li>Extensive range of spare parts in stock</li>
+                                <li>Fast ordering and delivery within 24 hours</li>
+                                <li>Order fulfillment in the shortest possible time</li>
+                                <li>Constant and up-to-date selection of accessories</li>
+                                <li>Favorable conditions for independent service centers and partners</li>
+                                <li>Professional consulting and technical support</li>
+                                <li>Delivery of original parts directly to your workshop</li>
                             </ul>
                         </div>
                     </div>

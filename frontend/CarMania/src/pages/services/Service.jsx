@@ -25,22 +25,22 @@ const Service = () => {
                     <div className="container sectionSpacing sectionInner">
                         <div className={styles.infoWrap}>
                             <div className={styles.serviceDescription}>
-                                Provádíme veškeré servisní zásahy včetně prací, které kryje záruka vozu, i nadstandardní opravy po záruce automobilek VW a AUDI.
-                                Ke každému automobilu přistupujeme s maximální péčí a pozorností, abychom zajistili jeho perfektní stav. 
-                                Objednejte se na servis, navštivte nás a svěřte svůj automobil do rukou profesionálů.
+                                We perform all service operations, including work covered by the vehicle warranty, as well as extended repairs after the manufacturer’s warranty for VW and AUDI vehicles.
+                                We approach every automobile with the utmost care and attention to ensure it remains in perfect condition.
+                                Book a service appointment, visit us, and entrust your vehicle to the hands of professionals.
                             </div>
                             <ul className={styles.serviceList}>
-                                <li>Záruční a pozáruční servis</li>
-                                <li>Diagnostika vozidel</li>
-                                <li>Pneuservis</li>
-                                <li>Kontrola a nastavení geometrie</li>
-                                <li>Karosářské a lakýrnické práce</li>
-                                <li>Ruční mytí vozů a čištění interiérů, hloubkové čištění interiérů</li>
-                                <li>Zvýhodněnou hodinovou sazbu a zvýhodněné ceny dílů pro vozy starší 7 let</li>
-                                <li>Express servis, pick-up servis</li>
-                                <li>Kompletní řešení pojistných událostí</li>
-                                <li>Zajištění STK a emisí</li>
-                                <li>V případě nouze asistenční službu – mobil servis</li>
+                                <li>Warranty and post-warranty service</li>
+                                <li>Vehicle diagnostics</li>
+                                <li>Tire service</li>
+                                <li>Wheel alignment inspection and adjustment</li>
+                                <li>Bodywork and paintwork repairs</li>
+                                <li>Hand car washing and interior cleaning, deep interior cleaning</li>
+                                <li>Discounted hourly rates and parts prices for vehicles older than 7 years</li>
+                                <li>Express service, pick-up service</li>
+                                <li>Complete handling of insurance claims</li>
+                                <li>Arranging technical inspection (STK) and emissions testing</li>
+                                <li>Emergency roadside assistance – mobile service</li>
                             </ul>
                         </div>
                     </div>

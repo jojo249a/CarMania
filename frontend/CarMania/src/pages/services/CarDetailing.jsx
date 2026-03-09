@@ -26,18 +26,18 @@ const CarDetailing = () => {
                     <div className="container sectionSpacing sectionInner">
                         <div className={styles.infoWrap}>
                             <div className={styles.serviceDescription}>
-                                Nabízíme detailní péči o karoserii i interiér, která dokáže obnovit vzhled vozu a prodloužit jeho životnost. 
-                                Ruční práce, špičkové přípravky a moderní techniky zajistí, že váš automobil bude chráněný, lesklý a připravený na každou sezónu. 
-                                Perfektní pro luxusní, sportovní i běžná vozidla.
+                                We offer detailed care for both the car body and interior that can restore the vehicle’s appearance and extend its lifespan.
+                                Hand craftsmanship, premium products, and modern techniques ensure that your car remains protected, shiny, and ready for every season.
+                                Perfect for luxury, sports, and everyday vehicles.
                             </div>
                             <ul className={styles.serviceList}>
-                                <li>Strojní a ruční korekce laku</li>
-                                <li>Aplikace keramické ochrany laku</li>
-                                <li>Ochranné PPF fólie</li>
-                                <li>Hloubkové čištění interiéru</li>
-                                <li>Ošetření kůže a plastů</li>
-                                <li>Leštění skel, světel a detailů</li>
-                                <li>Příprava vozu na sezónu / výstavu</li>
+                                <li>Machine and manual paint correction</li>
+                                <li>Application of ceramic paint protection</li>
+                                <li>Protective PPF films</li>
+                                <li>Deep interior cleaning</li>
+                                <li>Leather and plastic treatment</li>
+                                <li>Polishing of glass, headlights, and details</li>
+                                <li>Vehicle preparation for the season / exhibitions</li>
                             </ul>
                         </div>
                     </div>

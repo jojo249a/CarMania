@@ -37,7 +37,7 @@ const Contact = () => {
                                     </div>
                                     <div className={styles.showroomsContact}>
                                         <div className="link"><FaPhone className={styles.contactIcon}/>+421 948 911 964</div>
-                                        <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@ar-cars.cz</div>
+                                        <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@car-mania.sk</div>
                                     </div>
                                     <div className={styles.showroomsMedia}>
                                         <Link to=""><FaFacebook className={styles.showroomsMediaIcon}/></Link>
@@ -57,7 +57,7 @@ const Contact = () => {
                                     </div>
                                     <div className={styles.showroomsContact}>
                                         <div className="link"><FaPhone className={styles.contactIcon}/>+420 596 710 183</div>
-                                        <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@ar-cars.cz</div>
+                                        <div className="link"><FaRegEnvelope className={styles.contactIcon}/>info@car-mania.cz</div>
                                     </div>
                                     <div className={styles.showroomsMedia}>
                                         <Link to=""><FaFacebook className={styles.showroomsMediaIcon}/></Link>

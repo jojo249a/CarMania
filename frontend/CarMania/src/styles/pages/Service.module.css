@@ -1,6 +1,9 @@
 .hero {
     position: relative;
     height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .heroImgWrap {
     position: relative;
@@ -23,24 +26,22 @@
     object-fit: cover;
 }
 .hero .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     position: absolute;
     bottom: 10%;
     color: white;
     width: 100%;
     font-size: 1.5em;
     z-index: 200;
+    padding-inline: 20px;
+    max-width: 1000px;
+    width: 100%;
 }
 .hero .heading {
     font-weight: 400;
     font-size: 2em;
-    width: 1000px;
 }
 .hero .description {
     font-weight: 100;
-    width: 1000px;
 }
 .infoWrap {
     max-width: 700px;
@@ -52,6 +53,7 @@
 .serviceList {
     margin-top: 20px;
     line-height: 1.7;
+    padding-left: 1em;
 }
 .serviceList li {
     list-style: disc;
@@ -63,6 +65,9 @@
     margin-inline: auto;
     grid-template-columns: repeat(2, 1fr);
 }
+.imgWrap {
+    max-height: 500px;
+}
 .imgWrap:last-child:nth-child(odd) {
     height: 800px;
     grid-column: span 2;
@@ -71,4 +76,26 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero .text {
+        font-size: 1.4em;
+    }
+    .serviceImages {
+        grid-template-columns: 1fr;
+    }
+    .imgWrap:last-child:nth-child(odd) {
+        height: auto;
+        grid-column: span 1;
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .hero .text {
+        font-size: 1.3em;
+    }
+    .hero .heading {
+        margin-bottom: 8px;
+    }
 }

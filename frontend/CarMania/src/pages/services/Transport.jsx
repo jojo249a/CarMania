@@ -24,18 +24,18 @@ const Transport = () => {
                 <section>
                     <div className="container sectionSpacing sectionInner">
                         <div className={styles.infoWrap}>
-                            <div className={styles.serviceDescription}>
-                                Postaráme se o kompletní přepravu vašeho vozu bez nutnosti osobní návštěvy servisu. 
-                                Vůz vyzvedneme u vás doma nebo ve firmě, zajistíme veškeré servisní úkony a následně jej bezpečně vrátíme zpět. 
-                                Služba je ideální pro vytížené klienty i majitele prémiových vozů, kteří hledají pohodlí, jistotu a profesionální péči.
+                           <div className={styles.serviceDescription}>
+                                We will take care of the complete transport of your vehicle without the need for a personal visit to the service center.
+                                We will pick up the vehicle at your home or company, carry out all necessary service operations, and safely return it afterward.
+                                This service is ideal for busy clients and owners of premium vehicles who seek convenience, reliability, and professional care.
                             </div>
                             <ul className={styles.serviceList}>
-                                <li>Vyžvednutí vozu u zákazníka</li>
-                                <li>Bezpečný převoz specializovaným transportem</li>
-                                <li>Doručení po dokončení servisu</li>
-                                <li>Možnost expresního vyřízení</li>
-                                <li>Provoz v rámci ČR, SK i zahraničí</li>
-                                <li>Informace o průběhu servisního zásahu</li>
+                                <li>Vehicle pick-up at the customer’s location</li>
+                                <li>Safe transport using specialized transport vehicles</li>
+                                <li>Delivery after the service is completed</li>
+                                <li>Express service option available</li>
+                                <li>Service available within the Czech Republic, Slovakia, and abroad</li>
+                                <li>Updates about the progress of the service work</li>
                             </ul>
                         </div>
                     </div>
